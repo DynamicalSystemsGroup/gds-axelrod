@@ -12,9 +12,3 @@ dependencies = [
     "nashpy>=0.0.41",
     "numpy>=1.26",
 ]
-
-[tool.uv.sources]
-gds-games = { path = "../../gds-core/packages/gds-games", editable = true }
-gds-framework = { path = "../../gds-core/packages/gds-framework", editable = true }
-gds-viz = { path = "../../gds-core/packages/gds-viz", editable = true }
-gds-sim = { path = "../../gds-core/packages/gds-sim", editable = true }

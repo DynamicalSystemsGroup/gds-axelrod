@@ -28,11 +28,11 @@ jobs:
 
       - name: Install pipeline dependencies
         working-directory: pipeline
-        run: uv sync --no-sources
+        run: uv sync
 
       - name: Generate data
         working-directory: pipeline
-        run: uv run --no-sources python generate.py
+        run: uv run python generate.py
 
       - name: Copy data to site
         run: cp pipeline/output/*.json site/public/data/
