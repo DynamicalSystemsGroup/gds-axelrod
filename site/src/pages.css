@@ -712,12 +712,9 @@
   color: var(--ink-dim);
 }
 
-#scatter-canvas {
-  display: block;
-  max-width: 100%;
+#scatter-plot {
+  width: 100%;
   margin: 12px auto;
-  border: 1px solid var(--rim);
-  border-radius: 4px;
 }
 
 .eval-table-wrap {
@@ -946,17 +943,3 @@
   text-decoration: underline;
 }
 
-.scatter-tooltip {
-  display: none;
-  position: absolute;
-  pointer-events: none;
-  background: var(--panel);
-  border: 1px solid var(--rim);
-  border-radius: 4px;
-  padding: 8px 10px;
-  font-size: 0.66rem;
-  line-height: 1.6;
-  white-space: nowrap;
-  z-index: 10;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-}

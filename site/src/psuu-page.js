@@ -35,9 +35,6 @@ let worker = null;
 let workerReady = false;
 let sweepStartTime = null;
 
-// Scatter hit-testing state
-let scatterPoints = [];
-
 // ── Boot ──
 
 async function boot() {
@@ -139,8 +136,7 @@ function renderPage(data) {
       <h2>Parameter Space Exploration</h2>
       <p class="sim-desc">Each point is one evaluation (noise, rounds_per_match). Color encodes <strong id="scatter-kpi-label">${KPI_LABELS[currentFocusKpi]}</strong>. Size encodes diversity. Hover for details.</p>
       <div class="scatter-wrap">
-        <canvas id="scatter-canvas" width="700" height="400"></canvas>
-        <div id="scatter-tooltip" class="scatter-tooltip"></div>
+        <div id="scatter-plot"></div>
       </div>
     </section>
 
@@ -223,156 +219,86 @@ function updateEvalTable(data) {
   if (countEl) countEl.textContent = data.total_evaluations;
 }
 
-// ── Scatter plot ──
+// ── Scatter plot (Plotly) ──
 
-function scatterColor(focusKpi, t) {
+function scatterColorscale(focusKpi) {
   if (focusKpi === 'winner_share') {
-    return { r: Math.round(80 + t * 140), g: Math.round(220 - t * 140), b: 60 };
+    // Inverted: low is good (green), high is bad (red)
+    return [[0, 'rgba(80,220,60,0.85)'], [0.5, 'rgba(200,200,60,0.85)'], [1, 'rgba(220,80,60,0.85)']];
   }
-  return { r: Math.round(220 - t * 140), g: Math.round(80 + t * 140), b: 60 };
+  // Normal: low is bad (red), high is good (green)
+  return [[0, 'rgba(220,80,60,0.85)'], [0.5, 'rgba(200,200,60,0.85)'], [1, 'rgba(80,220,60,0.85)']];
 }
 
 function drawScatter(data, focusKpi) {
-  const canvas = document.getElementById('scatter-canvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  const W = canvas.width;
-  const H = canvas.height;
-  const M = { top: 24, right: 80, bottom: 44, left: 56 };
-  const pW = W - M.left - M.right;
-  const pH = H - M.top - M.bottom;
-
-  ctx.clearRect(0, 0, W, H);
-  ctx.fillStyle = 'rgba(255,253,249,0.7)';
-  ctx.fillRect(0, 0, W, H);
+  const plotDiv = document.getElementById('scatter-plot');
+  if (!plotDiv) return;
 
   const evals = data.evaluations;
-  const noiseMin = data.space.noise.min;
-  const noiseMax = data.space.noise.max;
-  const roundsMin = data.space.rounds_per_match.min;
-  const roundsMax = data.space.rounds_per_match.max;
-
   const focusScores = evals.map(e => e.scores[focusKpi]);
   const divScores = evals.map(e => e.scores.diversity);
-  const focusMin = Math.min(...focusScores);
-  const focusMax = Math.max(...focusScores);
   const divMin = Math.min(...divScores);
   const divMax = Math.max(...divScores);
 
-  // Build hit-test array
-  scatterPoints = [];
+  // Scale diversity to marker size 6–20
+  const sizes = divScores.map(d =>
+    divMax > divMin ? 6 + ((d - divMin) / (divMax - divMin)) * 14 : 10
+  );
 
-  for (const ev of evals) {
-    const nx = (ev.params.noise - noiseMin) / (noiseMax - noiseMin);
-    const ny = (ev.params.rounds_per_match - roundsMin) / (roundsMax - roundsMin);
-    const x = M.left + nx * pW;
-    const y = M.top + pH - ny * pH;
+  const shortLabel = focusKpi === 'cooperation_rate' ? 'Coop Rate'
+    : focusKpi === 'diversity' ? 'Diversity' : 'Winner Share';
 
-    const ct = focusMax > focusMin ? (ev.scores[focusKpi] - focusMin) / (focusMax - focusMin) : 0.5;
-    const { r, g, b } = scatterColor(focusKpi, ct);
+  const trace = {
+    type: 'scatter',
+    mode: 'markers',
+    x: evals.map(e => e.params.noise),
+    y: evals.map(e => e.params.rounds_per_match),
+    marker: {
+      size: sizes,
+      color: focusScores,
+      colorscale: scatterColorscale(focusKpi),
+      showscale: true,
+      colorbar: {
+        title: { text: shortLabel, font: { size: 10 } },
+        thickness: 14,
+        len: 0.8,
+      },
+      line: { width: 1, color: 'rgba(0,0,0,0.15)' },
+    },
+    text: evals.map(e =>
+      `noise: ${e.params.noise.toFixed(4)}<br>rounds: ${e.params.rounds_per_match}<br>` +
+      KPI_KEYS.map(k => `${KPI_LABELS[k]}: ${e.scores[k].toFixed(3)}`).join('<br>')
+    ),
+    hoverinfo: 'text',
+  };
 
-    const dt = divMax > divMin ? (ev.scores.diversity - divMin) / (divMax - divMin) : 0.5;
-    const radius = 3 + dt * 9;
+  const layout = {
+    paper_bgcolor: 'transparent',
+    plot_bgcolor: 'rgba(255,253,249,0.7)',
+    font: { family: 'IBM Plex Mono, monospace', size: 11, color: '#8a8278' },
+    height: 420,
+    margin: { t: 20, r: 80, b: 50, l: 60 },
+    xaxis: {
+      title: { text: 'noise', font: { size: 11 } },
+      gridcolor: 'rgba(0,0,0,0.06)',
+      linecolor: '#8a8278',
+      zeroline: false,
+    },
+    yaxis: {
+      title: { text: 'rounds_per_match', font: { size: 11 } },
+      gridcolor: 'rgba(0,0,0,0.06)',
+      linecolor: '#8a8278',
+      zeroline: false,
+    },
+  };
 
-    ctx.beginPath();
-    ctx.arc(x, y, radius, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(${r},${g},${b},0.75)`;
-    ctx.fill();
-    ctx.strokeStyle = `rgba(${r},${g},${b},1)`;
-    ctx.lineWidth = 1;
-    ctx.stroke();
+  const config = { displayModeBar: false, responsive: true };
 
-    scatterPoints.push({ x, y, radius, ev });
-  }
-
-  // Axes
-  ctx.strokeStyle = '#8a8278';
-  ctx.lineWidth = 1;
-  ctx.beginPath();
-  ctx.moveTo(M.left, M.top);
-  ctx.lineTo(M.left, M.top + pH);
-  ctx.lineTo(M.left + pW, M.top + pH);
-  ctx.stroke();
-
-  ctx.fillStyle = '#8a8278';
-  ctx.font = '10px "IBM Plex Mono",monospace';
-  ctx.textAlign = 'center';
-  ctx.fillText(`noise ${noiseMin}`, M.left + 20, M.top + pH + 28);
-  ctx.fillText(`${noiseMax}`, M.left + pW - 10, M.top + pH + 28);
-  ctx.textAlign = 'right';
-  ctx.fillText(`${roundsMin}`, M.left - 6, M.top + pH - 2);
-  ctx.fillText(`${roundsMax}`, M.left - 6, M.top + 12);
-  ctx.save();
-  ctx.translate(M.left - 40, M.top + pH / 2);
-  ctx.rotate(-Math.PI / 2);
-  ctx.textAlign = 'center';
-  ctx.fillText('rounds_per_match', 0, 0);
-  ctx.restore();
-
-  // Color legend
-  const lx = M.left + pW + 16;
-  const lw = 14;
-  const lh = pH;
-  const isInverted = focusKpi === 'winner_share';
-  const topColor = isInverted ? 'rgba(220,80,60,0.75)' : 'rgba(80,220,60,0.75)';
-  const botColor = isInverted ? 'rgba(80,220,60,0.75)' : 'rgba(220,80,60,0.75)';
-  const grad = ctx.createLinearGradient(lx, M.top + lh, lx, M.top);
-  grad.addColorStop(0, botColor);
-  grad.addColorStop(1, topColor);
-  ctx.fillStyle = grad;
-  ctx.fillRect(lx, M.top, lw, lh);
-  ctx.strokeStyle = '#8a8278';
-  ctx.strokeRect(lx, M.top, lw, lh);
-
-  const shortLabel = focusKpi === 'cooperation_rate' ? 'coop'
-    : focusKpi === 'diversity' ? 'div' : 'win%';
-  ctx.fillStyle = '#8a8278';
-  ctx.font = '9px "IBM Plex Mono",monospace';
-  ctx.textAlign = 'left';
-  ctx.fillText(shortLabel, lx + lw + 4, M.top + 8);
-  ctx.fillText(isInverted ? 'low' : 'high', lx + lw + 4, M.top + 18);
-  ctx.fillText(isInverted ? 'high' : 'low', lx + lw + 4, M.top + lh);
-}
-
-// ── Scatter tooltip ──
-
-function handleScatterHover(e) {
-  const canvas = document.getElementById('scatter-canvas');
-  const tooltip = document.getElementById('scatter-tooltip');
-  if (!canvas || !tooltip || !scatterPoints.length) return;
-
-  const rect = canvas.getBoundingClientRect();
-  const scaleX = canvas.width / rect.width;
-  const scaleY = canvas.height / rect.height;
-  const mx = (e.clientX - rect.left) * scaleX;
-  const my = (e.clientY - rect.top) * scaleY;
-
-  let hit = null;
-  for (const pt of scatterPoints) {
-    const dx = mx - pt.x;
-    const dy = my - pt.y;
-    if (dx * dx + dy * dy <= (pt.radius + 3) * (pt.radius + 3)) {
-      hit = pt;
-      break;
-    }
-  }
-
-  if (hit) {
-    const ev = hit.ev;
-    tooltip.innerHTML =
-      `<strong>noise</strong> ${ev.params.noise.toFixed(4)}<br>` +
-      `<strong>rounds</strong> ${ev.params.rounds_per_match}<br>` +
-      KPI_KEYS.map(k => `<strong>${KPI_LABELS[k]}</strong> ${ev.scores[k].toFixed(3)}`).join('<br>');
-    tooltip.style.display = 'block';
-    // Position near cursor but within container
-    const tx = e.clientX - rect.left + 14;
-    const ty = e.clientY - rect.top - 10;
-    tooltip.style.left = Math.min(tx, rect.width - 180) + 'px';
-    tooltip.style.top = ty + 'px';
-    canvas.style.cursor = 'crosshair';
+  // Use react for efficient updates, newPlot for first render
+  if (plotDiv.data) {
+    Plotly.react(plotDiv, [trace], layout, config);
   } else {
-    tooltip.style.display = 'none';
-    canvas.style.cursor = 'default';
+    Plotly.newPlot(plotDiv, [trace], layout, config);
   }
 }
 
@@ -426,20 +352,6 @@ function bindControls() {
       startSweep();
     }
   });
-
-  // Scatter hover
-  document.addEventListener('mousemove', (e) => {
-    if (e.target.id === 'scatter-canvas' || e.target.closest('.scatter-wrap')) {
-      handleScatterHover(e);
-    }
-  });
-
-  document.addEventListener('mouseleave', (e) => {
-    if (e.target.id === 'scatter-canvas') {
-      const tooltip = document.getElementById('scatter-tooltip');
-      if (tooltip) tooltip.style.display = 'none';
-    }
-  }, true);
 }
 
 function startSweep() {

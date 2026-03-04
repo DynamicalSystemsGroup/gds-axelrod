@@ -1,67 +1,110 @@
 /**
- * Chart renderers for chapters: stacked area, line charts, heatmaps.
+ * Chart renderers for chapters: stacked area (Canvas), line/heatmap/bar (Plotly).
  */
 
-import { getStratColor } from '../petri/agents.js';
+import { getStratColor, getStratShort } from '../petri/agents.js';
+
+const PLOTLY_CONFIG = { displayModeBar: false, responsive: true };
+
+const LAYOUT_BASE = {
+  paper_bgcolor: 'transparent',
+  plot_bgcolor: 'rgba(255,253,249,0.7)',
+  font: { family: 'IBM Plex Mono, monospace', size: 11, color: '#8a8278' },
+  xaxis: { gridcolor: 'rgba(0,0,0,0.06)', linecolor: '#8a8278', zeroline: false },
+  yaxis: { gridcolor: 'rgba(0,0,0,0.06)', linecolor: '#8a8278', zeroline: false },
+  margin: { t: 20, r: 20, b: 40, l: 50 },
+};
 
 export function renderRankings(container, rankings, maxScore) {
-  let html = '<ul class="rankings-list">';
-  rankings.forEach((r, i) => {
-    const pct = (r.score / maxScore) * 100;
-    const color = getStratColor(r.name);
-    html += `<li>
-      <span style="min-width:18px;color:var(--ink-dim)">${i + 1}.</span>
-      <span style="min-width:120px">${r.name}</span>
-      <div style="flex:1;background:var(--grid);border-radius:3px;height:6px;overflow:hidden">
-        <div class="rank-bar" style="width:${pct}%;background:${color}"></div>
-      </div>
-      <span style="min-width:40px;text-align:right;color:var(--ink-dim);font-size:0.66rem">${r.score}</span>
-    </li>`;
-  });
-  html += '</ul>';
-  container.innerHTML = html;
+  container.innerHTML = '';
+  const div = document.createElement('div');
+  container.appendChild(div);
+
+  // Sort descending by score
+  const sorted = [...rankings].sort((a, b) => b.score - a.score);
+
+  const trace = {
+    type: 'bar',
+    orientation: 'h',
+    y: sorted.map(r => r.name),
+    x: sorted.map(r => r.score),
+    marker: { color: sorted.map(r => getStratColor(r.name)) },
+    text: sorted.map(r => r.score.toString()),
+    textposition: 'outside',
+    textfont: { size: 9, color: '#8a8278' },
+    hovertemplate: '%{y}: %{x}<extra></extra>',
+  };
+
+  const layout = {
+    ...LAYOUT_BASE,
+    margin: { t: 10, r: 40, b: 30, l: 110 },
+    height: Math.max(200, sorted.length * 28 + 40),
+    yaxis: { ...LAYOUT_BASE.yaxis, autorange: 'reversed' },
+    xaxis: { ...LAYOUT_BASE.xaxis, title: { text: 'Score', font: { size: 10 } } },
+  };
+
+  Plotly.newPlot(div, [trace], layout, PLOTLY_CONFIG);
 }
 
 export function renderHeatmap(container, heatmap, strategies) {
-  const names = strategies.map(s => s.name);
-  const n = names.length;
-
   container.innerHTML = '';
-  const grid = document.createElement('div');
-  grid.className = 'heatmap-grid';
-  grid.style.gridTemplateColumns = `60px repeat(${n}, 1fr)`;
+  const div = document.createElement('div');
+  container.appendChild(div);
 
-  // Header row
-  grid.appendChild(makeCell(''));
-  names.forEach(name => {
-    const short = name.split(' ').map(w => w[0]).join('');
-    grid.appendChild(makeCell(short, 'var(--panel)'));
-  });
+  const names = strategies.map(s => s.name);
+  const abbrevs = names.map(n => getStratShort(n));
 
-  // Data rows
-  names.forEach(rowName => {
-    const short = rowName.split(' ').map(w => w[0]).join('');
-    grid.appendChild(makeCell(short, 'var(--panel)'));
-    names.forEach(colName => {
-      const val = heatmap[rowName]?.[colName] ?? '-';
-      const maxVal = 50; // rough max
-      const intensity = typeof val === 'number' ? Math.min(val / maxVal, 1) : 0;
-      const bg = typeof val === 'number'
-        ? `rgba(74, 144, 217, ${intensity * 0.4})`
-        : 'var(--dish)';
-      grid.appendChild(makeCell(val, bg));
-    });
-  });
+  // Build z-matrix (row = row player, col = col player)
+  const z = names.map(rowName =>
+    names.map(colName => {
+      const val = heatmap[rowName]?.[colName];
+      return typeof val === 'number' ? val : null;
+    })
+  );
 
-  container.appendChild(grid);
-}
+  // Build text annotations for cell values
+  const annotations = [];
+  for (let i = 0; i < names.length; i++) {
+    for (let j = 0; j < names.length; j++) {
+      const val = z[i][j];
+      if (val == null) continue;
+      // Use dark text on light cells, light text on dark cells
+      const maxVal = Math.max(...z.flat().filter(v => v != null));
+      const intensity = maxVal > 0 ? val / maxVal : 0;
+      annotations.push({
+        x: abbrevs[j],
+        y: abbrevs[i],
+        text: String(Math.round(val)),
+        showarrow: false,
+        font: { size: 9, color: intensity > 0.55 ? '#fff' : '#8a8278' },
+      });
+    }
+  }
 
-function makeCell(text, bg = 'var(--dish)') {
-  const el = document.createElement('div');
-  el.className = 'heatmap-cell';
-  el.style.background = bg;
-  el.textContent = text;
-  return el;
+  const trace = {
+    type: 'heatmap',
+    z,
+    x: abbrevs,
+    y: abbrevs,
+    colorscale: [
+      [0, 'rgba(255,253,249,0.9)'],
+      [0.5, 'rgba(74,144,217,0.4)'],
+      [1, 'rgba(74,144,217,0.85)'],
+    ],
+    hovertemplate: '%{y} vs %{x}: %{z}<extra></extra>',
+    showscale: false,
+  };
+
+  const layout = {
+    ...LAYOUT_BASE,
+    height: Math.max(280, names.length * 32 + 60),
+    margin: { t: 10, r: 10, b: 40, l: 60 },
+    xaxis: { ...LAYOUT_BASE.xaxis, tickangle: 0, dtick: 1, side: 'bottom' },
+    yaxis: { ...LAYOUT_BASE.yaxis, dtick: 1, autorange: 'reversed' },
+    annotations,
+  };
+
+  Plotly.newPlot(div, [trace], layout, PLOTLY_CONFIG);
 }
 
 export function renderStackedArea(container, snapshots, strategyNames) {
@@ -118,71 +161,27 @@ export function renderStackedArea(container, snapshots, strategyNames) {
 
 export function renderLineSweep(container, sweep, xKey, xLabel, strategyNames) {
   container.innerHTML = '';
-  const canvas = document.createElement('canvas');
-  canvas.width = 560;
-  canvas.height = 200;
-  canvas.style.width = '100%';
-  canvas.style.height = '200px';
-  container.appendChild(canvas);
+  const div = document.createElement('div');
+  container.appendChild(div);
 
-  const ctx = canvas.getContext('2d');
-  const W = canvas.width, H = canvas.height;
-  const pad = { l: 40, r: 10, t: 10, b: 30 };
-  const plotW = W - pad.l - pad.r;
-  const plotH = H - pad.t - pad.b;
+  const traces = strategyNames.map(name => ({
+    type: 'scatter',
+    mode: 'lines',
+    name: name.split(' ').map(w => w[0]).join(''),
+    x: sweep.map(s => s[xKey]),
+    y: sweep.map(s => s.scores[name] || 0),
+    line: { color: getStratColor(name), width: 2 },
+    hovertemplate: `${name}<br>${xLabel}: %{x}<br>Score: %{y:.1f}<extra></extra>`,
+  }));
 
-  const xVals = sweep.map(s => s[xKey]);
-  const xMin = Math.min(...xVals), xMax = Math.max(...xVals);
+  const layout = {
+    ...LAYOUT_BASE,
+    height: 240,
+    showlegend: true,
+    legend: { font: { size: 9 }, orientation: 'h', y: 1.12, x: 0 },
+    xaxis: { ...LAYOUT_BASE.xaxis, title: { text: xLabel, font: { size: 10 } } },
+    yaxis: { ...LAYOUT_BASE.yaxis, title: { text: 'Score', font: { size: 10 } } },
+  };
 
-  // Find global score max
-  let scoreMax = 0;
-  sweep.forEach(s => {
-    Object.values(s.scores).forEach(v => { if (v > scoreMax) scoreMax = v; });
-  });
-
-  // Draw axes
-  ctx.strokeStyle = 'rgba(0,0,0,0.15)';
-  ctx.lineWidth = 1;
-  ctx.beginPath();
-  ctx.moveTo(pad.l, pad.t);
-  ctx.lineTo(pad.l, H - pad.b);
-  ctx.lineTo(W - pad.r, H - pad.b);
-  ctx.stroke();
-
-  // Labels
-  ctx.fillStyle = '#8a8278';
-  ctx.font = '9px IBM Plex Mono';
-  ctx.fillText(xLabel, W / 2 - 20, H - 4);
-  ctx.fillText('0', pad.l - 12, H - pad.b + 4);
-
-  // Draw lines per strategy
-  strategyNames.forEach(name => {
-    const color = getStratColor(name);
-    ctx.strokeStyle = color;
-    ctx.lineWidth = 1.5;
-    ctx.beginPath();
-
-    sweep.forEach((s, i) => {
-      const x = pad.l + ((s[xKey] - xMin) / (xMax - xMin || 1)) * plotW;
-      const score = s.scores[name] || 0;
-      const y = pad.t + plotH - (score / scoreMax) * plotH;
-      if (i === 0) ctx.moveTo(x, y);
-      else ctx.lineTo(x, y);
-    });
-
-    ctx.stroke();
-  });
-
-  // Legend
-  const legendY = pad.t + 6;
-  let legendX = pad.l + 4;
-  strategyNames.slice(0, 5).forEach(name => {
-    ctx.fillStyle = getStratColor(name);
-    ctx.fillRect(legendX, legendY, 6, 6);
-    ctx.fillStyle = '#8a8278';
-    ctx.font = '8px IBM Plex Mono';
-    const short = name.split(' ').map(w => w[0]).join('');
-    ctx.fillText(short, legendX + 8, legendY + 6);
-    legendX += 30;
-  });
+  Plotly.newPlot(div, traces, layout, PLOTLY_CONFIG);
 }

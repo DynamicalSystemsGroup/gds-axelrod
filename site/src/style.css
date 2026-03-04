@@ -439,6 +439,52 @@ canvas#petri {
   height: 200px;
 }
 
+/* ── SITE FOOTER ── */
+.site-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 32px 24px 40px;
+  margin-top: 48px;
+  border-top: 1px solid var(--rim);
+  position: relative;
+  z-index: 1;
+}
+
+.footer-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.footer-logo:hover {
+  opacity: 1;
+}
+
+.footer-text {
+  font-size: 0.62rem;
+  color: var(--ink-dim);
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
+.footer-text a {
+  color: var(--ink-dim);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.footer-text a:hover {
+  color: var(--ink);
+}
+
+.footer-sep {
+  margin: 0 6px;
+}
+
 /* ── RESPONSIVE: TABLET ── */
 @media (max-width: 1023px) {
   :root { --panel-w: 155px; }
