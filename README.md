@@ -1,5 +1,7 @@
 # gds-axelrod
 
+**[Live Site](https://blockscience.github.io/gds-axelrod/)**
+
 Interactive exploration of Axelrod's iterated prisoner's dilemma tournament, built on the [GDS ecosystem](https://github.com/BlockScience/gds-core) — compositional game theory via [gds-games](https://pypi.org/project/gds-games/) (OGS).
 
 Six showcase pages demonstrate different analytical lenses on the same Prisoner's Dilemma model: narrative story, formal structure, visualizations, simulation, Nash analysis, and parameter space search (PSUU). Each page draws from a different GDS representation — one model, many views, none compromised.
