@@ -172,6 +172,9 @@ function renderPage(data) {
     source: 'gds-psuu (Sweep + ParameterSpace + KPI) + gds-sim',
     question: 'Which parameter combination optimizes which KPI?',
     note: 'gds-psuu formalizes parameter search as a first-class object \u2014 ParameterSpace, KPI functions, and an optimizer form a structured exploration pipeline. Combined with gds-sim for execution, it turns \u201cwhich parameters are best?\u201d from an ad-hoc script into a reproducible analysis. The interactive explorer runs the same model in-browser via Pyodide.',
+    links: [
+      { label: 'Parameter Selection Under Uncertainty', url: 'https://blog.block.science/how-to-perform-parameter-selection-under-uncertainty/' },
+    ],
   });
 }
 

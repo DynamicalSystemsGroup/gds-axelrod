@@ -926,6 +926,26 @@
   margin-top: 10px;
 }
 
+.ecosystem-references {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--rim);
+  font-size: 0.64rem;
+  line-height: 1.8;
+  color: var(--ink-dim);
+}
+
+.ecosystem-references a {
+  color: var(--ink-dim);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.ecosystem-references a:hover {
+  color: var(--ink);
+  text-decoration: underline;
+}
+
 .scatter-tooltip {
   display: none;
   position: absolute;
