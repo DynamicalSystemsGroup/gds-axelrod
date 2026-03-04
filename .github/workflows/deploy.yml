@@ -20,23 +20,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install uv
-        uses: astral-sh/setup-uv@v5
-
-      - name: Set up Python
-        run: uv python install 3.12
-
-      - name: Install pipeline dependencies
-        working-directory: pipeline
-        run: uv sync
-
-      - name: Generate data
-        working-directory: pipeline
-        run: uv run python generate.py
-
-      - name: Copy data to site
-        run: cp pipeline/output/*.json site/public/data/
-
       - name: Set up Node
         uses: actions/setup-node@v4
         with:

@@ -1,16 +1,26 @@
 # gds-axelrod
 
-Interactive exploration of Axelrod's iterated prisoner's dilemma tournament, built on [gds-games](https://github.com/BlockScience/gds-core) (OGS) compositional game theory.
+Interactive exploration of Axelrod's iterated prisoner's dilemma tournament, built on the [GDS ecosystem](https://github.com/BlockScience/gds-core) — compositional game theory via [gds-games](https://pypi.org/project/gds-games/) (OGS).
 
-Scroll-driven narrative (5 chapters) + real-time Petri dish sandbox. Lab-notebook aesthetic.
+Six showcase pages demonstrate different analytical lenses on the same Prisoner's Dilemma model: narrative story, formal structure, visualizations, simulation, Nash analysis, and parameter space search (PSUU). Each page draws from a different GDS representation — one model, many views, none compromised.
 
 ## Architecture
 
 ```
-pipeline/       Python data generation (OGS PatternIR + tournament simulations)
-site/           Vite + GSAP frontend (Canvas Petri dish, scroll-driven chapters)
-visual_layout.md  Design reference (self-contained HTML prototype)
+pipeline/       Python data generation (OGS PatternIR + tournament + sim + PSUU)
+site/           Vite frontend (Canvas Petri dish, chapters, showcase pages)
 ```
+
+## Pages
+
+| Page | View | GDS Source |
+|------|------|------------|
+| Story (Home) | Narrative chapters + Petri dish sandbox | OGS Pattern + strategy definitions |
+| Formal Structure | Canonical decomposition h = f . g | GDSSpec + CanonicalGDS |
+| Visualizations | Mermaid diagrams from 6 view types | SystemIR + GDSSpec via gds-viz |
+| Simulation | Population trajectories per parameter subset | gds-sim Model |
+| Nash Analysis | Equilibria, dominance, Pareto outcomes | PatternIR (OGS) |
+| PSUU | Interactive parameter space exploration | gds-psuu + gds-sim (Pyodide) |
 
 ## Development
 
@@ -18,9 +28,8 @@ visual_layout.md  Design reference (self-contained HTML prototype)
 
 ```bash
 cd pipeline
-uv venv
-uv pip install -e ../../gds-core/packages/gds-games -e ../../gds-core/packages/gds-framework
-.venv/bin/python generate.py
+uv sync
+uv run python generate.py
 cp output/*.json ../site/public/data/
 ```
 
@@ -39,13 +48,6 @@ cd site
 npm run build    # outputs to site/dist/
 ```
 
-## Chapters
+## License
 
-| # | Title | Key Visual |
-|---|-------|------------|
-| 1 | The Dilemma | Payoff matrix + OGS PatternIR game tree |
-| 2 | The Tournament | Heatmap grid + rankings |
-| 3 | Evolution | Stacked area (Moran vs Proportional) |
-| 4 | Noise & Forgiveness | Strategy ranking crossover |
-| 5 | Shadow of the Future | Score vs rounds sweep |
-| Sandbox | The Petri Dish | Real-time evolutionary simulation |
+Apache 2.0 — see [LICENSE](LICENSE).
