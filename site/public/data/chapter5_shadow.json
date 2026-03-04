@@ -1,0 +1,484 @@
+{
+  "title": "Shadow of the Future",
+  "round_counts": [
+    1,
+    2,
+    3,
+    5,
+    10,
+    20,
+    50,
+    100,
+    200
+  ],
+  "sweep": [
+    {
+      "rounds": 1,
+      "scores": {
+        "Always Cooperate": 14,
+        "Always Defect": 21,
+        "Tit for Tat": 14,
+        "Grim Trigger": 14,
+        "Detective": 14,
+        "Tit for Two Tats": 14,
+        "Pavlov": 14,
+        "Generous TFT": 14,
+        "Random": 23
+      },
+      "rankings": [
+        {
+          "name": "Random",
+          "score": 23
+        },
+        {
+          "name": "Always Defect",
+          "score": 21
+        },
+        {
+          "name": "Always Cooperate",
+          "score": 14
+        },
+        {
+          "name": "Tit for Tat",
+          "score": 14
+        },
+        {
+          "name": "Grim Trigger",
+          "score": 14
+        },
+        {
+          "name": "Detective",
+          "score": 14
+        },
+        {
+          "name": "Tit for Two Tats",
+          "score": 14
+        },
+        {
+          "name": "Pavlov",
+          "score": 14
+        },
+        {
+          "name": "Generous TFT",
+          "score": 14
+        }
+      ]
+    },
+    {
+      "rounds": 2,
+      "scores": {
+        "Always Cooperate": 28,
+        "Always Defect": 30,
+        "Tit for Tat": 30,
+        "Grim Trigger": 30,
+        "Detective": 35,
+        "Tit for Two Tats": 28,
+        "Pavlov": 30,
+        "Generous TFT": 30,
+        "Random": 25
+      },
+      "rankings": [
+        {
+          "name": "Detective",
+          "score": 35
+        },
+        {
+          "name": "Always Defect",
+          "score": 30
+        },
+        {
+          "name": "Tit for Tat",
+          "score": 30
+        },
+        {
+          "name": "Grim Trigger",
+          "score": 30
+        },
+        {
+          "name": "Pavlov",
+          "score": 30
+        },
+        {
+          "name": "Generous TFT",
+          "score": 30
+        },
+        {
+          "name": "Always Cooperate",
+          "score": 28
+        },
+        {
+          "name": "Tit for Two Tats",
+          "score": 28
+        },
+        {
+          "name": "Random",
+          "score": 25
+        }
+      ]
+    },
+    {
+      "rounds": 3,
+      "scores": {
+        "Always Cooperate": 45,
+        "Always Defect": 42,
+        "Tit for Tat": 49,
+        "Grim Trigger": 50,
+        "Detective": 40,
+        "Tit for Two Tats": 46,
+        "Pavlov": 49,
+        "Generous TFT": 48,
+        "Random": 35
+      },
+      "rankings": [
+        {
+          "name": "Grim Trigger",
+          "score": 50
+        },
+        {
+          "name": "Tit for Tat",
+          "score": 49
+        },
+        {
+          "name": "Pavlov",
+          "score": 49
+        },
+        {
+          "name": "Generous TFT",
+          "score": 48
+        },
+        {
+          "name": "Tit for Two Tats",
+          "score": 46
+        },
+        {
+          "name": "Always Cooperate",
+          "score": 45
+        },
+        {
+          "name": "Always Defect",
+          "score": 42
+        },
+        {
+          "name": "Detective",
+          "score": 40
+        },
+        {
+          "name": "Random",
+          "score": 35
+        }
+      ]
+    },
+    {
+      "rounds": 5,
+      "scores": {
+        "Always Cooperate": 73,
+        "Always Defect": 60,
+        "Tit for Tat": 82,
+        "Grim Trigger": 84,
+        "Detective": 69,
+        "Tit for Two Tats": 76,
+        "Pavlov": 82,
+        "Generous TFT": 79,
+        "Random": 69
+      },
+      "rankings": [
+        {
+          "name": "Grim Trigger",
+          "score": 84
+        },
+        {
+          "name": "Tit for Tat",
+          "score": 82
+        },
+        {
+          "name": "Pavlov",
+          "score": 82
+        },
+        {
+          "name": "Generous TFT",
+          "score": 79
+        },
+        {
+          "name": "Tit for Two Tats",
+          "score": 76
+        },
+        {
+          "name": "Always Cooperate",
+          "score": 73
+        },
+        {
+          "name": "Detective",
+          "score": 69
+        },
+        {
+          "name": "Random",
+          "score": 69
+        },
+        {
+          "name": "Always Defect",
+          "score": 60
+        }
+      ]
+    },
+    {
+      "rounds": 10,
+      "scores": {
+        "Always Cooperate": 137,
+        "Always Defect": 87,
+        "Tit for Tat": 169,
+        "Grim Trigger": 163,
+        "Detective": 144,
+        "Tit for Two Tats": 151,
+        "Pavlov": 169,
+        "Generous TFT": 162,
+        "Random": 112
+      },
+      "rankings": [
+        {
+          "name": "Tit for Tat",
+          "score": 169
+        },
+        {
+          "name": "Pavlov",
+          "score": 169
+        },
+        {
+          "name": "Grim Trigger",
+          "score": 163
+        },
+        {
+          "name": "Generous TFT",
+          "score": 162
+        },
+        {
+          "name": "Tit for Two Tats",
+          "score": 151
+        },
+        {
+          "name": "Detective",
+          "score": 144
+        },
+        {
+          "name": "Always Cooperate",
+          "score": 137
+        },
+        {
+          "name": "Random",
+          "score": 112
+        },
+        {
+          "name": "Always Defect",
+          "score": 87
+        }
+      ]
+    },
+    {
+      "rounds": 20,
+      "scores": {
+        "Always Cooperate": 262,
+        "Always Defect": 147,
+        "Tit for Tat": 339,
+        "Grim Trigger": 318,
+        "Detective": 284,
+        "Tit for Two Tats": 298,
+        "Pavlov": 339,
+        "Generous TFT": 326,
+        "Random": 201
+      },
+      "rankings": [
+        {
+          "name": "Tit for Tat",
+          "score": 339
+        },
+        {
+          "name": "Pavlov",
+          "score": 339
+        },
+        {
+          "name": "Generous TFT",
+          "score": 326
+        },
+        {
+          "name": "Grim Trigger",
+          "score": 318
+        },
+        {
+          "name": "Tit for Two Tats",
+          "score": 298
+        },
+        {
+          "name": "Detective",
+          "score": 284
+        },
+        {
+          "name": "Always Cooperate",
+          "score": 262
+        },
+        {
+          "name": "Random",
+          "score": 201
+        },
+        {
+          "name": "Always Defect",
+          "score": 147
+        }
+      ]
+    },
+    {
+      "rounds": 50,
+      "scores": {
+        "Always Cooperate": 634,
+        "Always Defect": 312,
+        "Tit for Tat": 847,
+        "Grim Trigger": 780,
+        "Detective": 702,
+        "Tit for Two Tats": 741,
+        "Pavlov": 847,
+        "Generous TFT": 816,
+        "Random": 491
+      },
+      "rankings": [
+        {
+          "name": "Tit for Tat",
+          "score": 847
+        },
+        {
+          "name": "Pavlov",
+          "score": 847
+        },
+        {
+          "name": "Generous TFT",
+          "score": 816
+        },
+        {
+          "name": "Grim Trigger",
+          "score": 780
+        },
+        {
+          "name": "Tit for Two Tats",
+          "score": 741
+        },
+        {
+          "name": "Detective",
+          "score": 702
+        },
+        {
+          "name": "Always Cooperate",
+          "score": 634
+        },
+        {
+          "name": "Random",
+          "score": 491
+        },
+        {
+          "name": "Always Defect",
+          "score": 312
+        }
+      ]
+    },
+    {
+      "rounds": 100,
+      "scores": {
+        "Always Cooperate": 1259,
+        "Always Defect": 591,
+        "Tit for Tat": 1696,
+        "Grim Trigger": 1555,
+        "Detective": 1401,
+        "Tit for Two Tats": 1479,
+        "Pavlov": 1696,
+        "Generous TFT": 1638,
+        "Random": 997
+      },
+      "rankings": [
+        {
+          "name": "Tit for Tat",
+          "score": 1696
+        },
+        {
+          "name": "Pavlov",
+          "score": 1696
+        },
+        {
+          "name": "Generous TFT",
+          "score": 1638
+        },
+        {
+          "name": "Grim Trigger",
+          "score": 1555
+        },
+        {
+          "name": "Tit for Two Tats",
+          "score": 1479
+        },
+        {
+          "name": "Detective",
+          "score": 1401
+        },
+        {
+          "name": "Always Cooperate",
+          "score": 1259
+        },
+        {
+          "name": "Random",
+          "score": 997
+        },
+        {
+          "name": "Always Defect",
+          "score": 591
+        }
+      ]
+    },
+    {
+      "rounds": 200,
+      "scores": {
+        "Always Cooperate": 2518,
+        "Always Defect": 1161,
+        "Tit for Tat": 3402,
+        "Grim Trigger": 3114,
+        "Detective": 2807,
+        "Tit for Two Tats": 2959,
+        "Pavlov": 3402,
+        "Generous TFT": 3289,
+        "Random": 1988
+      },
+      "rankings": [
+        {
+          "name": "Tit for Tat",
+          "score": 3402
+        },
+        {
+          "name": "Pavlov",
+          "score": 3402
+        },
+        {
+          "name": "Generous TFT",
+          "score": 3289
+        },
+        {
+          "name": "Grim Trigger",
+          "score": 3114
+        },
+        {
+          "name": "Tit for Two Tats",
+          "score": 2959
+        },
+        {
+          "name": "Detective",
+          "score": 2807
+        },
+        {
+          "name": "Always Cooperate",
+          "score": 2518
+        },
+        {
+          "name": "Random",
+          "score": 1988
+        },
+        {
+          "name": "Always Defect",
+          "score": 1161
+        }
+      ]
+    }
+  ]
+}

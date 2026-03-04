@@ -1,0 +1,155 @@
+{
+  "title": "Nash Analysis",
+  "description": "Full game-theoretic analysis of the Prisoner's Dilemma via nashpy.",
+  "players": {
+    "Alice": [
+      "Cooperate",
+      "Defect"
+    ],
+    "Bob": [
+      "Cooperate",
+      "Defect"
+    ]
+  },
+  "payoff_matrices": {
+    "alice": [
+      [
+        2.0,
+        -1.0
+      ],
+      [
+        3.0,
+        0.0
+      ]
+    ],
+    "bob": [
+      [
+        2.0,
+        3.0
+      ],
+      [
+        -1.0,
+        0.0
+      ]
+    ]
+  },
+  "payoff_params": {
+    "R": 2,
+    "T": 3,
+    "S": -1,
+    "P": 0,
+    "labels": {
+      "R": "Reward (mutual cooperation)",
+      "T": "Temptation (defect while other cooperates)",
+      "S": "Sucker (cooperate while other defects)",
+      "P": "Punishment (mutual defection)"
+    }
+  },
+  "equilibria": [
+    {
+      "alice_strategy": {
+        "Cooperate": 0.0,
+        "Defect": 1.0
+      },
+      "bob_strategy": {
+        "Cooperate": 0.0,
+        "Defect": 1.0
+      },
+      "alice_pure": "Defect",
+      "bob_pure": "Defect",
+      "expected_payoff": {
+        "alice": 0.0,
+        "bob": 0.0
+      }
+    }
+  ],
+  "dominant_strategies": {
+    "Alice": "Defect",
+    "Bob": "Defect"
+  },
+  "pareto_optimal": [
+    {
+      "alice_action": "Cooperate",
+      "bob_action": "Cooperate",
+      "alice_payoff": 2.0,
+      "bob_payoff": 2.0
+    },
+    {
+      "alice_action": "Cooperate",
+      "bob_action": "Defect",
+      "alice_payoff": -1.0,
+      "bob_payoff": 3.0
+    },
+    {
+      "alice_action": "Defect",
+      "bob_action": "Cooperate",
+      "alice_payoff": 3.0,
+      "bob_payoff": -1.0
+    }
+  ],
+  "verification": {
+    "declared_equilibria": [
+      {
+        "name": "Mutual Defection",
+        "actions": {
+          "Alice Decision": "Defect",
+          "Bob Decision": "Defect"
+        },
+        "outcome": "Both players defect (Nash equilibrium)"
+      }
+    ],
+    "declared_pareto": [
+      {
+        "name": "Mutual Cooperation",
+        "actions": {
+          "Alice Decision": "Cooperate",
+          "Bob Decision": "Cooperate"
+        },
+        "outcome": "Both players cooperate (Pareto optimal)"
+      }
+    ],
+    "computed_equilibria_count": 1,
+    "all_terminal_conditions": [
+      {
+        "name": "Mutual Cooperation",
+        "actions": {
+          "Alice Decision": "Cooperate",
+          "Bob Decision": "Cooperate"
+        },
+        "outcome": "Both players cooperate (Pareto optimal)",
+        "description": "Pareto optimum \u2014 both receive reward",
+        "payoff": "R=2 each"
+      },
+      {
+        "name": "Mutual Defection",
+        "actions": {
+          "Alice Decision": "Defect",
+          "Bob Decision": "Defect"
+        },
+        "outcome": "Both players defect (Nash equilibrium)",
+        "description": "Dominant strategy equilibrium",
+        "payoff": "P=0 each"
+      },
+      {
+        "name": "Alice Exploits",
+        "actions": {
+          "Alice Decision": "Defect",
+          "Bob Decision": "Cooperate"
+        },
+        "outcome": "Alice defects while Bob cooperates",
+        "description": "Temptation vs sucker",
+        "payoff": "T=3 for Alice, S=-1 for Bob"
+      },
+      {
+        "name": "Bob Exploits",
+        "actions": {
+          "Alice Decision": "Cooperate",
+          "Bob Decision": "Defect"
+        },
+        "outcome": "Bob defects while Alice cooperates",
+        "description": "Temptation vs sucker",
+        "payoff": "T=3 for Bob, S=-1 for Alice"
+      }
+    ]
+  }
+}

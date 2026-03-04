@@ -1,0 +1,244 @@
+{
+  "version": "1.0",
+  "patterns": [
+    {
+      "name": "Axelrod Prisoner's Dilemma",
+      "games": [
+        {
+          "name": "Alice Decision",
+          "game_type": "decision",
+          "signature": [
+            "Alice Observation",
+            "Alice Action",
+            "Alice Payoff",
+            "Alice Experience"
+          ],
+          "logic": "Alice observes her previous round payoff and chooses {Cooperate, Defect}.",
+          "gds_function": null,
+          "constraints": [],
+          "parent_pattern": null,
+          "color_code": 1,
+          "contained_nodes": [],
+          "tags": {
+            "domain": "Alice"
+          }
+        },
+        {
+          "name": "Bob Decision",
+          "game_type": "decision",
+          "signature": [
+            "Bob Observation",
+            "Bob Action",
+            "Bob Payoff",
+            "Bob Experience"
+          ],
+          "logic": "Bob observes his previous round payoff and chooses {Cooperate, Defect}.",
+          "gds_function": null,
+          "constraints": [],
+          "parent_pattern": null,
+          "color_code": 1,
+          "contained_nodes": [],
+          "tags": {
+            "domain": "Bob"
+          }
+        },
+        {
+          "name": "Payoff Computation",
+          "game_type": "function_covariant",
+          "signature": [
+            "Alice Action + Bob Action",
+            "Alice Payoff + Bob Payoff",
+            "",
+            ""
+          ],
+          "logic": "Payoff matrix lookup: CC=(2,2), CD=(-1,3), DC=(3,-1), DD=(0,0).",
+          "gds_function": null,
+          "constraints": [],
+          "parent_pattern": null,
+          "color_code": 1,
+          "contained_nodes": [],
+          "tags": {
+            "domain": "Environment"
+          }
+        }
+      ],
+      "flows": [
+        {
+          "source": "Alice Decision",
+          "target": "Payoff Computation",
+          "label": "Alice Action",
+          "flow_type": "observation",
+          "direction": "covariant",
+          "is_feedback": false,
+          "is_corecursive": false
+        },
+        {
+          "source": "Bob Decision",
+          "target": "Payoff Computation",
+          "label": "Bob Action",
+          "flow_type": "observation",
+          "direction": "covariant",
+          "is_feedback": false,
+          "is_corecursive": false
+        },
+        {
+          "source": "Payoff Computation",
+          "target": "Alice Decision",
+          "label": "Alice Payoff",
+          "flow_type": "utility_coutility",
+          "direction": "contravariant",
+          "is_feedback": true,
+          "is_corecursive": false
+        },
+        {
+          "source": "Payoff Computation",
+          "target": "Bob Decision",
+          "label": "Bob Payoff",
+          "flow_type": "utility_coutility",
+          "direction": "contravariant",
+          "is_feedback": true,
+          "is_corecursive": false
+        },
+        {
+          "source": "Payoff Matrix",
+          "target": "Payoff Computation",
+          "label": "Payoff Matrix",
+          "flow_type": "observation",
+          "direction": "covariant",
+          "is_feedback": false,
+          "is_corecursive": false
+        }
+      ],
+      "inputs": [
+        {
+          "name": "Payoff Matrix",
+          "input_type": "external_world",
+          "schema_hint": "(R, T, S, P) = (2, 3, -1, 0)",
+          "shape": ""
+        }
+      ],
+      "composition_type": "feedback",
+      "terminal_conditions": [
+        {
+          "name": "Mutual Cooperation",
+          "actions": {
+            "Alice Decision": "Cooperate",
+            "Bob Decision": "Cooperate"
+          },
+          "outcome": "Both players cooperate (Pareto optimal)",
+          "description": "Pareto optimum — both receive reward",
+          "payoff_description": "R=2 each"
+        },
+        {
+          "name": "Mutual Defection",
+          "actions": {
+            "Alice Decision": "Defect",
+            "Bob Decision": "Defect"
+          },
+          "outcome": "Both players defect (Nash equilibrium)",
+          "description": "Dominant strategy equilibrium",
+          "payoff_description": "P=0 each"
+        },
+        {
+          "name": "Alice Exploits",
+          "actions": {
+            "Alice Decision": "Defect",
+            "Bob Decision": "Cooperate"
+          },
+          "outcome": "Alice defects while Bob cooperates",
+          "description": "Temptation vs sucker",
+          "payoff_description": "T=3 for Alice, S=-1 for Bob"
+        },
+        {
+          "name": "Bob Exploits",
+          "actions": {
+            "Alice Decision": "Cooperate",
+            "Bob Decision": "Defect"
+          },
+          "outcome": "Bob defects while Alice cooperates",
+          "description": "Temptation vs sucker",
+          "payoff_description": "T=3 for Bob, S=-1 for Alice"
+        }
+      ],
+      "action_spaces": [
+        {
+          "game": "Alice Decision",
+          "actions": [
+            "Cooperate",
+            "Defect"
+          ],
+          "constraints": []
+        },
+        {
+          "game": "Bob Decision",
+          "actions": [
+            "Cooperate",
+            "Defect"
+          ],
+          "constraints": []
+        }
+      ],
+      "initialization": null,
+      "hierarchy": {
+        "id": "group_1",
+        "name": "Prisoner's Dilemma",
+        "composition_type": "feedback",
+        "children": [
+          {
+            "id": "group_2",
+            "name": "Game Round",
+            "composition_type": "sequential",
+            "children": [
+              {
+                "id": "group_3",
+                "name": "Simultaneous Decisions",
+                "composition_type": "parallel",
+                "children": [
+                  {
+                    "id": "leaf_Alice_Decision",
+                    "name": "Alice Decision",
+                    "composition_type": null,
+                    "children": [],
+                    "block_name": "Alice Decision",
+                    "exit_condition": ""
+                  },
+                  {
+                    "id": "leaf_Bob_Decision",
+                    "name": "Bob Decision",
+                    "composition_type": null,
+                    "children": [],
+                    "block_name": "Bob Decision",
+                    "exit_condition": ""
+                  }
+                ],
+                "block_name": null,
+                "exit_condition": ""
+              },
+              {
+                "id": "leaf_Payoff_Computation",
+                "name": "Payoff Computation",
+                "composition_type": null,
+                "children": [],
+                "block_name": "Payoff Computation",
+                "exit_condition": ""
+              }
+            ],
+            "block_name": null,
+            "exit_condition": ""
+          }
+        ],
+        "block_name": null,
+        "exit_condition": ""
+      },
+      "source_canvas": "dsl",
+      "source_spec_notes": null
+    }
+  ],
+  "metadata": {
+    "source_canvases": [
+      "dsl"
+    ],
+    "generated_at": "2026-03-04T13:19:03.488591Z",
+    "parser_version": "0.1.0"
+  }
+}

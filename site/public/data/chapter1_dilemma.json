@@ -1,0 +1,84 @@
+{
+  "title": "The Dilemma",
+  "payoff_matrix": {
+    "players": [
+      "Alice",
+      "Bob"
+    ],
+    "actions": [
+      "Cooperate",
+      "Defect"
+    ],
+    "payoffs": [
+      [
+        [
+          2,
+          2
+        ],
+        [
+          -1,
+          3
+        ]
+      ],
+      [
+        [
+          3,
+          -1
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    ]
+  },
+  "example_match": {
+    "strategy_a": "Tit for Tat",
+    "strategy_b": "Always Defect",
+    "score_a": -1,
+    "score_b": 3,
+    "rounds": 10,
+    "history": [
+      [
+        "Cooperate",
+        "Defect"
+      ],
+      [
+        "Defect",
+        "Defect"
+      ],
+      [
+        "Defect",
+        "Defect"
+      ],
+      [
+        "Defect",
+        "Defect"
+      ],
+      [
+        "Defect",
+        "Defect"
+      ],
+      [
+        "Defect",
+        "Defect"
+      ],
+      [
+        "Defect",
+        "Defect"
+      ],
+      [
+        "Defect",
+        "Defect"
+      ],
+      [
+        "Defect",
+        "Defect"
+      ],
+      [
+        "Defect",
+        "Defect"
+      ]
+    ]
+  }
+}

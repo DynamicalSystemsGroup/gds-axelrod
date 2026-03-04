@@ -1,0 +1,4626 @@
+{
+  "title": "Evolution",
+  "initial_populations": {
+    "Always Cooperate": 10,
+    "Always Defect": 10,
+    "Tit for Tat": 10,
+    "Grim Trigger": 10,
+    "Detective": 10,
+    "Tit for Two Tats": 10,
+    "Pavlov": 10,
+    "Generous TFT": 10,
+    "Random": 10
+  },
+  "moran": [
+    {
+      "generation": 0,
+      "populations": {
+        "Always Cooperate": 10,
+        "Always Defect": 10,
+        "Tit for Tat": 10,
+        "Grim Trigger": 10,
+        "Detective": 10,
+        "Tit for Two Tats": 10,
+        "Pavlov": 10,
+        "Generous TFT": 10,
+        "Random": 10
+      }
+    },
+    {
+      "generation": 1,
+      "populations": {
+        "Always Cooperate": 10,
+        "Always Defect": 9,
+        "Tit for Tat": 10,
+        "Grim Trigger": 10,
+        "Detective": 10,
+        "Tit for Two Tats": 10,
+        "Pavlov": 11,
+        "Generous TFT": 10,
+        "Random": 10
+      },
+      "avg_scores": {
+        "Always Cooperate": 17.125,
+        "Always Defect": 10.875,
+        "Tit for Tat": 21.125,
+        "Grim Trigger": 20.375,
+        "Detective": 18.0,
+        "Tit for Two Tats": 18.875,
+        "Pavlov": 21.125,
+        "Generous TFT": 20.25,
+        "Random": 14.0
+      }
+    },
+    {
+      "generation": 2,
+      "populations": {
+        "Always Cooperate": 10,
+        "Always Defect": 8,
+        "Tit for Tat": 10,
+        "Grim Trigger": 10,
+        "Detective": 10,
+        "Tit for Two Tats": 10,
+        "Pavlov": 12,
+        "Generous TFT": 10,
+        "Random": 10
+      },
+      "avg_scores": {
+        "Always Cooperate": 17.125,
+        "Always Defect": 10.875,
+        "Tit for Tat": 21.125,
+        "Grim Trigger": 20.375,
+        "Detective": 18.0,
+        "Tit for Two Tats": 18.875,
+        "Pavlov": 21.125,
+        "Generous TFT": 20.25,
+        "Random": 14.0
+      }
+    },
+    {
+      "generation": 3,
+      "populations": {
+        "Always Cooperate": 10,
+        "Always Defect": 7,
+        "Tit for Tat": 10,
+        "Grim Trigger": 10,
+        "Detective": 10,
+        "Tit for Two Tats": 10,
+        "Pavlov": 13,
+        "Generous TFT": 10,
+        "Random": 10
+      },
+      "avg_scores": {
+        "Always Cooperate": 17.125,
+        "Always Defect": 10.875,
+        "Tit for Tat": 21.125,
+        "Grim Trigger": 20.375,
+        "Detective": 18.0,
+        "Tit for Two Tats": 18.875,
+        "Pavlov": 21.125,
+        "Generous TFT": 20.25,
+        "Random": 14.0
+      }
+    },
+    {
+      "generation": 4,
+      "populations": {
+        "Always Cooperate": 10,
+        "Always Defect": 6,
+        "Tit for Tat": 10,
+        "Grim Trigger": 10,
+        "Detective": 10,
+        "Tit for Two Tats": 10,
+        "Pavlov": 14,
+        "Generous TFT": 10,
+        "Random": 10
+      },
+      "avg_scores": {
+        "Always Cooperate": 17.125,
+        "Always Defect": 10.875,
+        "Tit for Tat": 21.125,
+        "Grim Trigger": 20.375,
+        "Detective": 18.0,
+        "Tit for Two Tats": 18.875,
+        "Pavlov": 21.125,
+        "Generous TFT": 20.25,
+        "Random": 14.0
+      }
+    },
+    {
+      "generation": 5,
+      "populations": {
+        "Always Cooperate": 10,
+        "Always Defect": 5,
+        "Tit for Tat": 10,
+        "Grim Trigger": 10,
+        "Detective": 10,
+        "Tit for Two Tats": 10,
+        "Pavlov": 15,
+        "Generous TFT": 10,
+        "Random": 10
+      },
+      "avg_scores": {
+        "Always Cooperate": 17.125,
+        "Always Defect": 10.875,
+        "Tit for Tat": 21.125,
+        "Grim Trigger": 20.375,
+        "Detective": 18.0,
+        "Tit for Two Tats": 18.875,
+        "Pavlov": 21.125,
+        "Generous TFT": 20.25,
+        "Random": 14.0
+      }
+    },
+    {
+      "generation": 6,
+      "populations": {
+        "Always Cooperate": 10,
+        "Always Defect": 4,
+        "Tit for Tat": 10,
+        "Grim Trigger": 10,
+        "Detective": 10,
+        "Tit for Two Tats": 10,
+        "Pavlov": 16,
+        "Generous TFT": 10,
+        "Random": 10
+      },
+      "avg_scores": {
+        "Always Cooperate": 17.125,
+        "Always Defect": 10.875,
+        "Tit for Tat": 21.125,
+        "Grim Trigger": 20.375,
+        "Detective": 18.0,
+        "Tit for Two Tats": 18.875,
+        "Pavlov": 21.125,
+        "Generous TFT": 20.25,
+        "Random": 14.0
+      }
+    },
+    {
+      "generation": 7,
+      "populations": {
+        "Always Cooperate": 10,
+        "Always Defect": 3,
+        "Tit for Tat": 10,
+        "Grim Trigger": 10,
+        "Detective": 10,
+        "Tit for Two Tats": 10,
+        "Pavlov": 17,
+        "Generous TFT": 10,
+        "Random": 10
+      },
+      "avg_scores": {
+        "Always Cooperate": 17.125,
+        "Always Defect": 10.875,
+        "Tit for Tat": 21.125,
+        "Grim Trigger": 20.375,
+        "Detective": 18.0,
+        "Tit for Two Tats": 18.875,
+        "Pavlov": 21.125,
+        "Generous TFT": 20.25,
+        "Random": 14.0
+      }
+    },
+    {
+      "generation": 8,
+      "populations": {
+        "Always Cooperate": 10,
+        "Always Defect": 2,
+        "Tit for Tat": 10,
+        "Grim Trigger": 10,
+        "Detective": 10,
+        "Tit for Two Tats": 10,
+        "Pavlov": 18,
+        "Generous TFT": 10,
+        "Random": 10
+      },
+      "avg_scores": {
+        "Always Cooperate": 17.125,
+        "Always Defect": 10.875,
+        "Tit for Tat": 21.125,
+        "Grim Trigger": 20.375,
+        "Detective": 18.0,
+        "Tit for Two Tats": 18.875,
+        "Pavlov": 21.125,
+        "Generous TFT": 20.25,
+        "Random": 14.0
+      }
+    },
+    {
+      "generation": 9,
+      "populations": {
+        "Always Cooperate": 10,
+        "Always Defect": 1,
+        "Tit for Tat": 10,
+        "Grim Trigger": 10,
+        "Detective": 10,
+        "Tit for Two Tats": 10,
+        "Pavlov": 19,
+        "Generous TFT": 10,
+        "Random": 10
+      },
+      "avg_scores": {
+        "Always Cooperate": 17.125,
+        "Always Defect": 10.875,
+        "Tit for Tat": 21.125,
+        "Grim Trigger": 20.375,
+        "Detective": 18.0,
+        "Tit for Two Tats": 18.875,
+        "Pavlov": 21.125,
+        "Generous TFT": 20.25,
+        "Random": 14.0
+      }
+    },
+    {
+      "generation": 10,
+      "populations": {
+        "Always Cooperate": 10,
+        "Always Defect": 0,
+        "Tit for Tat": 10,
+        "Grim Trigger": 10,
+        "Detective": 10,
+        "Tit for Two Tats": 10,
+        "Pavlov": 20,
+        "Generous TFT": 10,
+        "Random": 10
+      },
+      "avg_scores": {
+        "Always Cooperate": 17.125,
+        "Always Defect": 10.875,
+        "Tit for Tat": 21.125,
+        "Grim Trigger": 20.375,
+        "Detective": 18.0,
+        "Tit for Two Tats": 18.875,
+        "Pavlov": 21.125,
+        "Generous TFT": 20.25,
+        "Random": 14.0
+      }
+    },
+    {
+      "generation": 11,
+      "populations": {
+        "Always Cooperate": 10,
+        "Always Defect": 0,
+        "Tit for Tat": 10,
+        "Grim Trigger": 10,
+        "Detective": 10,
+        "Tit for Two Tats": 10,
+        "Pavlov": 21,
+        "Generous TFT": 10,
+        "Random": 9
+      },
+      "avg_scores": {
+        "Always Cooperate": 21.0,
+        "Tit for Tat": 24.285714285714285,
+        "Grim Trigger": 23.428571428571427,
+        "Detective": 21.0,
+        "Tit for Two Tats": 21.857142857142858,
+        "Pavlov": 24.285714285714285,
+        "Generous TFT": 23.857142857142858,
+        "Random": 16.857142857142858
+      }
+    },
+    {
+      "generation": 12,
+      "populations": {
+        "Always Cooperate": 10,
+        "Always Defect": 0,
+        "Tit for Tat": 10,
+        "Grim Trigger": 10,
+        "Detective": 10,
+        "Tit for Two Tats": 10,
+        "Pavlov": 22,
+        "Generous TFT": 10,
+        "Random": 8
+      },
+      "avg_scores": {
+        "Always Cooperate": 21.0,
+        "Tit for Tat": 24.285714285714285,
+        "Grim Trigger": 23.428571428571427,
+        "Detective": 21.0,
+        "Tit for Two Tats": 21.857142857142858,
+        "Pavlov": 24.285714285714285,
+        "Generous TFT": 23.857142857142858,
+        "Random": 16.857142857142858
+      }
+    },
+    {
+      "generation": 13,
+      "populations": {
+        "Always Cooperate": 10,
+        "Always Defect": 0,
+        "Tit for Tat": 10,
+        "Grim Trigger": 10,
+        "Detective": 10,
+        "Tit for Two Tats": 10,
+        "Pavlov": 23,
+        "Generous TFT": 10,
+        "Random": 7
+      },
+      "avg_scores": {
+        "Always Cooperate": 21.0,
+        "Tit for Tat": 24.285714285714285,
+        "Grim Trigger": 23.428571428571427,
+        "Detective": 21.0,
+        "Tit for Two Tats": 21.857142857142858,
+        "Pavlov": 24.285714285714285,
+        "Generous TFT": 23.857142857142858,
+        "Random": 16.857142857142858
+      }
+    },
+    {
+      "generation": 14,
+      "populations": {
+        "Always Cooperate": 10,
+        "Always Defect": 0,
+        "Tit for Tat": 10,
+        "Grim Trigger": 10,
+        "Detective": 10,
+        "Tit for Two Tats": 10,
+        "Pavlov": 24,
+        "Generous TFT": 10,
+        "Random": 6
+      },
+      "avg_scores": {
+        "Always Cooperate": 21.0,
+        "Tit for Tat": 24.285714285714285,
+        "Grim Trigger": 23.428571428571427,
+        "Detective": 21.0,
+        "Tit for Two Tats": 21.857142857142858,
+        "Pavlov": 24.285714285714285,
+        "Generous TFT": 23.857142857142858,
+        "Random": 16.857142857142858
+      }
+    },
+    {
+      "generation": 15,
+      "populations": {
+        "Always Cooperate": 10,
+        "Always Defect": 0,
+        "Tit for Tat": 10,
+        "Grim Trigger": 10,
+        "Detective": 10,
+        "Tit for Two Tats": 10,
+        "Pavlov": 25,
+        "Generous TFT": 10,
+        "Random": 5
+      },
+      "avg_scores": {
+        "Always Cooperate": 21.0,
+        "Tit for Tat": 24.285714285714285,
+        "Grim Trigger": 23.428571428571427,
+        "Detective": 21.0,
+        "Tit for Two Tats": 21.857142857142858,
+        "Pavlov": 24.285714285714285,
+        "Generous TFT": 23.857142857142858,
+        "Random": 16.857142857142858
+      }
+    },
+    {
+      "generation": 16,
+      "populations": {
+        "Always Cooperate": 10,
+        "Always Defect": 0,
+        "Tit for Tat": 10,
+        "Grim Trigger": 10,
+        "Detective": 10,
+        "Tit for Two Tats": 10,
+        "Pavlov": 26,
+        "Generous TFT": 10,
+        "Random": 4
+      },
+      "avg_scores": {
+        "Always Cooperate": 21.0,
+        "Tit for Tat": 24.285714285714285,
+        "Grim Trigger": 23.428571428571427,
+        "Detective": 21.0,
+        "Tit for Two Tats": 21.857142857142858,
+        "Pavlov": 24.285714285714285,
+        "Generous TFT": 23.857142857142858,
+        "Random": 16.857142857142858
+      }
+    },
+    {
+      "generation": 17,
+      "populations": {
+        "Always Cooperate": 10,
+        "Always Defect": 0,
+        "Tit for Tat": 10,
+        "Grim Trigger": 10,
+        "Detective": 10,
+        "Tit for Two Tats": 10,
+        "Pavlov": 27,
+        "Generous TFT": 10,
+        "Random": 3
+      },
+      "avg_scores": {
+        "Always Cooperate": 21.0,
+        "Tit for Tat": 24.285714285714285,
+        "Grim Trigger": 23.428571428571427,
+        "Detective": 21.0,
+        "Tit for Two Tats": 21.857142857142858,
+        "Pavlov": 24.285714285714285,
+        "Generous TFT": 23.857142857142858,
+        "Random": 16.857142857142858
+      }
+    },
+    {
+      "generation": 18,
+      "populations": {
+        "Always Cooperate": 10,
+        "Always Defect": 0,
+        "Tit for Tat": 10,
+        "Grim Trigger": 10,
+        "Detective": 10,
+        "Tit for Two Tats": 10,
+        "Pavlov": 28,
+        "Generous TFT": 10,
+        "Random": 2
+      },
+      "avg_scores": {
+        "Always Cooperate": 21.0,
+        "Tit for Tat": 24.285714285714285,
+        "Grim Trigger": 23.428571428571427,
+        "Detective": 21.0,
+        "Tit for Two Tats": 21.857142857142858,
+        "Pavlov": 24.285714285714285,
+        "Generous TFT": 23.857142857142858,
+        "Random": 16.857142857142858
+      }
+    },
+    {
+      "generation": 19,
+      "populations": {
+        "Always Cooperate": 10,
+        "Always Defect": 0,
+        "Tit for Tat": 10,
+        "Grim Trigger": 10,
+        "Detective": 10,
+        "Tit for Two Tats": 10,
+        "Pavlov": 29,
+        "Generous TFT": 10,
+        "Random": 1
+      },
+      "avg_scores": {
+        "Always Cooperate": 21.0,
+        "Tit for Tat": 24.285714285714285,
+        "Grim Trigger": 23.428571428571427,
+        "Detective": 21.0,
+        "Tit for Two Tats": 21.857142857142858,
+        "Pavlov": 24.285714285714285,
+        "Generous TFT": 23.857142857142858,
+        "Random": 16.857142857142858
+      }
+    },
+    {
+      "generation": 20,
+      "populations": {
+        "Always Cooperate": 10,
+        "Always Defect": 0,
+        "Tit for Tat": 10,
+        "Grim Trigger": 10,
+        "Detective": 10,
+        "Tit for Two Tats": 10,
+        "Pavlov": 30,
+        "Generous TFT": 10,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 21.0,
+        "Tit for Tat": 24.285714285714285,
+        "Grim Trigger": 23.428571428571427,
+        "Detective": 21.0,
+        "Tit for Two Tats": 21.857142857142858,
+        "Pavlov": 24.285714285714285,
+        "Generous TFT": 23.857142857142858,
+        "Random": 16.857142857142858
+      }
+    },
+    {
+      "generation": 21,
+      "populations": {
+        "Always Cooperate": 10,
+        "Always Defect": 0,
+        "Tit for Tat": 10,
+        "Grim Trigger": 10,
+        "Detective": 9,
+        "Tit for Two Tats": 10,
+        "Pavlov": 30,
+        "Generous TFT": 11,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 23.166666666666668,
+        "Tit for Tat": 26.333333333333332,
+        "Grim Trigger": 24.5,
+        "Detective": 22.5,
+        "Tit for Two Tats": 23.833333333333332,
+        "Pavlov": 26.333333333333332,
+        "Generous TFT": 26.333333333333332
+      }
+    },
+    {
+      "generation": 22,
+      "populations": {
+        "Always Cooperate": 10,
+        "Always Defect": 0,
+        "Tit for Tat": 10,
+        "Grim Trigger": 10,
+        "Detective": 8,
+        "Tit for Two Tats": 10,
+        "Pavlov": 30,
+        "Generous TFT": 12,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 23.166666666666668,
+        "Tit for Tat": 26.333333333333332,
+        "Grim Trigger": 24.5,
+        "Detective": 22.5,
+        "Tit for Two Tats": 23.833333333333332,
+        "Pavlov": 26.333333333333332,
+        "Generous TFT": 26.333333333333332
+      }
+    },
+    {
+      "generation": 23,
+      "populations": {
+        "Always Cooperate": 10,
+        "Always Defect": 0,
+        "Tit for Tat": 10,
+        "Grim Trigger": 10,
+        "Detective": 7,
+        "Tit for Two Tats": 10,
+        "Pavlov": 30,
+        "Generous TFT": 13,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 23.166666666666668,
+        "Tit for Tat": 26.333333333333332,
+        "Grim Trigger": 24.5,
+        "Detective": 22.5,
+        "Tit for Two Tats": 23.833333333333332,
+        "Pavlov": 26.333333333333332,
+        "Generous TFT": 26.333333333333332
+      }
+    },
+    {
+      "generation": 24,
+      "populations": {
+        "Always Cooperate": 10,
+        "Always Defect": 0,
+        "Tit for Tat": 10,
+        "Grim Trigger": 10,
+        "Detective": 6,
+        "Tit for Two Tats": 10,
+        "Pavlov": 30,
+        "Generous TFT": 14,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 23.166666666666668,
+        "Tit for Tat": 26.333333333333332,
+        "Grim Trigger": 24.5,
+        "Detective": 22.5,
+        "Tit for Two Tats": 23.833333333333332,
+        "Pavlov": 26.333333333333332,
+        "Generous TFT": 26.333333333333332
+      }
+    },
+    {
+      "generation": 25,
+      "populations": {
+        "Always Cooperate": 10,
+        "Always Defect": 0,
+        "Tit for Tat": 10,
+        "Grim Trigger": 10,
+        "Detective": 5,
+        "Tit for Two Tats": 10,
+        "Pavlov": 30,
+        "Generous TFT": 15,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 23.166666666666668,
+        "Tit for Tat": 26.333333333333332,
+        "Grim Trigger": 24.5,
+        "Detective": 22.5,
+        "Tit for Two Tats": 23.833333333333332,
+        "Pavlov": 26.333333333333332,
+        "Generous TFT": 26.333333333333332
+      }
+    },
+    {
+      "generation": 26,
+      "populations": {
+        "Always Cooperate": 10,
+        "Always Defect": 0,
+        "Tit for Tat": 10,
+        "Grim Trigger": 10,
+        "Detective": 4,
+        "Tit for Two Tats": 10,
+        "Pavlov": 30,
+        "Generous TFT": 16,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 23.166666666666668,
+        "Tit for Tat": 26.333333333333332,
+        "Grim Trigger": 24.5,
+        "Detective": 22.5,
+        "Tit for Two Tats": 23.833333333333332,
+        "Pavlov": 26.333333333333332,
+        "Generous TFT": 26.333333333333332
+      }
+    },
+    {
+      "generation": 27,
+      "populations": {
+        "Always Cooperate": 10,
+        "Always Defect": 0,
+        "Tit for Tat": 10,
+        "Grim Trigger": 10,
+        "Detective": 3,
+        "Tit for Two Tats": 10,
+        "Pavlov": 30,
+        "Generous TFT": 17,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 23.166666666666668,
+        "Tit for Tat": 26.333333333333332,
+        "Grim Trigger": 24.5,
+        "Detective": 22.5,
+        "Tit for Two Tats": 23.833333333333332,
+        "Pavlov": 26.333333333333332,
+        "Generous TFT": 26.333333333333332
+      }
+    },
+    {
+      "generation": 28,
+      "populations": {
+        "Always Cooperate": 10,
+        "Always Defect": 0,
+        "Tit for Tat": 10,
+        "Grim Trigger": 10,
+        "Detective": 2,
+        "Tit for Two Tats": 10,
+        "Pavlov": 30,
+        "Generous TFT": 18,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 23.166666666666668,
+        "Tit for Tat": 26.333333333333332,
+        "Grim Trigger": 24.5,
+        "Detective": 22.5,
+        "Tit for Two Tats": 23.833333333333332,
+        "Pavlov": 26.333333333333332,
+        "Generous TFT": 26.333333333333332
+      }
+    },
+    {
+      "generation": 29,
+      "populations": {
+        "Always Cooperate": 10,
+        "Always Defect": 0,
+        "Tit for Tat": 10,
+        "Grim Trigger": 10,
+        "Detective": 1,
+        "Tit for Two Tats": 10,
+        "Pavlov": 30,
+        "Generous TFT": 19,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 23.166666666666668,
+        "Tit for Tat": 26.333333333333332,
+        "Grim Trigger": 24.5,
+        "Detective": 22.5,
+        "Tit for Two Tats": 23.833333333333332,
+        "Pavlov": 26.333333333333332,
+        "Generous TFT": 26.333333333333332
+      }
+    },
+    {
+      "generation": 30,
+      "populations": {
+        "Always Cooperate": 10,
+        "Always Defect": 0,
+        "Tit for Tat": 10,
+        "Grim Trigger": 10,
+        "Detective": 0,
+        "Tit for Two Tats": 10,
+        "Pavlov": 30,
+        "Generous TFT": 20,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 23.166666666666668,
+        "Tit for Tat": 26.333333333333332,
+        "Grim Trigger": 24.5,
+        "Detective": 22.5,
+        "Tit for Two Tats": 23.833333333333332,
+        "Pavlov": 26.333333333333332,
+        "Generous TFT": 26.333333333333332
+      }
+    },
+    {
+      "generation": 31,
+      "populations": {
+        "Always Cooperate": 9,
+        "Always Defect": 0,
+        "Tit for Tat": 10,
+        "Grim Trigger": 10,
+        "Detective": 0,
+        "Tit for Two Tats": 10,
+        "Pavlov": 30,
+        "Generous TFT": 21,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0
+      }
+    },
+    {
+      "generation": 32,
+      "populations": {
+        "Always Cooperate": 8,
+        "Always Defect": 0,
+        "Tit for Tat": 10,
+        "Grim Trigger": 10,
+        "Detective": 0,
+        "Tit for Two Tats": 10,
+        "Pavlov": 30,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0
+      }
+    },
+    {
+      "generation": 33,
+      "populations": {
+        "Always Cooperate": 7,
+        "Always Defect": 0,
+        "Tit for Tat": 10,
+        "Grim Trigger": 10,
+        "Detective": 0,
+        "Tit for Two Tats": 10,
+        "Pavlov": 30,
+        "Generous TFT": 23,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0
+      }
+    },
+    {
+      "generation": 34,
+      "populations": {
+        "Always Cooperate": 6,
+        "Always Defect": 0,
+        "Tit for Tat": 10,
+        "Grim Trigger": 10,
+        "Detective": 0,
+        "Tit for Two Tats": 10,
+        "Pavlov": 30,
+        "Generous TFT": 24,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0
+      }
+    },
+    {
+      "generation": 35,
+      "populations": {
+        "Always Cooperate": 5,
+        "Always Defect": 0,
+        "Tit for Tat": 10,
+        "Grim Trigger": 10,
+        "Detective": 0,
+        "Tit for Two Tats": 10,
+        "Pavlov": 30,
+        "Generous TFT": 25,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0
+      }
+    },
+    {
+      "generation": 36,
+      "populations": {
+        "Always Cooperate": 4,
+        "Always Defect": 0,
+        "Tit for Tat": 10,
+        "Grim Trigger": 10,
+        "Detective": 0,
+        "Tit for Two Tats": 10,
+        "Pavlov": 30,
+        "Generous TFT": 26,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0
+      }
+    },
+    {
+      "generation": 37,
+      "populations": {
+        "Always Cooperate": 3,
+        "Always Defect": 0,
+        "Tit for Tat": 10,
+        "Grim Trigger": 10,
+        "Detective": 0,
+        "Tit for Two Tats": 10,
+        "Pavlov": 30,
+        "Generous TFT": 27,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0
+      }
+    },
+    {
+      "generation": 38,
+      "populations": {
+        "Always Cooperate": 2,
+        "Always Defect": 0,
+        "Tit for Tat": 10,
+        "Grim Trigger": 10,
+        "Detective": 0,
+        "Tit for Two Tats": 10,
+        "Pavlov": 30,
+        "Generous TFT": 28,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0
+      }
+    },
+    {
+      "generation": 39,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 10,
+        "Grim Trigger": 10,
+        "Detective": 0,
+        "Tit for Two Tats": 10,
+        "Pavlov": 30,
+        "Generous TFT": 29,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0
+      }
+    },
+    {
+      "generation": 40,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 10,
+        "Grim Trigger": 10,
+        "Detective": 0,
+        "Tit for Two Tats": 10,
+        "Pavlov": 30,
+        "Generous TFT": 30,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0
+      }
+    },
+    {
+      "generation": 41,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 9,
+        "Grim Trigger": 10,
+        "Detective": 0,
+        "Tit for Two Tats": 10,
+        "Pavlov": 30,
+        "Generous TFT": 31,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Tit for Tat": 30.0,
+        "Grim Trigger": 30.0,
+        "Tit for Two Tats": 30.0,
+        "Pavlov": 30.0,
+        "Generous TFT": 30.0
+      }
+    },
+    {
+      "generation": 42,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 8,
+        "Grim Trigger": 10,
+        "Detective": 0,
+        "Tit for Two Tats": 10,
+        "Pavlov": 30,
+        "Generous TFT": 32,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Tit for Tat": 30.0,
+        "Grim Trigger": 30.0,
+        "Tit for Two Tats": 30.0,
+        "Pavlov": 30.0,
+        "Generous TFT": 30.0
+      }
+    },
+    {
+      "generation": 43,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 7,
+        "Grim Trigger": 10,
+        "Detective": 0,
+        "Tit for Two Tats": 10,
+        "Pavlov": 30,
+        "Generous TFT": 33,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Tit for Tat": 30.0,
+        "Grim Trigger": 30.0,
+        "Tit for Two Tats": 30.0,
+        "Pavlov": 30.0,
+        "Generous TFT": 30.0
+      }
+    },
+    {
+      "generation": 44,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 6,
+        "Grim Trigger": 10,
+        "Detective": 0,
+        "Tit for Two Tats": 10,
+        "Pavlov": 30,
+        "Generous TFT": 34,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Tit for Tat": 30.0,
+        "Grim Trigger": 30.0,
+        "Tit for Two Tats": 30.0,
+        "Pavlov": 30.0,
+        "Generous TFT": 30.0
+      }
+    },
+    {
+      "generation": 45,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 5,
+        "Grim Trigger": 10,
+        "Detective": 0,
+        "Tit for Two Tats": 10,
+        "Pavlov": 30,
+        "Generous TFT": 35,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Tit for Tat": 30.0,
+        "Grim Trigger": 30.0,
+        "Tit for Two Tats": 30.0,
+        "Pavlov": 30.0,
+        "Generous TFT": 30.0
+      }
+    },
+    {
+      "generation": 46,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 4,
+        "Grim Trigger": 10,
+        "Detective": 0,
+        "Tit for Two Tats": 10,
+        "Pavlov": 30,
+        "Generous TFT": 36,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Tit for Tat": 30.0,
+        "Grim Trigger": 30.0,
+        "Tit for Two Tats": 30.0,
+        "Pavlov": 30.0,
+        "Generous TFT": 30.0
+      }
+    },
+    {
+      "generation": 47,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 3,
+        "Grim Trigger": 10,
+        "Detective": 0,
+        "Tit for Two Tats": 10,
+        "Pavlov": 30,
+        "Generous TFT": 37,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Tit for Tat": 30.0,
+        "Grim Trigger": 30.0,
+        "Tit for Two Tats": 30.0,
+        "Pavlov": 30.0,
+        "Generous TFT": 30.0
+      }
+    },
+    {
+      "generation": 48,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 2,
+        "Grim Trigger": 10,
+        "Detective": 0,
+        "Tit for Two Tats": 10,
+        "Pavlov": 30,
+        "Generous TFT": 38,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Tit for Tat": 30.0,
+        "Grim Trigger": 30.0,
+        "Tit for Two Tats": 30.0,
+        "Pavlov": 30.0,
+        "Generous TFT": 30.0
+      }
+    },
+    {
+      "generation": 49,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 1,
+        "Grim Trigger": 10,
+        "Detective": 0,
+        "Tit for Two Tats": 10,
+        "Pavlov": 30,
+        "Generous TFT": 39,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Tit for Tat": 30.0,
+        "Grim Trigger": 30.0,
+        "Tit for Two Tats": 30.0,
+        "Pavlov": 30.0,
+        "Generous TFT": 30.0
+      }
+    },
+    {
+      "generation": 50,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 0,
+        "Grim Trigger": 10,
+        "Detective": 0,
+        "Tit for Two Tats": 10,
+        "Pavlov": 30,
+        "Generous TFT": 40,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Tit for Tat": 30.0,
+        "Grim Trigger": 30.0,
+        "Tit for Two Tats": 30.0,
+        "Pavlov": 30.0,
+        "Generous TFT": 30.0
+      }
+    },
+    {
+      "generation": 51,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 0,
+        "Grim Trigger": 9,
+        "Detective": 0,
+        "Tit for Two Tats": 10,
+        "Pavlov": 30,
+        "Generous TFT": 41,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Grim Trigger": 33.333333333333336,
+        "Tit for Two Tats": 33.333333333333336,
+        "Pavlov": 33.333333333333336,
+        "Generous TFT": 33.333333333333336
+      }
+    },
+    {
+      "generation": 52,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 0,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 10,
+        "Pavlov": 30,
+        "Generous TFT": 42,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Grim Trigger": 33.333333333333336,
+        "Tit for Two Tats": 33.333333333333336,
+        "Pavlov": 33.333333333333336,
+        "Generous TFT": 33.333333333333336
+      }
+    },
+    {
+      "generation": 53,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 0,
+        "Grim Trigger": 7,
+        "Detective": 0,
+        "Tit for Two Tats": 10,
+        "Pavlov": 30,
+        "Generous TFT": 43,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Grim Trigger": 33.333333333333336,
+        "Tit for Two Tats": 33.333333333333336,
+        "Pavlov": 33.333333333333336,
+        "Generous TFT": 33.333333333333336
+      }
+    },
+    {
+      "generation": 54,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 0,
+        "Grim Trigger": 6,
+        "Detective": 0,
+        "Tit for Two Tats": 10,
+        "Pavlov": 30,
+        "Generous TFT": 44,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Grim Trigger": 33.333333333333336,
+        "Tit for Two Tats": 33.333333333333336,
+        "Pavlov": 33.333333333333336,
+        "Generous TFT": 33.333333333333336
+      }
+    },
+    {
+      "generation": 55,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 0,
+        "Grim Trigger": 5,
+        "Detective": 0,
+        "Tit for Two Tats": 10,
+        "Pavlov": 30,
+        "Generous TFT": 45,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Grim Trigger": 33.333333333333336,
+        "Tit for Two Tats": 33.333333333333336,
+        "Pavlov": 33.333333333333336,
+        "Generous TFT": 33.333333333333336
+      }
+    },
+    {
+      "generation": 56,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 0,
+        "Grim Trigger": 4,
+        "Detective": 0,
+        "Tit for Two Tats": 10,
+        "Pavlov": 30,
+        "Generous TFT": 46,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Grim Trigger": 33.333333333333336,
+        "Tit for Two Tats": 33.333333333333336,
+        "Pavlov": 33.333333333333336,
+        "Generous TFT": 33.333333333333336
+      }
+    },
+    {
+      "generation": 57,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 0,
+        "Grim Trigger": 3,
+        "Detective": 0,
+        "Tit for Two Tats": 10,
+        "Pavlov": 30,
+        "Generous TFT": 47,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Grim Trigger": 33.333333333333336,
+        "Tit for Two Tats": 33.333333333333336,
+        "Pavlov": 33.333333333333336,
+        "Generous TFT": 33.333333333333336
+      }
+    },
+    {
+      "generation": 58,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 0,
+        "Grim Trigger": 2,
+        "Detective": 0,
+        "Tit for Two Tats": 10,
+        "Pavlov": 30,
+        "Generous TFT": 48,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Grim Trigger": 33.333333333333336,
+        "Tit for Two Tats": 33.333333333333336,
+        "Pavlov": 33.333333333333336,
+        "Generous TFT": 33.333333333333336
+      }
+    },
+    {
+      "generation": 59,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 0,
+        "Grim Trigger": 1,
+        "Detective": 0,
+        "Tit for Two Tats": 10,
+        "Pavlov": 30,
+        "Generous TFT": 49,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Grim Trigger": 33.333333333333336,
+        "Tit for Two Tats": 33.333333333333336,
+        "Pavlov": 33.333333333333336,
+        "Generous TFT": 33.333333333333336
+      }
+    },
+    {
+      "generation": 60,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 0,
+        "Grim Trigger": 0,
+        "Detective": 0,
+        "Tit for Two Tats": 10,
+        "Pavlov": 30,
+        "Generous TFT": 50,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Grim Trigger": 33.333333333333336,
+        "Tit for Two Tats": 33.333333333333336,
+        "Pavlov": 33.333333333333336,
+        "Generous TFT": 33.333333333333336
+      }
+    },
+    {
+      "generation": 61,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 0,
+        "Grim Trigger": 0,
+        "Detective": 0,
+        "Tit for Two Tats": 9,
+        "Pavlov": 30,
+        "Generous TFT": 51,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Tit for Two Tats": 40.0,
+        "Pavlov": 40.0,
+        "Generous TFT": 40.0
+      }
+    },
+    {
+      "generation": 62,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 0,
+        "Grim Trigger": 0,
+        "Detective": 0,
+        "Tit for Two Tats": 8,
+        "Pavlov": 30,
+        "Generous TFT": 52,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Tit for Two Tats": 40.0,
+        "Pavlov": 40.0,
+        "Generous TFT": 40.0
+      }
+    },
+    {
+      "generation": 63,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 0,
+        "Grim Trigger": 0,
+        "Detective": 0,
+        "Tit for Two Tats": 7,
+        "Pavlov": 30,
+        "Generous TFT": 53,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Tit for Two Tats": 40.0,
+        "Pavlov": 40.0,
+        "Generous TFT": 40.0
+      }
+    },
+    {
+      "generation": 64,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 0,
+        "Grim Trigger": 0,
+        "Detective": 0,
+        "Tit for Two Tats": 6,
+        "Pavlov": 30,
+        "Generous TFT": 54,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Tit for Two Tats": 40.0,
+        "Pavlov": 40.0,
+        "Generous TFT": 40.0
+      }
+    },
+    {
+      "generation": 65,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 0,
+        "Grim Trigger": 0,
+        "Detective": 0,
+        "Tit for Two Tats": 5,
+        "Pavlov": 30,
+        "Generous TFT": 55,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Tit for Two Tats": 40.0,
+        "Pavlov": 40.0,
+        "Generous TFT": 40.0
+      }
+    },
+    {
+      "generation": 66,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 0,
+        "Grim Trigger": 0,
+        "Detective": 0,
+        "Tit for Two Tats": 4,
+        "Pavlov": 30,
+        "Generous TFT": 56,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Tit for Two Tats": 40.0,
+        "Pavlov": 40.0,
+        "Generous TFT": 40.0
+      }
+    },
+    {
+      "generation": 67,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 0,
+        "Grim Trigger": 0,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 30,
+        "Generous TFT": 57,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Tit for Two Tats": 40.0,
+        "Pavlov": 40.0,
+        "Generous TFT": 40.0
+      }
+    },
+    {
+      "generation": 68,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 0,
+        "Grim Trigger": 0,
+        "Detective": 0,
+        "Tit for Two Tats": 2,
+        "Pavlov": 30,
+        "Generous TFT": 58,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Tit for Two Tats": 40.0,
+        "Pavlov": 40.0,
+        "Generous TFT": 40.0
+      }
+    },
+    {
+      "generation": 69,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 0,
+        "Grim Trigger": 0,
+        "Detective": 0,
+        "Tit for Two Tats": 1,
+        "Pavlov": 30,
+        "Generous TFT": 59,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Tit for Two Tats": 40.0,
+        "Pavlov": 40.0,
+        "Generous TFT": 40.0
+      }
+    },
+    {
+      "generation": 70,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 0,
+        "Grim Trigger": 0,
+        "Detective": 0,
+        "Tit for Two Tats": 0,
+        "Pavlov": 30,
+        "Generous TFT": 60,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Tit for Two Tats": 40.0,
+        "Pavlov": 40.0,
+        "Generous TFT": 40.0
+      }
+    },
+    {
+      "generation": 71,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 0,
+        "Grim Trigger": 0,
+        "Detective": 0,
+        "Tit for Two Tats": 0,
+        "Pavlov": 29,
+        "Generous TFT": 61,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Pavlov": 60.0,
+        "Generous TFT": 60.0
+      }
+    },
+    {
+      "generation": 72,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 0,
+        "Grim Trigger": 0,
+        "Detective": 0,
+        "Tit for Two Tats": 0,
+        "Pavlov": 28,
+        "Generous TFT": 62,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Pavlov": 60.0,
+        "Generous TFT": 60.0
+      }
+    },
+    {
+      "generation": 73,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 0,
+        "Grim Trigger": 0,
+        "Detective": 0,
+        "Tit for Two Tats": 0,
+        "Pavlov": 27,
+        "Generous TFT": 63,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Pavlov": 60.0,
+        "Generous TFT": 60.0
+      }
+    },
+    {
+      "generation": 74,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 0,
+        "Grim Trigger": 0,
+        "Detective": 0,
+        "Tit for Two Tats": 0,
+        "Pavlov": 26,
+        "Generous TFT": 64,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Pavlov": 60.0,
+        "Generous TFT": 60.0
+      }
+    },
+    {
+      "generation": 75,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 0,
+        "Grim Trigger": 0,
+        "Detective": 0,
+        "Tit for Two Tats": 0,
+        "Pavlov": 25,
+        "Generous TFT": 65,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Pavlov": 60.0,
+        "Generous TFT": 60.0
+      }
+    },
+    {
+      "generation": 76,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 0,
+        "Grim Trigger": 0,
+        "Detective": 0,
+        "Tit for Two Tats": 0,
+        "Pavlov": 24,
+        "Generous TFT": 66,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Pavlov": 60.0,
+        "Generous TFT": 60.0
+      }
+    },
+    {
+      "generation": 77,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 0,
+        "Grim Trigger": 0,
+        "Detective": 0,
+        "Tit for Two Tats": 0,
+        "Pavlov": 23,
+        "Generous TFT": 67,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Pavlov": 60.0,
+        "Generous TFT": 60.0
+      }
+    },
+    {
+      "generation": 78,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 0,
+        "Grim Trigger": 0,
+        "Detective": 0,
+        "Tit for Two Tats": 0,
+        "Pavlov": 22,
+        "Generous TFT": 68,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Pavlov": 60.0,
+        "Generous TFT": 60.0
+      }
+    },
+    {
+      "generation": 79,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 0,
+        "Grim Trigger": 0,
+        "Detective": 0,
+        "Tit for Two Tats": 0,
+        "Pavlov": 21,
+        "Generous TFT": 69,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Pavlov": 60.0,
+        "Generous TFT": 60.0
+      }
+    },
+    {
+      "generation": 80,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 0,
+        "Grim Trigger": 0,
+        "Detective": 0,
+        "Tit for Two Tats": 0,
+        "Pavlov": 20,
+        "Generous TFT": 70,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Pavlov": 60.0,
+        "Generous TFT": 60.0
+      }
+    },
+    {
+      "generation": 81,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 0,
+        "Grim Trigger": 0,
+        "Detective": 0,
+        "Tit for Two Tats": 0,
+        "Pavlov": 19,
+        "Generous TFT": 71,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Pavlov": 60.0,
+        "Generous TFT": 60.0
+      }
+    },
+    {
+      "generation": 82,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 0,
+        "Grim Trigger": 0,
+        "Detective": 0,
+        "Tit for Two Tats": 0,
+        "Pavlov": 18,
+        "Generous TFT": 72,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Pavlov": 60.0,
+        "Generous TFT": 60.0
+      }
+    },
+    {
+      "generation": 83,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 0,
+        "Grim Trigger": 0,
+        "Detective": 0,
+        "Tit for Two Tats": 0,
+        "Pavlov": 17,
+        "Generous TFT": 73,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Pavlov": 60.0,
+        "Generous TFT": 60.0
+      }
+    },
+    {
+      "generation": 84,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 0,
+        "Grim Trigger": 0,
+        "Detective": 0,
+        "Tit for Two Tats": 0,
+        "Pavlov": 16,
+        "Generous TFT": 74,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Pavlov": 60.0,
+        "Generous TFT": 60.0
+      }
+    },
+    {
+      "generation": 85,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 0,
+        "Grim Trigger": 0,
+        "Detective": 0,
+        "Tit for Two Tats": 0,
+        "Pavlov": 15,
+        "Generous TFT": 75,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Pavlov": 60.0,
+        "Generous TFT": 60.0
+      }
+    },
+    {
+      "generation": 86,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 0,
+        "Grim Trigger": 0,
+        "Detective": 0,
+        "Tit for Two Tats": 0,
+        "Pavlov": 14,
+        "Generous TFT": 76,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Pavlov": 60.0,
+        "Generous TFT": 60.0
+      }
+    },
+    {
+      "generation": 87,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 0,
+        "Grim Trigger": 0,
+        "Detective": 0,
+        "Tit for Two Tats": 0,
+        "Pavlov": 13,
+        "Generous TFT": 77,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Pavlov": 60.0,
+        "Generous TFT": 60.0
+      }
+    },
+    {
+      "generation": 88,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 0,
+        "Grim Trigger": 0,
+        "Detective": 0,
+        "Tit for Two Tats": 0,
+        "Pavlov": 12,
+        "Generous TFT": 78,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Pavlov": 60.0,
+        "Generous TFT": 60.0
+      }
+    },
+    {
+      "generation": 89,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 0,
+        "Grim Trigger": 0,
+        "Detective": 0,
+        "Tit for Two Tats": 0,
+        "Pavlov": 11,
+        "Generous TFT": 79,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Pavlov": 60.0,
+        "Generous TFT": 60.0
+      }
+    },
+    {
+      "generation": 90,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 0,
+        "Grim Trigger": 0,
+        "Detective": 0,
+        "Tit for Two Tats": 0,
+        "Pavlov": 10,
+        "Generous TFT": 80,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Pavlov": 60.0,
+        "Generous TFT": 60.0
+      }
+    },
+    {
+      "generation": 91,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 0,
+        "Grim Trigger": 0,
+        "Detective": 0,
+        "Tit for Two Tats": 0,
+        "Pavlov": 9,
+        "Generous TFT": 81,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Pavlov": 60.0,
+        "Generous TFT": 60.0
+      }
+    },
+    {
+      "generation": 92,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 0,
+        "Grim Trigger": 0,
+        "Detective": 0,
+        "Tit for Two Tats": 0,
+        "Pavlov": 8,
+        "Generous TFT": 82,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Pavlov": 60.0,
+        "Generous TFT": 60.0
+      }
+    },
+    {
+      "generation": 93,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 0,
+        "Grim Trigger": 0,
+        "Detective": 0,
+        "Tit for Two Tats": 0,
+        "Pavlov": 7,
+        "Generous TFT": 83,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Pavlov": 60.0,
+        "Generous TFT": 60.0
+      }
+    },
+    {
+      "generation": 94,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 0,
+        "Grim Trigger": 0,
+        "Detective": 0,
+        "Tit for Two Tats": 0,
+        "Pavlov": 6,
+        "Generous TFT": 84,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Pavlov": 60.0,
+        "Generous TFT": 60.0
+      }
+    },
+    {
+      "generation": 95,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 0,
+        "Grim Trigger": 0,
+        "Detective": 0,
+        "Tit for Two Tats": 0,
+        "Pavlov": 5,
+        "Generous TFT": 85,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Pavlov": 60.0,
+        "Generous TFT": 60.0
+      }
+    },
+    {
+      "generation": 96,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 0,
+        "Grim Trigger": 0,
+        "Detective": 0,
+        "Tit for Two Tats": 0,
+        "Pavlov": 4,
+        "Generous TFT": 86,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Pavlov": 60.0,
+        "Generous TFT": 60.0
+      }
+    },
+    {
+      "generation": 97,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 0,
+        "Grim Trigger": 0,
+        "Detective": 0,
+        "Tit for Two Tats": 0,
+        "Pavlov": 3,
+        "Generous TFT": 87,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Pavlov": 60.0,
+        "Generous TFT": 60.0
+      }
+    },
+    {
+      "generation": 98,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 0,
+        "Grim Trigger": 0,
+        "Detective": 0,
+        "Tit for Two Tats": 0,
+        "Pavlov": 2,
+        "Generous TFT": 88,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Pavlov": 60.0,
+        "Generous TFT": 60.0
+      }
+    },
+    {
+      "generation": 99,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 0,
+        "Grim Trigger": 0,
+        "Detective": 0,
+        "Tit for Two Tats": 0,
+        "Pavlov": 1,
+        "Generous TFT": 89,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Pavlov": 60.0,
+        "Generous TFT": 60.0
+      }
+    },
+    {
+      "generation": 100,
+      "populations": {
+        "Always Cooperate": 0,
+        "Always Defect": 0,
+        "Tit for Tat": 0,
+        "Grim Trigger": 0,
+        "Detective": 0,
+        "Tit for Two Tats": 0,
+        "Pavlov": 0,
+        "Generous TFT": 90,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Pavlov": 60.0,
+        "Generous TFT": 60.0
+      }
+    }
+  ],
+  "proportional": [
+    {
+      "generation": 0,
+      "populations": {
+        "Always Cooperate": 10,
+        "Always Defect": 10,
+        "Tit for Tat": 10,
+        "Grim Trigger": 10,
+        "Detective": 10,
+        "Tit for Two Tats": 10,
+        "Pavlov": 10,
+        "Generous TFT": 10,
+        "Random": 10
+      }
+    },
+    {
+      "generation": 1,
+      "populations": {
+        "Always Cooperate": 9,
+        "Always Defect": 1,
+        "Tit for Tat": 14,
+        "Grim Trigger": 13,
+        "Detective": 10,
+        "Tit for Two Tats": 11,
+        "Pavlov": 14,
+        "Generous TFT": 13,
+        "Random": 5
+      },
+      "avg_scores": {
+        "Always Cooperate": 17.125,
+        "Always Defect": 10.875,
+        "Tit for Tat": 21.125,
+        "Grim Trigger": 20.375,
+        "Detective": 18.0,
+        "Tit for Two Tats": 18.875,
+        "Pavlov": 21.125,
+        "Generous TFT": 20.25,
+        "Random": 14.0
+      }
+    },
+    {
+      "generation": 2,
+      "populations": {
+        "Always Cooperate": 7,
+        "Always Defect": 0,
+        "Tit for Tat": 16,
+        "Grim Trigger": 14,
+        "Detective": 9,
+        "Tit for Two Tats": 11,
+        "Pavlov": 17,
+        "Generous TFT": 14,
+        "Random": 2
+      },
+      "avg_scores": {
+        "Always Cooperate": 17.125,
+        "Always Defect": 10.875,
+        "Tit for Tat": 21.125,
+        "Grim Trigger": 20.375,
+        "Detective": 18.0,
+        "Tit for Two Tats": 18.875,
+        "Pavlov": 21.125,
+        "Generous TFT": 20.25,
+        "Random": 14.0
+      }
+    },
+    {
+      "generation": 3,
+      "populations": {
+        "Always Cooperate": 5,
+        "Always Defect": 0,
+        "Tit for Tat": 20,
+        "Grim Trigger": 15,
+        "Detective": 6,
+        "Tit for Two Tats": 9,
+        "Pavlov": 19,
+        "Generous TFT": 16,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 21.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 24.285714285714285,
+        "Grim Trigger": 23.428571428571427,
+        "Detective": 21.0,
+        "Tit for Two Tats": 21.857142857142858,
+        "Pavlov": 24.285714285714285,
+        "Generous TFT": 23.857142857142858,
+        "Random": 16.857142857142858
+      }
+    },
+    {
+      "generation": 4,
+      "populations": {
+        "Always Cooperate": 2,
+        "Always Defect": 0,
+        "Tit for Tat": 24,
+        "Grim Trigger": 12,
+        "Detective": 2,
+        "Tit for Two Tats": 5,
+        "Pavlov": 25,
+        "Generous TFT": 20,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 23.166666666666668,
+        "Always Defect": 0.0,
+        "Tit for Tat": 26.333333333333332,
+        "Grim Trigger": 24.5,
+        "Detective": 22.5,
+        "Tit for Two Tats": 23.833333333333332,
+        "Pavlov": 26.333333333333332,
+        "Generous TFT": 26.333333333333332,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 5,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 23.166666666666668,
+        "Always Defect": 0.0,
+        "Tit for Tat": 26.333333333333332,
+        "Grim Trigger": 24.5,
+        "Detective": 22.5,
+        "Tit for Two Tats": 23.833333333333332,
+        "Pavlov": 26.333333333333332,
+        "Generous TFT": 26.333333333333332,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 6,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 7,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 8,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 9,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 10,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 11,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 12,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 13,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 14,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 15,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 16,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 17,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 18,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 19,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 20,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 21,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 22,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 23,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 24,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 25,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 26,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 27,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 28,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 29,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 30,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 31,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 32,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 33,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 34,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 35,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 36,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 37,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 38,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 39,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 40,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 41,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 42,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 43,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 44,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 45,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 46,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 47,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 48,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 49,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 50,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 51,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 52,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 53,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 54,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 55,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 56,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 57,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 58,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 59,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 60,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 61,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 62,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 63,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 64,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 65,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 66,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 67,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 68,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 69,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 70,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 71,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 72,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 73,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 74,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 75,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 76,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 77,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 78,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 79,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 80,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 81,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 82,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 83,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 84,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 85,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 86,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 87,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 88,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 89,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 90,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 91,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 92,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 93,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 94,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 95,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 96,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 97,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 98,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 99,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    },
+    {
+      "generation": 100,
+      "populations": {
+        "Always Cooperate": 1,
+        "Always Defect": 0,
+        "Tit for Tat": 28,
+        "Grim Trigger": 8,
+        "Detective": 0,
+        "Tit for Two Tats": 3,
+        "Pavlov": 28,
+        "Generous TFT": 22,
+        "Random": 0
+      },
+      "avg_scores": {
+        "Always Cooperate": 28.0,
+        "Always Defect": 0.0,
+        "Tit for Tat": 28.0,
+        "Grim Trigger": 28.0,
+        "Detective": 0.0,
+        "Tit for Two Tats": 28.0,
+        "Pavlov": 28.0,
+        "Generous TFT": 28.0,
+        "Random": 0.0
+      }
+    }
+  ]
+}

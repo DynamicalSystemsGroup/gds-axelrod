@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Axelrod's Tournament — Evolution of Trust</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;1,300&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/style.css">
+  <link rel="stylesheet" href="/src/pages.css">
+</head>
+<body>
+  <div class="page-container story-page">
+
+    <!-- Hero -->
+    <header class="page-header" id="hero">
+      <h1>The Evolution of Trust</h1>
+      <p class="page-subtitle">An interactive exploration of Axelrod's tournament,
+      built on compositional game theory.</p>
+    </header>
+
+    <!-- Chapter 1: The Dilemma -->
+    <section class="story-section" id="ch1">
+      <h2>I. The Dilemma</h2>
+      <p>Two players face a choice: <em>cooperate</em> or <em>defect</em>.
+      If both cooperate, both win. If one defects while the other cooperates,
+      the defector takes everything. If both defect, both lose.</p>
+      <p>This is the <strong>Prisoner's Dilemma</strong> — the most studied
+      game in all of game theory. The rational choice is to defect. But if
+      both are rational, both lose.</p>
+      <div id="payoff-matrix-container" class="viz-box"></div>
+      <p>The game changes when it's <em>iterated</em>. Play the same opponent
+      again and again, and suddenly reputation, retaliation, and forgiveness
+      all come into play.</p>
+      <div id="arch-domain-container" class="viz-box"></div>
+    </section>
+
+    <!-- Chapter 2: The Tournament -->
+    <section class="story-section" id="ch2">
+      <h2>II. The Tournament</h2>
+      <p>In 1980, Robert Axelrod invited game theorists to submit strategies
+      for a computer tournament. Each strategy would play every other strategy
+      in a round-robin of iterated prisoner's dilemma matches.</p>
+      <p>The simplest strategy won: <strong>Tit for Tat</strong>. Cooperate
+      first, then copy whatever the opponent did last time. Nice, retaliatory,
+      forgiving, clear.</p>
+      <div id="tournament-game-diagram" class="viz-box"></div>
+      <div id="tournament-heatmap-container" class="viz-box"></div>
+      <div id="tournament-rankings-container" class="viz-box"></div>
+    </section>
+
+    <!-- Chapter 3: Evolution -->
+    <section class="story-section" id="ch3">
+      <h2>III. Evolution</h2>
+      <p>Axelrod then asked: what if strategies could <em>reproduce</em>?
+      Successful strategies grow in population. Failed strategies die out.
+      Which strategies survive?</p>
+      <p>Watch the population evolve. Defectors thrive early by exploiting
+      cooperators. But as cooperators die out, defectors have no one left
+      to exploit. Reciprocal strategies like Tit for Tat inherit the earth.</p>
+      <div id="evolution-chart-container" class="viz-box"></div>
+    </section>
+
+    <!-- Chapter 4: Noise -->
+    <section class="story-section" id="ch4">
+      <h2>IV. Noise &amp; Forgiveness</h2>
+      <p>The real world is noisy. Signals get corrupted. Actions get
+      misinterpreted. What happens to Tit for Tat when noise enters?</p>
+      <p>Two Tit-for-Tat players accidentally defect — and they're locked
+      in an endless cycle of retaliation. Enter <strong>Generous Tit for Tat</strong>:
+      identical to TfT, but occasionally forgives a defection.</p>
+      <p>In noisy environments, forgiveness wins.</p>
+      <div id="noise-sweep-container" class="viz-box"></div>
+    </section>
+
+    <!-- Chapter 5: Shadow of the Future -->
+    <section class="story-section" id="ch5">
+      <h2>V. The Shadow of the Future</h2>
+      <p>Cooperation requires a <em>future</em>. If you know this is
+      the last round, defect. But extend the shadow — make the game
+      indefinite — and cooperation becomes rational.</p>
+      <p>The longer the match, the more cooperation pays. Short matches
+      favour exploitation. Long matches favour reciprocity.</p>
+      <div id="shadow-sweep-container" class="viz-box"></div>
+    </section>
+
+    <!-- Chapter 6: Simulation Matrix -->
+    <section class="story-section" id="ch6" style="max-width:1100px">
+      <h2>VI. The Simulation Matrix</h2>
+      <p>What happens when we sweep the parameter space? Each cell below
+      is a full evolutionary simulation under different conditions — varying
+      <strong>noise</strong> (miscommunication rate) and <strong>rounds per match</strong>
+      (the shadow of the future). Press Play to watch populations shift.</p>
+      <div class="sim-legend" id="sim-legend-inline"></div>
+      <div class="subset-grid" id="subset-grid-inline"></div>
+    </section>
+
+    <!-- Chapter 7: Petri Dish Sandbox -->
+    <section class="story-section" id="sandbox">
+      <h2>VII. The Petri Dish</h2>
+      <p>Now it's your turn. Watch strategies compete and evolve in real time.
+      Inject defectors. Adjust the speed. See what survives.</p>
+
+      <div id="dish-layer">
+        <div id="dish-main">
+          <!-- Left panel -->
+          <div class="side-panel" id="panel-left">
+            <div class="panel-block" id="gen-block">
+              <h3>Generation</h3>
+              <div class="gen-number" id="gen-num">0</div>
+              <div class="gen-sub" id="gen-sub">initialising culture...</div>
+            </div>
+            <div class="panel-block">
+              <h3>Population</h3>
+              <div id="strat-list"></div>
+            </div>
+          </div>
+
+          <!-- Centre: dish + controls -->
+          <div id="dish-area">
+            <div id="dish-wrap">
+              <canvas id="petri"></canvas>
+              <div id="dish-shadow"></div>
+              <div id="dish-rim"></div>
+              <div id="dish-glare"></div>
+              <div id="dish-vignette"></div>
+            </div>
+            <div id="sky-orb" aria-hidden="true"></div>
+            <div id="controls">
+              <button class="btn" id="btn-slow">Slower</button>
+              <button class="btn on" id="btn-pause">Pause</button>
+              <button class="btn" id="btn-fast">Faster</button>
+              <span class="speed-disp" id="spd">1x</span>
+              <button class="btn" id="btn-shock">Shock</button>
+              <button class="btn" id="btn-reset">Reset</button>
+            </div>
+          </div>
+
+          <!-- Right panel -->
+          <div class="side-panel" id="panel-right">
+            <div class="panel-block" id="chart-wrap">
+              <h3>Population History</h3>
+              <canvas id="chart" width="166" height="80"></canvas>
+            </div>
+            <div class="panel-block" id="log-wrap">
+              <h3>Observations</h3>
+              <ul id="log-list"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Tooltip -->
+  <div id="tip">
+    <strong id="tip-name"></strong>
+    <span id="tip-desc"></span><br>
+    <span id="tip-score" style="color:var(--ink-dim)"></span>
+  </div>
+
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    window.mermaid = mermaid;
+  </script>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

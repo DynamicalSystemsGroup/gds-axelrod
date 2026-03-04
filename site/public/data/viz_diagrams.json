@@ -1,0 +1,72 @@
+{
+  "title": "Visualizations",
+  "diagrams": {
+    "ogs_structural": {
+      "title": "Game Structural Topology",
+      "description": "Full game topology with all flows \u2014 decision games, functions, and feedback loops.",
+      "mermaid": "%%{init: {'flowchart': {'nodeSpacing': 50, 'rankSpacing': 60}}}%%\nflowchart TD\n    Alice_Decision[\"Alice Decision\"]\n    Bob_Decision[\"Bob Decision\"]\n    Payoff_Computation([\"Payoff Computation\"])\n    Alice_Decision -->|\"Alice Action\"| Payoff_Computation\n    Bob_Decision -->|\"Bob Action\"| Payoff_Computation\n    Payoff_Computation -.->|\"Alice Payoff\"| Alice_Decision\n    Payoff_Computation -.->|\"Bob Payoff\"| Bob_Decision\n    Payoff_Matrix -->|\"Payoff Matrix\"| Payoff_Computation",
+      "package": "gds-games (ogs.viz)"
+    },
+    "ogs_architecture_by_role": {
+      "title": "Architecture by Role",
+      "description": "Games grouped by GameType (decision, covariant function, etc.).",
+      "mermaid": "%%{init: {'flowchart': {'nodeSpacing': 50, 'rankSpacing': 80}}}%%\nflowchart TD\n    subgraph decision [Decision]\n        Alice_Decision[\"Alice Decision\"]\n        Bob_Decision[\"Bob Decision\"]\n    end\n    subgraph function_covariant [Function Covariant]\n        Payoff_Computation[\"Payoff Computation\"]\n    end\n    Alice_Decision -->|\"Alice Action\"| Payoff_Computation\n    Bob_Decision -->|\"Bob Action\"| Payoff_Computation\n    Payoff_Computation -->|\"Alice Payoff\"| Alice_Decision\n    Payoff_Computation -->|\"Bob Payoff\"| Bob_Decision\n    Payoff_Matrix -->|\"Payoff Matrix\"| Payoff_Computation",
+      "package": "gds-games (ogs.viz)"
+    },
+    "ogs_architecture_by_domain": {
+      "title": "Architecture by Domain",
+      "description": "Games grouped by domain tag (Alice, Bob, Environment).",
+      "mermaid": "%%{init: {'flowchart': {'nodeSpacing': 50, 'rankSpacing': 80}}}%%\nflowchart TD\n    subgraph dom_Alice [\"Alice\"]\n        Alice_Decision[\"Alice Decision\"]\n    end\n    subgraph dom_Bob [\"Bob\"]\n        Bob_Decision[\"Bob Decision\"]\n    end\n    subgraph dom_Environment [\"Environment\"]\n        Payoff_Computation[\"Payoff Computation\"]\n    end\n    Alice_Decision -->|\"Alice Action\"| Payoff_Computation\n    Bob_Decision -->|\"Bob Action\"| Payoff_Computation\n    Payoff_Computation -->|\"Alice Payoff\"| Alice_Decision\n    Payoff_Computation -->|\"Bob Payoff\"| Bob_Decision\n    Payoff_Matrix -->|\"Payoff Matrix\"| Payoff_Computation",
+      "package": "gds-games (ogs.viz)"
+    },
+    "ogs_hierarchy": {
+      "title": "Composition Hierarchy",
+      "description": "Nested composition tree showing sequential, parallel, and feedback structure.",
+      "mermaid": "%%{init: {'flowchart': {'nodeSpacing': 40, 'rankSpacing': 50}}}%%\nflowchart TD\n    group_1[\"Prisoner's Dilemma (feedback)\"]\n    group_2[\"Game Round (sequential)\"]\n    group_1 --> group_2\n    group_3[\"Simultaneous Decisions (parallel)\"]\n    group_2 --> group_3\n    leaf_Alice_Decision[\"Alice Decision\"]\n    group_3 --> leaf_Alice_Decision\n    leaf_Bob_Decision[\"Bob Decision\"]\n    group_3 --> leaf_Bob_Decision\n    leaf_Payoff_Computation[\"Payoff Computation\"]\n    group_2 --> leaf_Payoff_Computation",
+      "package": "gds-games (ogs.viz)"
+    },
+    "ogs_flow_topology": {
+      "title": "Flow Topology (Covariant)",
+      "description": "Forward (covariant) flows only \u2014 useful for data flow analysis.",
+      "mermaid": "%%{init: {'flowchart': {'nodeSpacing': 50, 'rankSpacing': 60}}}%%\nflowchart LR\n    Alice_Decision[\"Alice Decision\"]\n    Bob_Decision[\"Bob Decision\"]\n    Payoff_Computation[\"Payoff Computation\"]\n    Payoff_Matrix[\"Payoff Matrix\"]\n    Alice_Decision -->|\"Alice Action\"| Payoff_Computation\n    Bob_Decision -->|\"Bob Action\"| Payoff_Computation\n    Payoff_Matrix -->|\"Payoff Matrix\"| Payoff_Computation",
+      "package": "gds-games (ogs.viz)"
+    },
+    "ogs_terminal_conditions": {
+      "title": "Terminal Conditions",
+      "description": "State transition diagram showing all possible outcomes.",
+      "mermaid": "%%{init: {'flowchart': {'nodeSpacing': 50, 'rankSpacing': 60}}}%%\nstateDiagram-v2\n    [*] --> Running\n    Running --> Mutual_Cooperation : Both players cooperate (Pareto optimal)\n    Mutual_Cooperation : Mutual Cooperation\n    note right of Mutual_Cooperation\n        Pareto optimum \u2014 both receive reward\n    end note\n    Running --> Mutual_Defection : Both players defect (Nash equilibrium)\n    Mutual_Defection : Mutual Defection\n    note right of Mutual_Defection\n        Dominant strategy equilibrium\n    end note\n    Running --> Alice_Exploits : Alice defects while Bob cooperates\n    Alice_Exploits : Alice Exploits\n    note right of Alice_Exploits\n        Temptation vs sucker\n    end note\n    Running --> Bob_Exploits : Bob defects while Alice cooperates\n    Bob_Exploits : Bob Exploits\n    note right of Bob_Exploits\n        Temptation vs sucker\n    end note",
+      "package": "gds-games (ogs.viz)"
+    },
+    "gds_system": {
+      "title": "System Structure",
+      "description": "Flat block topology from SystemIR \u2014 blocks with role-based shapes and wiring edges.",
+      "mermaid": "%%{init:{\"theme\":\"neutral\"}}%%\nflowchart TD\n    classDef boundary fill:#93c5fd,stroke:#2563eb,stroke-width:2px,color:#1e3a5f\n    classDef policy fill:#fcd34d,stroke:#d97706,stroke-width:2px,color:#78350f\n    classDef mechanism fill:#86efac,stroke:#16a34a,stroke-width:2px,color:#14532d\n    classDef control fill:#d8b4fe,stroke:#9333ea,stroke-width:2px,color:#3b0764\n    classDef generic fill:#cbd5e1,stroke:#64748b,stroke-width:1px,color:#1e293b\n    Alice_Decision[Alice Decision]:::generic\n    Bob_Decision[Bob Decision]:::generic\n    Payoff_Computation[Payoff Computation]:::generic\n    Alice_Decision --Alice Action--> Payoff_Computation\n    Bob_Decision --Bob Action--> Payoff_Computation\n    Payoff_Computation ==Alice Payoff==> Alice_Decision\n    Payoff_Computation ==Bob Payoff==> Bob_Decision\n    Payoff_Matrix --Payoff Matrix--> Payoff_Computation",
+      "package": "gds-viz"
+    },
+    "gds_system_hierarchy": {
+      "title": "System Hierarchy",
+      "description": "Hierarchical composition tree showing block nesting.",
+      "mermaid": "%%{init:{\"theme\":\"neutral\"}}%%\nflowchart TD\n    classDef boundary fill:#93c5fd,stroke:#2563eb,stroke-width:2px,color:#1e3a5f\n    classDef policy fill:#fcd34d,stroke:#d97706,stroke-width:2px,color:#78350f\n    classDef mechanism fill:#86efac,stroke:#16a34a,stroke-width:2px,color:#14532d\n    classDef control fill:#d8b4fe,stroke:#9333ea,stroke-width:2px,color:#3b0764\n    classDef generic fill:#cbd5e1,stroke:#64748b,stroke-width:1px,color:#1e293b\n    Alice_Decision[Alice Decision]:::generic\n    Bob_Decision[Bob Decision]:::generic\n    Payoff_Computation[Payoff Computation]:::generic\n    Alice_Decision --Alice Action--> Payoff_Computation\n    Bob_Decision --Bob Action--> Payoff_Computation\n    Payoff_Computation ==Alice Payoff==> Alice_Decision\n    Payoff_Computation ==Bob Payoff==> Bob_Decision\n    Payoff_Matrix --Payoff Matrix--> Payoff_Computation",
+      "package": "gds-viz"
+    },
+    "gds_spec": {
+      "title": "Specification Architecture",
+      "description": "Architecture-level view with blocks grouped by role, entity cylinders, and wiring edges.",
+      "mermaid": "%%{init:{\"theme\":\"neutral\"}}%%\nflowchart TD\n    classDef boundary fill:#93c5fd,stroke:#2563eb,stroke-width:2px,color:#1e3a5f\n    classDef policy fill:#fcd34d,stroke:#d97706,stroke-width:2px,color:#78350f\n    classDef mechanism fill:#86efac,stroke:#16a34a,stroke-width:2px,color:#14532d\n    classDef control fill:#d8b4fe,stroke:#9333ea,stroke-width:2px,color:#3b0764\n    classDef generic fill:#cbd5e1,stroke:#64748b,stroke-width:1px,color:#1e293b\n    classDef entity fill:#e2e8f0,stroke:#475569,stroke-width:2px,color:#0f172a\n    classDef param fill:#fdba74,stroke:#ea580c,stroke-width:2px,color:#7c2d12\n    classDef state fill:#5eead4,stroke:#0d9488,stroke-width:2px,color:#134e4a\n    classDef target fill:#fca5a5,stroke:#dc2626,stroke-width:2px,color:#7f1d1d\n    classDef empty fill:#e2e8f0,stroke:#94a3b8,stroke-width:1px,color:#475569\n    subgraph boundary [\"Boundary (U)\"]\n        Payoff_Matrix([Payoff Matrix]):::boundary\n    end\n    subgraph policy [\"Policy (g)\"]\n        Alice_Decision[Alice Decision]:::policy\n        Bob_Decision[Bob Decision]:::policy\n        Payoff_Computation[Payoff Computation]:::policy\n    end\n    Alice_Decision --Alice Action Flow--> Payoff_Computation\n    Bob_Decision --Bob Action Flow--> Payoff_Computation\n    Payoff_Computation --Alice Payoff Flow--> Alice_Decision\n    Payoff_Computation --Bob Payoff Flow--> Bob_Decision\n    Payoff_Matrix --Payoff Matrix Flow--> Payoff_Computation\n    style boundary fill:#dbeafe,stroke:#60a5fa,stroke-width:1px,color:#1e40af\n    style policy fill:#fef3c7,stroke:#fbbf24,stroke-width:1px,color:#92400e",
+      "package": "gds-viz"
+    },
+    "gds_canonical": {
+      "title": "Canonical Decomposition (h = f \u2218 g)",
+      "description": "Formal GDS decomposition: state variables, boundary inputs, policies, mechanisms.",
+      "mermaid": "%%{init:{\"theme\":\"neutral\"}}%%\nflowchart LR\n    classDef boundary fill:#93c5fd,stroke:#2563eb,stroke-width:2px,color:#1e3a5f\n    classDef policy fill:#fcd34d,stroke:#d97706,stroke-width:2px,color:#78350f\n    classDef mechanism fill:#86efac,stroke:#16a34a,stroke-width:2px,color:#14532d\n    classDef control fill:#d8b4fe,stroke:#9333ea,stroke-width:2px,color:#3b0764\n    classDef generic fill:#cbd5e1,stroke:#64748b,stroke-width:1px,color:#1e293b\n    classDef entity fill:#e2e8f0,stroke:#475569,stroke-width:2px,color:#0f172a\n    classDef param fill:#fdba74,stroke:#ea580c,stroke-width:2px,color:#7c2d12\n    classDef state fill:#5eead4,stroke:#0d9488,stroke-width:2px,color:#134e4a\n    classDef target fill:#fca5a5,stroke:#dc2626,stroke-width:2px,color:#7f1d1d\n    classDef empty fill:#e2e8f0,stroke:#94a3b8,stroke-width:1px,color:#475569\n    X_t([\"X_t\"]):::state\n    X_next([\"X_{t+1}\"]):::state\n    subgraph U [\"Boundary (U)\"]\n        Payoff_Matrix[Payoff Matrix]:::boundary\n    end\n    subgraph g [\"Policy (g)\"]\n        Alice_Decision[Alice Decision]:::policy\n        Bob_Decision[Bob Decision]:::policy\n        Payoff_Computation[Payoff Computation]:::policy\n    end\n    X_t --> U\n    U --> g\n    g --> X_next\n    style U fill:#dbeafe,stroke:#60a5fa,stroke-width:1px,color:#1e40af\n    style g fill:#fef3c7,stroke:#fbbf24,stroke-width:1px,color:#92400e",
+      "package": "gds-viz"
+    },
+    "gds_params": {
+      "title": "Parameter Influence",
+      "description": "Parameter (\u0398) influence diagram: which parameters affect which blocks and entities.",
+      "mermaid": "%%{init:{\"theme\":\"neutral\"}}%%\nflowchart LR\n    classDef boundary fill:#93c5fd,stroke:#2563eb,stroke-width:2px,color:#1e3a5f\n    classDef policy fill:#fcd34d,stroke:#d97706,stroke-width:2px,color:#78350f\n    classDef mechanism fill:#86efac,stroke:#16a34a,stroke-width:2px,color:#14532d\n    classDef control fill:#d8b4fe,stroke:#9333ea,stroke-width:2px,color:#3b0764\n    classDef generic fill:#cbd5e1,stroke:#64748b,stroke-width:1px,color:#1e293b\n    classDef entity fill:#e2e8f0,stroke:#475569,stroke-width:2px,color:#0f172a\n    classDef param fill:#fdba74,stroke:#ea580c,stroke-width:2px,color:#7c2d12\n    classDef state fill:#5eead4,stroke:#0d9488,stroke-width:2px,color:#134e4a\n    classDef target fill:#fca5a5,stroke:#dc2626,stroke-width:2px,color:#7f1d1d\n    classDef empty fill:#e2e8f0,stroke:#94a3b8,stroke-width:1px,color:#475569\n    no_params[No parameters defined]:::empty",
+      "package": "gds-viz"
+    }
+  },
+  "total_count": 11
+}

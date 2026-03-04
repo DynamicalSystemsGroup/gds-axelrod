@@ -1,0 +1,137 @@
+{
+  "title": "Formal Structure",
+  "spec_name": "Axelrod Prisoner's Dilemma",
+  "spec_description": "GDS projection of OGS pattern \"Axelrod Prisoner's Dilemma\"",
+  "blocks_by_role": {
+    "Policy": [
+      {
+        "name": "Alice Decision",
+        "forward_in": [
+          "Alice Observation"
+        ],
+        "forward_out": [
+          "Alice Action"
+        ],
+        "backward_in": [
+          "Alice Payoff"
+        ],
+        "backward_out": [
+          "Alice Experience"
+        ]
+      },
+      {
+        "name": "Bob Decision",
+        "forward_in": [
+          "Bob Observation"
+        ],
+        "forward_out": [
+          "Bob Action"
+        ],
+        "backward_in": [
+          "Bob Payoff"
+        ],
+        "backward_out": [
+          "Bob Experience"
+        ]
+      },
+      {
+        "name": "Payoff Computation",
+        "forward_in": [
+          "Alice Action",
+          "Bob Action"
+        ],
+        "forward_out": [
+          "Alice Payoff",
+          "Bob Payoff"
+        ],
+        "backward_in": [],
+        "backward_out": []
+      }
+    ],
+    "BoundaryAction": [
+      {
+        "name": "Payoff Matrix",
+        "forward_in": [],
+        "forward_out": [
+          "Payoff Matrix"
+        ],
+        "backward_in": [],
+        "backward_out": []
+      }
+    ]
+  },
+  "wirings": [
+    {
+      "name": "Axelrod Prisoner's Dilemma Wiring",
+      "wires": [
+        {
+          "source": "Alice Decision",
+          "target": "Payoff Computation",
+          "space": "Alice Action Flow"
+        },
+        {
+          "source": "Bob Decision",
+          "target": "Payoff Computation",
+          "space": "Bob Action Flow"
+        },
+        {
+          "source": "Payoff Computation",
+          "target": "Alice Decision",
+          "space": "Alice Payoff Flow"
+        },
+        {
+          "source": "Payoff Computation",
+          "target": "Bob Decision",
+          "space": "Bob Payoff Flow"
+        },
+        {
+          "source": "Payoff Matrix",
+          "target": "Payoff Computation",
+          "space": "Payoff Matrix Flow"
+        }
+      ]
+    }
+  ],
+  "types": {},
+  "spaces": {},
+  "entities": {},
+  "canonical": {
+    "formula": "h : X \u2192 X  (h = g)",
+    "state_variables": [],
+    "input_ports": [
+      {
+        "block": "Payoff Matrix",
+        "port": "Payoff Matrix"
+      }
+    ],
+    "decision_ports": [
+      {
+        "block": "Alice Decision",
+        "port": "Alice Action"
+      },
+      {
+        "block": "Bob Decision",
+        "port": "Bob Action"
+      },
+      {
+        "block": "Payoff Computation",
+        "port": "Alice Payoff"
+      },
+      {
+        "block": "Payoff Computation",
+        "port": "Bob Payoff"
+      }
+    ],
+    "boundary_blocks": [
+      "Payoff Matrix"
+    ],
+    "policy_blocks": [
+      "Alice Decision",
+      "Bob Decision",
+      "Payoff Computation"
+    ],
+    "mechanism_blocks": [],
+    "control_blocks": [],
+    "update_map": []
+  }
+}

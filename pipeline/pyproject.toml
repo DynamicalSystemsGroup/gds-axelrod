@@ -1,0 +1,20 @@
+[project]
+name = "gds-axelrod-pipeline"
+version = "0.1.0"
+description = "Data generation pipeline for gds-axelrod interactive site"
+requires-python = ">=3.12"
+dependencies = [
+    "gds-games>=0.3.0",
+    "gds-framework>=0.3.0",
+    "gds-viz>=0.1.0",
+    "gds-sim>=0.1.0",
+    "gds-psuu>=0.1.0",
+    "nashpy>=0.0.41",
+    "numpy>=1.26",
+]
+
+[tool.uv.sources]
+gds-games = { path = "../../gds-core/packages/gds-games", editable = true }
+gds-framework = { path = "../../gds-core/packages/gds-framework", editable = true }
+gds-viz = { path = "../../gds-core/packages/gds-viz", editable = true }
+gds-sim = { path = "../../gds-core/packages/gds-sim", editable = true }

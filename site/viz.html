@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visualizations — GDS Ecosystem</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;1,300&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/style.css">
+  <link rel="stylesheet" href="/src/pages.css">
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    window.mermaid = mermaid;
+  </script>
+</head>
+<body>
+  <div class="page-container">
+    <header class="page-header">
+      <h1>Visualizations</h1>
+      <p class="page-subtitle">All GDS and OGS Mermaid diagram views rendered client-side</p>
+      <p class="page-packages">gds-viz + ogs.viz</p>
+    </header>
+    <main id="viz-content" class="page-content">
+      <p class="loading">Loading diagram data...</p>
+    </main>
+  </div>
+  <script type="module" src="/src/viz-page.js"></script>
+</body>
+</html>

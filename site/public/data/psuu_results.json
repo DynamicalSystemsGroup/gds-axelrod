@@ -1,0 +1,415 @@
+{
+  "title": "PSUU Analysis",
+  "description": "Parameter Space Uncertainty & Sensitivity analysis: which noise/rounds combination maximizes cooperation?",
+  "space": {
+    "noise": {
+      "type": "continuous",
+      "min": 0.0,
+      "max": 0.15
+    },
+    "rounds_per_match": {
+      "type": "integer",
+      "min": 3,
+      "max": 25
+    }
+  },
+  "optimizer": {
+    "type": "RandomSearch",
+    "n_samples": 30,
+    "seed": 42
+  },
+  "simulation": {
+    "timesteps": 20,
+    "runs": 3
+  },
+  "kpis": {
+    "cooperation_rate": "Fraction of cooperative strategies in final population",
+    "diversity": "Number of unique strategies surviving",
+    "winner_share": "Population share of most dominant strategy (lower = more balanced)"
+  },
+  "best_per_kpi": {
+    "cooperation_rate": {
+      "params": {
+        "noise": 0.041728606234599404,
+        "rounds_per_match": 3
+      },
+      "score": 0.9444444444444444,
+      "all_scores": {
+        "cooperation_rate": 0.9444444444444444,
+        "diversity": 3.0,
+        "winner_share": 0.9444444444444444
+      },
+      "maximize": true
+    },
+    "diversity": {
+      "params": {
+        "noise": 0.09591401976868257,
+        "rounds_per_match": 3
+      },
+      "score": 5.0,
+      "all_scores": {
+        "cooperation_rate": 0.027777777777777776,
+        "diversity": 5.0,
+        "winner_share": 0.8611111111111112
+      },
+      "maximize": true
+    },
+    "winner_share": {
+      "params": {
+        "noise": 0.09591401976868257,
+        "rounds_per_match": 3
+      },
+      "score": 0.8611111111111112,
+      "all_scores": {
+        "cooperation_rate": 0.027777777777777776,
+        "diversity": 5.0,
+        "winner_share": 0.8611111111111112
+      },
+      "maximize": false
+    }
+  },
+  "evaluations": [
+    {
+      "params": {
+        "noise": 0.09591401976868257,
+        "rounds_per_match": 3
+      },
+      "scores": {
+        "cooperation_rate": 0.027777777777777776,
+        "diversity": 5.0,
+        "winner_share": 0.8611111111111112
+      }
+    },
+    {
+      "params": {
+        "noise": 0.11123257496397493,
+        "rounds_per_match": 10
+      },
+      "scores": {
+        "cooperation_rate": 0.0,
+        "diversity": 3.0,
+        "winner_share": 0.9444444444444444
+      }
+    },
+    {
+      "params": {
+        "noise": 0.03348161072232341,
+        "rounds_per_match": 6
+      },
+      "scores": {
+        "cooperation_rate": 0.0,
+        "diversity": 3.0,
+        "winner_share": 0.9444444444444444
+      }
+    },
+    {
+      "params": {
+        "noise": 0.10150492311343669,
+        "rounds_per_match": 20
+      },
+      "scores": {
+        "cooperation_rate": 0.0,
+        "diversity": 3.0,
+        "winner_share": 0.9444444444444444
+      }
+    },
+    {
+      "params": {
+        "noise": 0.013040824894412422,
+        "rounds_per_match": 16
+      },
+      "scores": {
+        "cooperation_rate": 0.0,
+        "diversity": 3.0,
+        "winner_share": 0.9444444444444444
+      }
+    },
+    {
+      "params": {
+        "noise": 0.0047674019222675385,
+        "rounds_per_match": 5
+      },
+      "scores": {
+        "cooperation_rate": 0.0,
+        "diversity": 3.0,
+        "winner_share": 0.9444444444444444
+      }
+    },
+    {
+      "params": {
+        "noise": 0.0327956962205405,
+        "rounds_per_match": 19
+      },
+      "scores": {
+        "cooperation_rate": 0.0,
+        "diversity": 3.0,
+        "winner_share": 0.9444444444444444
+      }
+    },
+    {
+      "params": {
+        "noise": 0.09030280935749704,
+        "rounds_per_match": 20
+      },
+      "scores": {
+        "cooperation_rate": 0.0,
+        "diversity": 3.0,
+        "winner_share": 0.9444444444444444
+      }
+    },
+    {
+      "params": {
+        "noise": 0.029825647602997274,
+        "rounds_per_match": 23
+      },
+      "scores": {
+        "cooperation_rate": 0.0,
+        "diversity": 3.0,
+        "winner_share": 0.9444444444444444
+      }
+    },
+    {
+      "params": {
+        "noise": 0.10519874603853539,
+        "rounds_per_match": 16
+      },
+      "scores": {
+        "cooperation_rate": 0.0,
+        "diversity": 3.0,
+        "winner_share": 0.9166666666666666
+      }
+    },
+    {
+      "params": {
+        "noise": 0.0330660933061045,
+        "rounds_per_match": 21
+      },
+      "scores": {
+        "cooperation_rate": 0.0,
+        "diversity": 3.0,
+        "winner_share": 0.9444444444444444
+      }
+    },
+    {
+      "params": {
+        "noise": 0.041728606234599404,
+        "rounds_per_match": 3
+      },
+      "scores": {
+        "cooperation_rate": 0.9444444444444444,
+        "diversity": 3.0,
+        "winner_share": 0.9444444444444444
+      }
+    },
+    {
+      "params": {
+        "noise": 0.11382110506946508,
+        "rounds_per_match": 8
+      },
+      "scores": {
+        "cooperation_rate": 0.9444444444444444,
+        "diversity": 3.0,
+        "winner_share": 0.9444444444444444
+      }
+    },
+    {
+      "params": {
+        "noise": 0.10472090924823403,
+        "rounds_per_match": 13
+      },
+      "scores": {
+        "cooperation_rate": 0.0,
+        "diversity": 3.0,
+        "winner_share": 0.9444444444444444
+      }
+    },
+    {
+      "params": {
+        "noise": 0.04168070125074628,
+        "rounds_per_match": 9
+      },
+      "scores": {
+        "cooperation_rate": 0.9444444444444444,
+        "diversity": 3.0,
+        "winner_share": 0.9444444444444444
+      }
+    },
+    {
+      "params": {
+        "noise": 0.14358196083101718,
+        "rounds_per_match": 13
+      },
+      "scores": {
+        "cooperation_rate": 0.0,
+        "diversity": 3.0,
+        "winner_share": 0.9444444444444444
+      }
+    },
+    {
+      "params": {
+        "noise": 0.015331541477977306,
+        "rounds_per_match": 15
+      },
+      "scores": {
+        "cooperation_rate": 0.0,
+        "diversity": 3.0,
+        "winner_share": 0.9444444444444444
+      }
+    },
+    {
+      "params": {
+        "noise": 0.014507456525019601,
+        "rounds_per_match": 14
+      },
+      "scores": {
+        "cooperation_rate": 0.9444444444444444,
+        "diversity": 3.0,
+        "winner_share": 0.9444444444444444
+      }
+    },
+    {
+      "params": {
+        "noise": 0.09055890470503365,
+        "rounds_per_match": 4
+      },
+      "scores": {
+        "cooperation_rate": 0.027777777777777776,
+        "diversity": 5.0,
+        "winner_share": 0.8888888888888888
+      }
+    },
+    {
+      "params": {
+        "noise": 0.10945976800407269,
+        "rounds_per_match": 20
+      },
+      "scores": {
+        "cooperation_rate": 0.0,
+        "diversity": 3.0,
+        "winner_share": 0.9444444444444444
+      }
+    },
+    {
+      "params": {
+        "noise": 0.018723924427981403,
+        "rounds_per_match": 15
+      },
+      "scores": {
+        "cooperation_rate": 0.9444444444444444,
+        "diversity": 3.0,
+        "winner_share": 0.9444444444444444
+      }
+    },
+    {
+      "params": {
+        "noise": 0.011820029711768725,
+        "rounds_per_match": 12
+      },
+      "scores": {
+        "cooperation_rate": 0.9444444444444444,
+        "diversity": 3.0,
+        "winner_share": 0.9444444444444444
+      }
+    },
+    {
+      "params": {
+        "noise": 0.12441069963794922,
+        "rounds_per_match": 22
+      },
+      "scores": {
+        "cooperation_rate": 0.0,
+        "diversity": 3.0,
+        "winner_share": 0.9444444444444444
+      }
+    },
+    {
+      "params": {
+        "noise": 0.13281776219052102,
+        "rounds_per_match": 14
+      },
+      "scores": {
+        "cooperation_rate": 0.0,
+        "diversity": 3.0,
+        "winner_share": 0.9444444444444444
+      }
+    },
+    {
+      "params": {
+        "noise": 0.0866028217885143,
+        "rounds_per_match": 25
+      },
+      "scores": {
+        "cooperation_rate": 0.0,
+        "diversity": 3.0,
+        "winner_share": 0.9444444444444444
+      }
+    },
+    {
+      "params": {
+        "noise": 0.010433272323561138,
+        "rounds_per_match": 24
+      },
+      "scores": {
+        "cooperation_rate": 0.0,
+        "diversity": 3.0,
+        "winner_share": 0.9444444444444444
+      }
+    },
+    {
+      "params": {
+        "noise": 0.03418474134773203,
+        "rounds_per_match": 12
+      },
+      "scores": {
+        "cooperation_rate": 0.0,
+        "diversity": 3.0,
+        "winner_share": 0.9444444444444444
+      }
+    },
+    {
+      "params": {
+        "noise": 0.14778322809911365,
+        "rounds_per_match": 10
+      },
+      "scores": {
+        "cooperation_rate": 0.0,
+        "diversity": 3.0,
+        "winner_share": 0.9444444444444444
+      }
+    },
+    {
+      "params": {
+        "noise": 0.12997255001329044,
+        "rounds_per_match": 15
+      },
+      "scores": {
+        "cooperation_rate": 0.0,
+        "diversity": 3.0,
+        "winner_share": 0.9444444444444444
+      }
+    },
+    {
+      "params": {
+        "noise": 0.04169604046651382,
+        "rounds_per_match": 23
+      },
+      "scores": {
+        "cooperation_rate": 0.0,
+        "diversity": 3.0,
+        "winner_share": 0.9444444444444444
+      }
+    }
+  ],
+  "total_evaluations": 30,
+  "strategy_names": [
+    "Always Cooperate",
+    "Always Defect",
+    "Tit for Tat",
+    "Grim Trigger",
+    "Detective",
+    "Tit for Two Tats",
+    "Pavlov",
+    "Generous TFT",
+    "Random"
+  ]
+}
