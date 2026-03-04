@@ -28,13 +28,11 @@ jobs:
 
       - name: Install pipeline dependencies
         working-directory: pipeline
-        run: |
-          uv venv
-          uv pip install gds-games gds-framework
+        run: uv sync --no-sources
 
       - name: Generate data
         working-directory: pipeline
-        run: uv run python generate.py
+        run: uv run --no-sources python generate.py
 
       - name: Copy data to site
         run: cp pipeline/output/*.json site/public/data/
