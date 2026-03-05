@@ -19,86 +19,10 @@
       built on compositional game theory.</p>
     </header>
 
-    <!-- Chapter 1: The Dilemma -->
-    <section class="story-section" id="ch1">
-      <h2>I. The Dilemma</h2>
-      <p>Two players face a choice: <em>cooperate</em> or <em>defect</em>.
-      If both cooperate, both win. If one defects while the other cooperates,
-      the defector takes everything. If both defect, both lose.</p>
-      <p>This is the <strong>Prisoner's Dilemma</strong> — the most studied
-      game in all of game theory. The rational choice is to defect. But if
-      both are rational, both lose.</p>
-      <div id="payoff-matrix-container" class="viz-box"></div>
-      <p>The game changes when it's <em>iterated</em>. Play the same opponent
-      again and again, and suddenly reputation, retaliation, and forgiveness
-      all come into play.</p>
-      <div id="arch-domain-container" class="viz-box"></div>
-    </section>
-
-    <!-- Chapter 2: The Tournament -->
-    <section class="story-section" id="ch2">
-      <h2>II. The Tournament</h2>
-      <p>In 1980, Robert Axelrod invited game theorists to submit strategies
-      for a computer tournament. Each strategy would play every other strategy
-      in a round-robin of iterated prisoner's dilemma matches.</p>
-      <p>The simplest strategy won: <strong>Tit for Tat</strong>. Cooperate
-      first, then copy whatever the opponent did last time. Nice, retaliatory,
-      forgiving, clear.</p>
-      <div id="tournament-game-diagram" class="viz-box"></div>
-      <div id="tournament-heatmap-container" class="viz-box"></div>
-      <div id="tournament-rankings-container" class="viz-box"></div>
-    </section>
-
-    <!-- Chapter 3: Evolution -->
-    <section class="story-section" id="ch3">
-      <h2>III. Evolution</h2>
-      <p>Axelrod then asked: what if strategies could <em>reproduce</em>?
-      Successful strategies grow in population. Failed strategies die out.
-      Which strategies survive?</p>
-      <p>Watch the population evolve. Defectors thrive early by exploiting
-      cooperators. But as cooperators die out, defectors have no one left
-      to exploit. Reciprocal strategies like Tit for Tat inherit the earth.</p>
-      <div id="evolution-chart-container" class="viz-box"></div>
-    </section>
-
-    <!-- Chapter 4: Noise -->
-    <section class="story-section" id="ch4">
-      <h2>IV. Noise &amp; Forgiveness</h2>
-      <p>The real world is noisy. Signals get corrupted. Actions get
-      misinterpreted. What happens to Tit for Tat when noise enters?</p>
-      <p>Two Tit-for-Tat players accidentally defect — and they're locked
-      in an endless cycle of retaliation. Enter <strong>Generous Tit for Tat</strong>:
-      identical to TfT, but occasionally forgives a defection.</p>
-      <p>In noisy environments, forgiveness wins.</p>
-      <div id="noise-sweep-container" class="viz-box"></div>
-    </section>
-
-    <!-- Chapter 5: Shadow of the Future -->
-    <section class="story-section" id="ch5">
-      <h2>V. The Shadow of the Future</h2>
-      <p>Cooperation requires a <em>future</em>. If you know this is
-      the last round, defect. But extend the shadow — make the game
-      indefinite — and cooperation becomes rational.</p>
-      <p>The longer the match, the more cooperation pays. Short matches
-      favour exploitation. Long matches favour reciprocity.</p>
-      <div id="shadow-sweep-container" class="viz-box"></div>
-    </section>
-
-    <!-- Chapter 6: Simulation Matrix -->
-    <section class="story-section" id="ch6" style="max-width:1100px">
-      <h2>VI. The Simulation Matrix</h2>
-      <p>What happens when we sweep the parameter space? Each cell below
-      is a full evolutionary simulation under different conditions — varying
-      <strong>noise</strong> (miscommunication rate) and <strong>rounds per match</strong>
-      (the shadow of the future). Press Play to watch populations shift.</p>
-      <div class="sim-legend" id="sim-legend-inline"></div>
-      <div class="subset-grid" id="subset-grid-inline"></div>
-    </section>
-
-    <!-- Chapter 7: Petri Dish Sandbox -->
+    <!-- Petri Dish Sandbox (interactive hook) -->
     <section class="story-section" id="sandbox">
-      <h2>VII. The Petri Dish</h2>
-      <p>Now it's your turn. Watch strategies compete and evolve in real time.
+      <h2>The Petri Dish</h2>
+      <p>Watch strategies compete and evolve in real time.
       Inject defectors. Adjust the speed. See what survives.</p>
 
       <div id="dish-layer">
@@ -149,6 +73,105 @@
           </div>
         </div>
       </div>
+    </section>
+
+    <!-- Chapter 1: The Dilemma (1v1 game) -->
+    <section class="story-section" id="ch1">
+      <h2>I. The Dilemma</h2>
+      <p>Two players face a choice: <em>cooperate</em> or <em>defect</em>.
+      If both cooperate, both win. If one defects while the other cooperates,
+      the defector takes everything. If both defect, both lose.</p>
+      <p>This is the <strong>Prisoner's Dilemma</strong> — the most studied
+      game in all of game theory. The rational choice is to defect. But if
+      both are rational, both lose.</p>
+      <div id="payoff-matrix-container" class="viz-box"></div>
+      <p>This single match — two players, one decision each, a payoff — is
+      the <strong>1v1 game</strong>. It's stateless: no memory, no history,
+      just a simultaneous choice. But the game changes when it's <em>iterated</em>.
+      Play the same opponent again and again, and suddenly reputation,
+      retaliation, and forgiveness all come into play.</p>
+    </section>
+
+    <!-- Chapter 2: The Tournament (wraps 1v1 into a population system) -->
+    <section class="story-section" id="ch2">
+      <h2>II. The Tournament</h2>
+      <p>In 1980, Robert Axelrod invited game theorists to submit strategies
+      for a computer tournament. Each strategy would play every other strategy
+      in a round-robin of iterated prisoner's dilemma matches.</p>
+      <p>This is a different system from the 1v1 game. The <strong>tournament</strong>
+      wraps many 1v1 matches into a population-level competition — it adds
+      state (scores, rankings) and structure (round-robin pairing) on top of
+      the single match.</p>
+      <p>The simplest strategy won: <strong>Tit for Tat</strong>. Cooperate
+      first, then copy whatever the opponent did last time. Nice, retaliatory,
+      forgiving, clear.</p>
+      <div id="tournament-heatmap-container" class="viz-box"></div>
+      <div id="tournament-rankings-container" class="viz-box"></div>
+    </section>
+
+    <!-- Chapter 3: Evolution (adds dynamics to the tournament) -->
+    <section class="story-section" id="ch3">
+      <h2>III. Evolution</h2>
+      <p>Axelrod then asked: what if strategies could <em>reproduce</em>?
+      This adds a second layer to the tournament: <strong>evolutionary
+      selection</strong>. After each round-robin, successful strategies grow
+      in population. Failed strategies die out. The tournament becomes a
+      dynamical system with state that changes over time.</p>
+      <p>Watch the population evolve. Defectors thrive early by exploiting
+      cooperators. But as cooperators die out, defectors have no one left
+      to exploit. Reciprocal strategies like Tit for Tat inherit the earth.</p>
+      <div id="evolution-chart-container" class="viz-box"></div>
+    </section>
+
+    <!-- Chapter 4: Noise & The Shadow (merged) -->
+    <section class="story-section" id="ch4">
+      <h2>IV. Noise &amp; The Shadow</h2>
+      <p>The real world is noisy. Signals get corrupted. Actions get
+      misinterpreted. What happens to Tit for Tat when noise enters?</p>
+      <p>Two Tit-for-Tat players accidentally defect — and they're locked
+      in an endless cycle of retaliation. Enter <strong>Generous Tit for Tat</strong>:
+      identical to TfT, but occasionally forgives a defection.
+      In noisy environments, forgiveness wins.</p>
+      <div id="noise-sweep-container" class="viz-box"></div>
+      <p>But cooperation also requires a <em>future</em>. If you know this is
+      the last round, defect. Extend the shadow — make the game
+      indefinite — and cooperation becomes rational.</p>
+      <p>The longer the match, the more cooperation pays. Short matches
+      favour exploitation. Long matches favour reciprocity. Together,
+      noise and the shadow of the future shape the evolutionary landscape.</p>
+      <div id="shadow-sweep-container" class="viz-box"></div>
+    </section>
+
+    <!-- Chapter 5: Simulation Matrix -->
+    <section class="story-section" id="ch5" style="max-width:1100px">
+      <h2>V. The Simulation Matrix</h2>
+      <p>What happens when we sweep the parameter space? Each cell below
+      is a full evolutionary simulation under different conditions — varying
+      <strong>noise</strong> (miscommunication rate) and <strong>rounds per match</strong>
+      (the shadow of the future). Press Play to watch populations shift.</p>
+      <div class="sim-legend" id="sim-legend-inline"></div>
+      <div class="subset-grid" id="subset-grid-inline"></div>
+    </section>
+
+    <!-- Chapter 6: Technical Appendix -->
+    <section class="story-section" id="ch6">
+      <h2>VI. Under the Hood</h2>
+      <p>Everything above is built on two formal specifications — one
+      for the <strong>1v1 game</strong> and one for the <strong>tournament</strong>
+      that wraps it.</p>
+      <h3>The 1v1 Game (OGS Pattern)</h3>
+      <p>The single match is specified as an <strong>OGS pattern</strong> —
+      a compositional game structure. Alice decides, Bob decides, the
+      environment computes payoffs. It's stateless: <em>h&nbsp;=&nbsp;g</em>,
+      pure policy with no mechanism or state update.</p>
+      <div id="arch-domain-container" class="viz-box"></div>
+      <h3>The Tournament (GDSSpec)</h3>
+      <p>The tournament wraps the 1v1 game into a <strong>stateful dynamical
+      system</strong>. It adds population state, round-robin pairing, evolutionary
+      selection, and tunable parameters (noise, rounds per match). Its canonical
+      form is <em>h<sub>&theta;</sub>&nbsp;=&nbsp;f<sub>&theta;</sub>&nbsp;&compfn;&nbsp;g<sub>&theta;</sub></em>
+      — policy <em>and</em> mechanism, with parameters.</p>
+      <div id="tournament-game-diagram" class="viz-box"></div>
     </section>
 
   </div>

@@ -5,7 +5,6 @@
 const NAV_LINKS = [
   { href: './', label: 'Story' },
   { href: './formal.html', label: 'Formal Structure' },
-  { href: './viz.html', label: 'Visualizations' },
   { href: './sim.html', label: 'Simulation' },
   { href: './nash.html', label: 'Nash Analysis' },
   { href: './psuu.html', label: 'PSUU' },

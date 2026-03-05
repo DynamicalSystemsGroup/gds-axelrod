@@ -1,5 +1,12 @@
 /* ── Shared styles for showcase pages (formal, viz, sim, nash) ── */
 
+/* ── SECTION DIVIDERS ── */
+hr.section-rule {
+  border: none;
+  border-top: 1px solid var(--rim);
+  margin: 3rem 0;
+}
+
 /* ── NAV BAR ── */
 #site-nav {
   position: sticky;

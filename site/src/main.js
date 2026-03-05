@@ -16,6 +16,7 @@ import { initChapter3 } from './chapters/ch3-evolution.js';
 import { initChapter4 } from './chapters/ch4-noise.js';
 import { initChapter5 } from './chapters/ch5-shadow.js';
 import { initChapter6 } from './chapters/ch6-sim.js';
+import { initAppendix } from './chapters/ch-appendix.js';
 import { renderEcosystemNote } from './ecosystem-note.js';
 
 // ── State ──
@@ -240,6 +241,7 @@ async function boot() {
     initChapter4(),
     initChapter5(),
     initChapter6(),
+    initAppendix(),
   ]);
 
   renderEcosystemNote(document.querySelector('.page-container.story-page'), {

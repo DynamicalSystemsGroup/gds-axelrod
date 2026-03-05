@@ -79,9 +79,7 @@ export function runGeneration(agents) {
 
   bot.forEach(loser => {
     const winner = top[Math.floor(Math.random() * top.length)];
-    loser.strategy = Math.random() < 0.08
-      ? KEYS[Math.floor(Math.random() * KEYS.length)]
-      : winner.strategy;
+    loser.strategy = winner.strategy;
     loser.score = 0;
   });
 }
