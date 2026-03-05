@@ -411,5 +411,204 @@
     "Pavlov",
     "Generous TFT",
     "Random"
+  ],
+  "sensitivity": {
+    "method": "OAT",
+    "indices": {
+      "cooperation_rate": {
+        "noise": {
+          "mean_effect": 0.1287,
+          "relative_effect": 0.4029,
+          "baseline_value": 0.3194,
+          "values": [
+            {
+              "param_value": 0.0117,
+              "kpi_value": 0.3148
+            },
+            {
+              "param_value": 0.0303,
+              "kpi_value": 0.1574
+            },
+            {
+              "param_value": 0.0654,
+              "kpi_value": 0.3194
+            },
+            {
+              "param_value": 0.1047,
+              "kpi_value": 0.0046
+            },
+            {
+              "param_value": 0.1321,
+              "kpi_value": 0.1574
+            }
+          ]
+        },
+        "rounds_per_match": {
+          "mean_effect": 0.1278,
+          "relative_effect": 0.4059,
+          "baseline_value": 0.3148,
+          "values": [
+            {
+              "param_value": 4.8333,
+              "kpi_value": 0.3241
+            },
+            {
+              "param_value": 11,
+              "kpi_value": 0.3148
+            },
+            {
+              "param_value": 14.3333,
+              "kpi_value": 0.3148
+            },
+            {
+              "param_value": 18.5,
+              "kpi_value": 0.0
+            },
+            {
+              "param_value": 23,
+              "kpi_value": 0.0
+            }
+          ]
+        }
+      },
+      "diversity": {
+        "noise": {
+          "mean_effect": 0.2,
+          "relative_effect": 0.06,
+          "baseline_value": 3.3333,
+          "values": [
+            {
+              "param_value": 0.0117,
+              "kpi_value": 3.0
+            },
+            {
+              "param_value": 0.0303,
+              "kpi_value": 3.0
+            },
+            {
+              "param_value": 0.0654,
+              "kpi_value": 3.3333
+            },
+            {
+              "param_value": 0.1047,
+              "kpi_value": 3.3333
+            },
+            {
+              "param_value": 0.1321,
+              "kpi_value": 3.0
+            }
+          ]
+        },
+        "rounds_per_match": {
+          "mean_effect": 0.1333,
+          "relative_effect": 0.0444,
+          "baseline_value": 3.0,
+          "values": [
+            {
+              "param_value": 4.8333,
+              "kpi_value": 3.6667
+            },
+            {
+              "param_value": 11,
+              "kpi_value": 3.0
+            },
+            {
+              "param_value": 14.3333,
+              "kpi_value": 3.0
+            },
+            {
+              "param_value": 18.5,
+              "kpi_value": 3.0
+            },
+            {
+              "param_value": 23,
+              "kpi_value": 3.0
+            }
+          ]
+        }
+      },
+      "winner_share": {
+        "noise": {
+          "mean_effect": 0.0074,
+          "relative_effect": 0.0079,
+          "baseline_value": 0.9352,
+          "values": [
+            {
+              "param_value": 0.0117,
+              "kpi_value": 0.9444
+            },
+            {
+              "param_value": 0.0303,
+              "kpi_value": 0.9444
+            },
+            {
+              "param_value": 0.0654,
+              "kpi_value": 0.9352
+            },
+            {
+              "param_value": 0.1047,
+              "kpi_value": 0.9259
+            },
+            {
+              "param_value": 0.1321,
+              "kpi_value": 0.9444
+            }
+          ]
+        },
+        "rounds_per_match": {
+          "mean_effect": 0.0055,
+          "relative_effect": 0.0059,
+          "baseline_value": 0.9444,
+          "values": [
+            {
+              "param_value": 4.8333,
+              "kpi_value": 0.9213
+            },
+            {
+              "param_value": 11,
+              "kpi_value": 0.9444
+            },
+            {
+              "param_value": 14.3333,
+              "kpi_value": 0.9444
+            },
+            {
+              "param_value": 18.5,
+              "kpi_value": 0.9398
+            },
+            {
+              "param_value": 23,
+              "kpi_value": 0.9444
+            }
+          ]
+        }
+      }
+    }
+  },
+  "objective_examples": [
+    {
+      "name": "Maximize Cooperation",
+      "weights": {
+        "cooperation_rate": 1.0,
+        "diversity": 0.0,
+        "winner_share": 0.0
+      }
+    },
+    {
+      "name": "Balanced (Coop + Diversity)",
+      "weights": {
+        "cooperation_rate": 0.6,
+        "diversity": 0.3,
+        "winner_share": -0.1
+      }
+    },
+    {
+      "name": "Diversity First",
+      "weights": {
+        "cooperation_rate": 0.2,
+        "diversity": 0.8,
+        "winner_share": -0.2
+      }
+    }
   ]
 }

@@ -1176,3 +1176,157 @@ hr.section-rule {
     grid-template-columns: 1fr;
   }
 }
+
+/* ── PSUU PAGE: 3D KPI landscapes ── */
+.kpi-3d-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 1rem;
+}
+
+.kpi-3d-chart {
+  min-height: 420px;
+  background: var(--panel);
+  border: 1px solid var(--rim);
+  border-radius: 6px;
+}
+
+.kpi-parallel-full {
+  min-height: 400px;
+  margin-top: 1rem;
+  background: var(--panel);
+  border: 1px solid var(--rim);
+  border-radius: 6px;
+}
+
+@media (max-width: 1000px) {
+  .kpi-3d-grid {
+    grid-template-columns: 1fr;
+  }
+  .kpi-3d-chart {
+    min-height: 350px;
+  }
+}
+
+/* ── PSUU PAGE: Multi-KPI Objective ── */
+.objective-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.objective-presets {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.objective-presets label {
+  font-size: 0.75rem;
+  color: var(--ink-dim);
+}
+
+.preset-btn {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.65rem;
+  padding: 4px 10px;
+  border: 1px solid var(--rim);
+  border-radius: 4px;
+  background: var(--panel);
+  color: var(--ink-dim);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.preset-btn:hover {
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
+}
+
+.weight-sliders {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.weight-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.weight-row label {
+  font-size: 0.7rem;
+  min-width: 120px;
+  color: var(--ink-dim);
+}
+
+.weight-slider {
+  flex: 1;
+  max-width: 200px;
+  accent-color: var(--ink);
+}
+
+.weight-val {
+  font-size: 0.7rem;
+  font-family: 'IBM Plex Mono', monospace;
+  min-width: 30px;
+  text-align: right;
+  color: var(--ink);
+}
+
+.objective-result {
+  margin: 1rem 0;
+}
+
+.objective-best {
+  padding: 1rem;
+  background: var(--panel);
+  border: 1px solid var(--rim);
+  border-radius: 6px;
+}
+
+.objective-formula {
+  font-size: 0.7rem;
+  margin-bottom: 0.5rem;
+}
+
+.objective-formula code {
+  background: rgba(0,0,0,0.04);
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+.objective-score {
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.objective-chart {
+  min-height: 280px;
+}
+
+/* ── PSUU PAGE: Sensitivity Analysis ── */
+.sensitivity-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 1rem;
+}
+
+.sensitivity-chart {
+  min-height: 320px;
+  background: var(--panel);
+  border: 1px solid var(--rim);
+  border-radius: 6px;
+}
+
+@media (max-width: 900px) {
+  .sensitivity-grid {
+    grid-template-columns: 1fr;
+  }
+}

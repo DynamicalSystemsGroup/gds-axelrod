@@ -320,6 +320,9 @@ def run_sweep(n_samples=30, seed=None, progress_callback=None, timesteps=20, run
             "maximize": maximize,
         }
 
+    # Sensitivity analysis (OAT — one-at-a-time)
+    sensitivity = run_oat_sensitivity(timesteps=timesteps, runs=runs, initial_pop=initial_pop)
+
     return {
         "title": "PSUU Analysis",
         "description": (
@@ -348,4 +351,77 @@ def run_sweep(n_samples=30, seed=None, progress_callback=None, timesteps=20, run
         "evaluations": evaluations,
         "total_evaluations": len(evaluations),
         "strategy_names": STRATEGY_NAMES,
+        "sensitivity": sensitivity,
     }
+
+
+# ── Sensitivity Analysis (OAT) ──
+
+def run_oat_sensitivity(n_levels=5, timesteps=20, runs=3, initial_pop=None):
+    """One-at-a-time sensitivity: vary each parameter independently from baseline.
+
+    Returns dict: {kpi_name: {param_name: {mean_effect, relative_effect, values}}}
+    """
+    # Define parameter ranges and baseline
+    param_defs = {
+        "noise": {"min": 0.0, "max": 0.15, "type": "continuous"},
+        "rounds_per_match": {"min": 3, "max": 25, "type": "integer"},
+    }
+    baseline = {
+        "noise": 0.075,  # midpoint
+        "rounds_per_match": 14,  # midpoint
+    }
+
+    kpi_fns = {
+        "cooperation_rate": cooperation_rate,
+        "diversity": diversity,
+        "winner_share": winner_share,
+    }
+
+    # Evaluate baseline
+    baseline_kpis = _evaluate_point(baseline, kpi_fns, timesteps, runs, initial_pop)
+
+    result = {}
+    for kpi_name in kpi_fns:
+        result[kpi_name] = {}
+        for param_name, pdef in param_defs.items():
+            if pdef["type"] == "integer":
+                levels = [pdef["min"] + i * (pdef["max"] - pdef["min"]) // (n_levels - 1)
+                          for i in range(n_levels)]
+                levels = sorted(set(int(v) for v in levels))
+            else:
+                step = (pdef["max"] - pdef["min"]) / (n_levels - 1)
+                levels = [pdef["min"] + i * step for i in range(n_levels)]
+
+            effects = []
+            level_values = []
+            for level in levels:
+                point = dict(baseline)
+                point[param_name] = level
+                kpis = _evaluate_point(point, kpi_fns, timesteps, runs, initial_pop)
+                effect = abs(kpis[kpi_name] - baseline_kpis[kpi_name])
+                effects.append(effect)
+                level_values.append({"param_value": level, "kpi_value": kpis[kpi_name]})
+
+            mean_effect = sum(effects) / len(effects) if effects else 0.0
+            base_val = abs(baseline_kpis[kpi_name])
+            relative_effect = mean_effect / base_val if base_val > 1e-9 else 0.0
+
+            result[kpi_name][param_name] = {
+                "mean_effect": mean_effect,
+                "relative_effect": relative_effect,
+                "baseline_value": baseline_kpis[kpi_name],
+                "values": level_values,
+            }
+
+    return {"method": "OAT", "indices": result}
+
+
+def _evaluate_point(params, kpi_fns, timesteps, runs, initial_pop):
+    """Evaluate a single parameter point, averaging over Monte Carlo runs."""
+    kpi_sums = {k: 0.0 for k in kpi_fns}
+    for _ in range(runs):
+        agents = run_simulation(params, timesteps=timesteps, initial_pop=initial_pop)
+        for k, fn in kpi_fns.items():
+            kpi_sums[k] += fn(agents)
+    return {k: v / runs for k, v in kpi_sums.items()}

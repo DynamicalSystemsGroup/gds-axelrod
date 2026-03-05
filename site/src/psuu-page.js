@@ -150,13 +150,64 @@ function renderPage(data) {
     </section>
 
     <section class="psuu-section">
-      <h2>KPI Trade-offs</h2>
-      <p class="sim-desc">Each point is one evaluation plotted in KPI space.
-      Cooperation rate vs diversity reveals the Pareto frontier — configurations
-      where improving one KPI requires sacrificing another.</p>
-      <div class="kpi-charts-row">
-        <div id="kpi-tradeoff-plot" class="kpi-chart"></div>
-        <div id="kpi-parallel-plot" class="kpi-chart"></div>
+      <h2>KPI Landscapes</h2>
+      <p class="sim-desc">The parameter space as a 3D landscape. Each point is one
+      evaluation — noise and rounds per match define the ground plane, the KPI
+      value is the height. Drag to rotate, scroll to zoom. The shape of each
+      surface reveals where cooperation thrives, where diversity peaks, and
+      where single strategies dominate.</p>
+      <div class="kpi-3d-grid">
+        <div id="kpi-3d-coop" class="kpi-3d-chart"></div>
+        <div id="kpi-3d-diversity" class="kpi-3d-chart"></div>
+        <div id="kpi-3d-winner" class="kpi-3d-chart"></div>
+      </div>
+    </section>
+
+    <section class="psuu-section">
+      <h2>Config → KPI Flow</h2>
+      <p class="sim-desc">Each line traces one configuration from its input parameters
+      (noise, rounds) through to its KPI outcomes. Green lines are high-cooperation
+      configs; red are defection-dominated. Drag on any axis to filter.</p>
+      <div id="kpi-parallel-plot" class="kpi-parallel-full"></div>
+    </section>
+
+    <section class="psuu-section psuu-objective">
+      <h2>Multi-KPI Objective</h2>
+      <p class="sim-desc">gds-psuu's <strong>WeightedSum</strong> objective combines multiple KPIs
+      into a single scalar score: <code>score = w1 * KPI1 + w2 * KPI2 + ...</code>.
+      Negative weights minimize that KPI. Drag the sliders to define your own
+      tradeoff — the best configuration updates live.</p>
+      <div class="objective-controls">
+        <div class="objective-presets">
+          <label>Presets:</label>
+          <button class="preset-btn" data-preset="coop">Max Cooperation</button>
+          <button class="preset-btn" data-preset="balanced">Balanced</button>
+          <button class="preset-btn" data-preset="diversity">Diversity First</button>
+        </div>
+        <div class="weight-sliders">
+          ${KPI_KEYS.map(k => `
+            <div class="weight-row">
+              <label>${KPI_LABELS[k]}</label>
+              <input type="range" class="weight-slider" data-kpi="${k}"
+                min="-1" max="1" step="0.1" value="${k === 'cooperation_rate' ? '1' : k === 'winner_share' ? '-0.1' : '0.3'}">
+              <span class="weight-val" id="weight-val-${k}">${k === 'cooperation_rate' ? '1.0' : k === 'winner_share' ? '-0.1' : '0.3'}</span>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+      <div id="objective-result" class="objective-result"></div>
+      <div id="objective-chart" class="objective-chart"></div>
+    </section>
+
+    <section class="psuu-section psuu-sensitivity">
+      <h2>Sensitivity Analysis</h2>
+      <p class="sim-desc">gds-psuu's <strong>OATAnalyzer</strong> (One-at-a-Time) varies each
+      parameter independently from a baseline, measuring how much each KPI changes.
+      <strong>Mean effect</strong> shows absolute importance; <strong>relative effect</strong>
+      normalizes by baseline value. Taller bars = more influential parameter.</p>
+      <div class="sensitivity-grid">
+        <div id="sensitivity-bar" class="sensitivity-chart"></div>
+        <div id="sensitivity-profile" class="sensitivity-chart"></div>
       </div>
     </section>
 
@@ -184,8 +235,10 @@ function renderPage(data) {
   updateBestCards(data, currentFocusKpi);
   updateEvalTable(data);
   drawScatter(data, currentFocusKpi);
-  drawKpiTradeoff(data);
+  drawKpi3dPlots(data);
   drawParallelCoords(data);
+  updateObjective(data);
+  drawSensitivity(data);
 
   renderEcosystemNote(container, {
     view: 'PSUU Analysis',
@@ -334,22 +387,35 @@ function drawKpiTradeoff(data) {
   if (!plotDiv) return;
 
   const evals = data.evaluations;
-  const coopRates = evals.map(e => e.scores.cooperation_rate);
-  const diversities = evals.map(e => e.scores.diversity);
-  const winnerShares = evals.map(e => e.scores.winner_share);
 
+  // Group evaluations by (coop_rate, diversity) bucket to show cluster sizes
+  const buckets = new Map();
+  for (const e of evals) {
+    // Round to avoid float key issues
+    const key = `${e.scores.cooperation_rate.toFixed(3)},${e.scores.diversity.toFixed(1)}`;
+    if (!buckets.has(key)) {
+      buckets.set(key, { evals: [], coop: e.scores.cooperation_rate, div: e.scores.diversity });
+    }
+    buckets.get(key).evals.push(e);
+  }
+
+  const points = [...buckets.values()];
+  const maxCount = Math.max(...points.map(p => p.evals.length));
+
+  // Use noise as x-axis instead — shows all 30 points spread out
+  // Left chart: noise vs cooperation rate, colored by rounds, sized by diversity
   const trace = {
     type: 'scatter',
     mode: 'markers',
-    x: coopRates,
-    y: diversities,
+    x: evals.map(e => e.params.noise),
+    y: evals.map(e => e.scores.cooperation_rate),
     marker: {
-      size: 10,
-      color: winnerShares,
-      colorscale: [[0, 'rgba(80,220,60,0.85)'], [0.5, 'rgba(200,200,60,0.85)'], [1, 'rgba(220,80,60,0.85)']],
+      size: evals.map(e => 6 + (e.scores.diversity / 9) * 14),
+      color: evals.map(e => e.params.rounds_per_match),
+      colorscale: [[0, 'rgba(220,80,60,0.85)'], [0.5, 'rgba(200,200,60,0.85)'], [1, 'rgba(80,180,60,0.85)']],
       showscale: true,
       colorbar: {
-        title: { text: 'Winner Share', font: { size: 9 } },
+        title: { text: 'Rounds', font: { size: 9 } },
         thickness: 12,
         len: 0.8,
       },
@@ -357,9 +423,9 @@ function drawKpiTradeoff(data) {
     },
     text: evals.map(e =>
       `noise: ${e.params.noise.toFixed(4)}<br>rounds: ${e.params.rounds_per_match}<br>` +
-      `Coop: ${e.scores.cooperation_rate.toFixed(3)}<br>` +
-      `Diversity: ${e.scores.diversity.toFixed(1)}<br>` +
-      `Winner Share: ${e.scores.winner_share.toFixed(3)}`
+      `Coop Rate: ${(e.scores.cooperation_rate * 100).toFixed(1)}%<br>` +
+      `Diversity: ${e.scores.diversity.toFixed(0)} strategies<br>` +
+      `Winner Share: ${(e.scores.winner_share * 100).toFixed(1)}%`
     ),
     hoverinfo: 'text',
   };
@@ -368,20 +434,23 @@ function drawKpiTradeoff(data) {
     paper_bgcolor: 'transparent',
     plot_bgcolor: 'rgba(255,253,249,0.7)',
     font: { family: 'IBM Plex Mono, monospace', size: 10, color: '#8a8278' },
+    title: { text: 'Parameter → Outcome', font: { size: 12, family: 'IM Fell English, serif', color: '#2a2520' }, x: 0.02, xanchor: 'left' },
     height: 380,
-    margin: { t: 20, r: 80, b: 50, l: 60 },
+    margin: { t: 40, r: 80, b: 50, l: 60 },
     xaxis: {
+      title: { text: 'Noise', font: { size: 10 } },
+      gridcolor: 'rgba(0,0,0,0.06)',
+      linecolor: '#8a8278',
+      zeroline: false,
+    },
+    yaxis: {
       title: { text: 'Cooperation Rate', font: { size: 10 } },
       gridcolor: 'rgba(0,0,0,0.06)',
       linecolor: '#8a8278',
       zeroline: false,
       range: [-0.05, 1.05],
-    },
-    yaxis: {
-      title: { text: 'Diversity', font: { size: 10 } },
-      gridcolor: 'rgba(0,0,0,0.06)',
-      linecolor: '#8a8278',
-      zeroline: false,
+      tickvals: [0, 0.25, 0.5, 0.75, 1],
+      ticktext: ['0%', '25%', '50%', '75%', '100%'],
     },
   };
 
@@ -389,6 +458,89 @@ function drawKpiTradeoff(data) {
     Plotly.react(plotDiv, [trace], layout, { displayModeBar: false, responsive: true });
   } else {
     Plotly.newPlot(plotDiv, [trace], layout, { displayModeBar: false, responsive: true });
+  }
+}
+
+// ── 3D KPI Landscapes ──
+
+function drawKpi3dPlots(data) {
+  const evals = data.evaluations;
+  const noises = evals.map(e => e.params.noise);
+  const rounds = evals.map(e => e.params.rounds_per_match);
+
+  const kpis = [
+    {
+      id: 'kpi-3d-coop', title: 'Cooperation Rate',
+      z: evals.map(e => e.scores.cooperation_rate),
+      colorscale: [[0, '#e74c3c'], [0.5, '#f0c040'], [1, '#2ecc71']],
+    },
+    {
+      id: 'kpi-3d-diversity', title: 'Diversity',
+      z: evals.map(e => e.scores.diversity),
+      colorscale: [[0, '#95a5a6'], [0.5, '#3498db'], [1, '#9b59b6']],
+    },
+    {
+      id: 'kpi-3d-winner', title: 'Winner Share',
+      z: evals.map(e => e.scores.winner_share),
+      colorscale: [[0, '#2ecc71'], [0.5, '#f0c040'], [1, '#e74c3c']],
+    },
+  ];
+
+  for (const kpi of kpis) {
+    const plotDiv = document.getElementById(kpi.id);
+    if (!plotDiv) continue;
+
+    const scatter = {
+      type: 'scatter3d',
+      mode: 'markers',
+      x: noises,
+      y: rounds,
+      z: kpi.z,
+      marker: {
+        size: 4,
+        color: kpi.z,
+        colorscale: kpi.colorscale,
+        opacity: 0.9,
+        line: { width: 0.5, color: 'rgba(0,0,0,0.2)' },
+      },
+      text: evals.map((e, i) =>
+        `noise: ${e.params.noise.toFixed(4)}<br>rounds: ${e.params.rounds_per_match}<br>${kpi.title}: ${typeof kpi.z[i] === 'number' && kpi.z[i] <= 1 ? (kpi.z[i] * 100).toFixed(1) + '%' : kpi.z[i]}`
+      ),
+      hoverinfo: 'text',
+      name: 'Evaluations',
+    };
+
+    const mesh = {
+      type: 'mesh3d',
+      x: noises,
+      y: rounds,
+      z: kpi.z,
+      intensity: kpi.z,
+      colorscale: kpi.colorscale,
+      opacity: 0.35,
+      showscale: false,
+      name: 'Surface',
+    };
+
+    const layout = {
+      paper_bgcolor: 'transparent',
+      font: { family: 'IBM Plex Mono, monospace', size: 9, color: '#8a8278' },
+      title: { text: kpi.title, font: { size: 12, family: 'IM Fell English, serif', color: '#2a2520' }, x: 0.5, xanchor: 'center' },
+      margin: { t: 40, r: 10, b: 10, l: 10 },
+      scene: {
+        xaxis: { title: { text: 'Noise', font: { size: 9 } }, gridcolor: 'rgba(0,0,0,0.06)' },
+        yaxis: { title: { text: 'Rounds', font: { size: 9 } }, gridcolor: 'rgba(0,0,0,0.06)' },
+        zaxis: { title: { text: kpi.title, font: { size: 9 } }, gridcolor: 'rgba(0,0,0,0.06)' },
+        camera: { eye: { x: 1.5, y: 1.5, z: 1.2 } },
+        bgcolor: 'rgba(255,253,249,0.7)',
+      },
+    };
+
+    if (plotDiv.data) {
+      Plotly.react(plotDiv, [mesh, scatter], layout, { displayModeBar: false, responsive: true });
+    } else {
+      Plotly.newPlot(plotDiv, [mesh, scatter], layout, { displayModeBar: false, responsive: true });
+    }
   }
 }
 
@@ -409,7 +561,8 @@ function drawParallelCoords(data) {
       colorbar: {
         title: { text: 'Coop Rate', font: { size: 9 } },
         thickness: 12,
-        len: 0.6,
+        len: 0.5,
+        y: 0.5,
       },
     },
     dimensions: [
@@ -417,25 +570,34 @@ function drawParallelCoords(data) {
         label: 'Noise',
         values: evals.map(e => e.params.noise),
         range: [0, 0.15],
+        tickvals: [0, 0.05, 0.1, 0.15],
+        ticktext: ['0', '0.05', '0.10', '0.15'],
       },
       {
-        label: 'Rounds',
+        label: 'Rounds/Match',
         values: evals.map(e => e.params.rounds_per_match),
         range: [3, 25],
+        tickvals: [3, 10, 15, 20, 25],
       },
       {
         label: 'Coop Rate',
         values: evals.map(e => e.scores.cooperation_rate),
         range: [0, 1],
+        tickvals: [0, 0.25, 0.5, 0.75, 1],
+        ticktext: ['0%', '25%', '50%', '75%', '100%'],
       },
       {
         label: 'Diversity',
         values: evals.map(e => e.scores.diversity),
+        range: [1, 9],
+        tickvals: [1, 3, 5, 7, 9],
       },
       {
         label: 'Winner Share',
         values: evals.map(e => e.scores.winner_share),
         range: [0, 1],
+        tickvals: [0, 0.25, 0.5, 0.75, 1],
+        ticktext: ['0%', '25%', '50%', '75%', '100%'],
       },
     ],
   };
@@ -443,14 +605,207 @@ function drawParallelCoords(data) {
   const layout = {
     paper_bgcolor: 'transparent',
     font: { family: 'IBM Plex Mono, monospace', size: 10, color: '#8a8278' },
+    title: { text: 'Config → KPI Mapping', font: { size: 12, family: 'IM Fell English, serif', color: '#2a2520' }, x: 0.02, xanchor: 'left' },
     height: 380,
-    margin: { t: 40, r: 40, b: 20, l: 40 },
+    margin: { t: 50, r: 60, b: 20, l: 60 },
   };
 
   if (plotDiv.data) {
     Plotly.react(plotDiv, [trace], layout, { displayModeBar: false, responsive: true });
   } else {
     Plotly.newPlot(plotDiv, [trace], layout, { displayModeBar: false, responsive: true });
+  }
+}
+
+// ── Multi-KPI Objective ──
+
+function getWeights() {
+  const weights = {};
+  document.querySelectorAll('.weight-slider').forEach(slider => {
+    weights[slider.dataset.kpi] = parseFloat(slider.value);
+  });
+  return weights;
+}
+
+function computeObjectiveScore(scores, weights) {
+  let total = 0;
+  for (const [kpi, w] of Object.entries(weights)) {
+    // Normalize diversity to 0-1 range (max 9 strategies) for fair weighting
+    const val = kpi === 'diversity' ? scores[kpi] / 9 : scores[kpi];
+    total += w * val;
+  }
+  return total;
+}
+
+function updateObjective(data) {
+  const resultDiv = document.getElementById('objective-result');
+  const chartDiv = document.getElementById('objective-chart');
+  if (!resultDiv || !chartDiv) return;
+
+  const weights = getWeights();
+  const evals = data.evaluations;
+
+  // Score all evaluations
+  const scored = evals.map((e, i) => ({
+    idx: i,
+    params: e.params,
+    scores: e.scores,
+    objective: computeObjectiveScore(e.scores, weights),
+  }));
+  scored.sort((a, b) => b.objective - a.objective);
+  const best = scored[0];
+
+  // Format active weights
+  const activeWeights = Object.entries(weights)
+    .filter(([, w]) => Math.abs(w) > 0.001)
+    .map(([k, w]) => `${w > 0 ? '+' : ''}${w.toFixed(1)} * ${KPI_LABELS[k]}`)
+    .join('  ');
+
+  resultDiv.innerHTML = `
+    <div class="objective-best">
+      <div class="objective-formula"><code>${activeWeights || '(all zero)'}</code></div>
+      <div class="objective-score">Best score: <strong>${best.objective.toFixed(4)}</strong></div>
+      <div class="best-params">
+        ${Object.entries(best.params).map(([k, v]) =>
+          `<div class="param-pill"><span class="param-key">${k}</span> = ${typeof v === 'number' ? v.toFixed(4) : v}</div>`
+        ).join('')}
+      </div>
+      <div class="best-others">
+        ${KPI_KEYS.map(k => `<span class="other-kpi">${KPI_LABELS[k]}: ${best.scores[k].toFixed(3)}</span>`).join('')}
+      </div>
+    </div>
+  `;
+
+  // Bar chart: top 10 evaluations ranked by objective
+  const top = scored.slice(0, Math.min(15, scored.length));
+  const trace = {
+    type: 'bar',
+    x: top.map((_, i) => `#${i + 1}`),
+    y: top.map(t => t.objective),
+    marker: {
+      color: top.map(t => t.objective),
+      colorscale: [[0, '#e74c3c'], [0.5, '#f0c040'], [1, '#2ecc71']],
+    },
+    text: top.map(t =>
+      `noise: ${t.params.noise.toFixed(4)}<br>rounds: ${t.params.rounds_per_match}<br>` +
+      `Score: ${t.objective.toFixed(4)}<br>` +
+      KPI_KEYS.map(k => `${KPI_LABELS[k]}: ${t.scores[k].toFixed(3)}`).join('<br>')
+    ),
+    hoverinfo: 'text',
+  };
+
+  const layout = {
+    paper_bgcolor: 'transparent',
+    plot_bgcolor: 'rgba(255,253,249,0.7)',
+    font: { family: 'IBM Plex Mono, monospace', size: 10, color: '#8a8278' },
+    title: { text: 'Top Configurations by Objective', font: { size: 12, family: 'IM Fell English, serif', color: '#2a2520' }, x: 0.02, xanchor: 'left' },
+    height: 280,
+    margin: { t: 40, r: 20, b: 40, l: 50 },
+    xaxis: { title: { text: 'Rank', font: { size: 10 } } },
+    yaxis: { title: { text: 'Objective Score', font: { size: 10 } }, gridcolor: 'rgba(0,0,0,0.06)' },
+  };
+
+  if (chartDiv.data) {
+    Plotly.react(chartDiv, [trace], layout, { displayModeBar: false, responsive: true });
+  } else {
+    Plotly.newPlot(chartDiv, [trace], layout, { displayModeBar: false, responsive: true });
+  }
+}
+
+// ── Sensitivity Analysis ──
+
+function drawSensitivity(data) {
+  if (!data.sensitivity) return;
+  drawSensitivityBars(data.sensitivity);
+  drawSensitivityProfiles(data.sensitivity);
+}
+
+function drawSensitivityBars(sensitivity) {
+  const plotDiv = document.getElementById('sensitivity-bar');
+  if (!plotDiv) return;
+
+  const indices = sensitivity.indices;
+  const kpiNames = Object.keys(indices);
+  const paramNames = Object.keys(indices[kpiNames[0]]);
+
+  // Grouped bar chart: one group per KPI, one bar per parameter
+  const colors = { noise: '#e67e22', rounds_per_match: '#3498db' };
+  const traces = paramNames.map(param => ({
+    type: 'bar',
+    name: param === 'rounds_per_match' ? 'Rounds/Match' : 'Noise',
+    x: kpiNames.map(k => KPI_LABELS[k]),
+    y: kpiNames.map(k => indices[k][param].mean_effect),
+    marker: { color: colors[param] },
+    text: kpiNames.map(k =>
+      `${param}: mean_effect=${indices[k][param].mean_effect.toFixed(4)}<br>` +
+      `relative_effect=${(indices[k][param].relative_effect * 100).toFixed(1)}%`
+    ),
+    hoverinfo: 'text',
+  }));
+
+  const layout = {
+    paper_bgcolor: 'transparent',
+    plot_bgcolor: 'rgba(255,253,249,0.7)',
+    font: { family: 'IBM Plex Mono, monospace', size: 10, color: '#8a8278' },
+    title: { text: 'Parameter Importance (Mean Effect)', font: { size: 12, family: 'IM Fell English, serif', color: '#2a2520' }, x: 0.02, xanchor: 'left' },
+    barmode: 'group',
+    height: 320,
+    margin: { t: 40, r: 20, b: 50, l: 60 },
+    yaxis: { title: { text: 'Mean Effect', font: { size: 10 } }, gridcolor: 'rgba(0,0,0,0.06)' },
+    legend: { x: 0.7, y: 0.95, font: { size: 9 } },
+  };
+
+  if (plotDiv.data) {
+    Plotly.react(plotDiv, traces, layout, { displayModeBar: false, responsive: true });
+  } else {
+    Plotly.newPlot(plotDiv, traces, layout, { displayModeBar: false, responsive: true });
+  }
+}
+
+function drawSensitivityProfiles(sensitivity) {
+  const plotDiv = document.getElementById('sensitivity-profile');
+  if (!plotDiv) return;
+
+  const indices = sensitivity.indices;
+  // Show response profiles: how each KPI changes as noise varies
+  // Pick the most interesting KPI to profile (cooperation_rate)
+  const kpiColors = {
+    cooperation_rate: '#2ecc71',
+    diversity: '#9b59b6',
+    winner_share: '#e74c3c',
+  };
+
+  const traces = [];
+  for (const [kpiName, paramData] of Object.entries(indices)) {
+    const noiseData = paramData.noise;
+    if (!noiseData?.values) continue;
+    traces.push({
+      type: 'scatter',
+      mode: 'lines+markers',
+      name: KPI_LABELS[kpiName],
+      x: noiseData.values.map(v => v.param_value),
+      y: noiseData.values.map(v => v.kpi_value),
+      line: { color: kpiColors[kpiName], width: 2 },
+      marker: { size: 6 },
+    });
+  }
+
+  const layout = {
+    paper_bgcolor: 'transparent',
+    plot_bgcolor: 'rgba(255,253,249,0.7)',
+    font: { family: 'IBM Plex Mono, monospace', size: 10, color: '#8a8278' },
+    title: { text: 'Response Profile: KPI vs Noise', font: { size: 12, family: 'IM Fell English, serif', color: '#2a2520' }, x: 0.02, xanchor: 'left' },
+    height: 320,
+    margin: { t: 40, r: 20, b: 50, l: 60 },
+    xaxis: { title: { text: 'Noise', font: { size: 10 } }, gridcolor: 'rgba(0,0,0,0.06)' },
+    yaxis: { title: { text: 'KPI Value', font: { size: 10 } }, gridcolor: 'rgba(0,0,0,0.06)' },
+    legend: { x: 0.6, y: 0.95, font: { size: 9 } },
+  };
+
+  if (plotDiv.data) {
+    Plotly.react(plotDiv, traces, layout, { displayModeBar: false, responsive: true });
+  } else {
+    Plotly.newPlot(plotDiv, traces, layout, { displayModeBar: false, responsive: true });
   }
 }
 
@@ -478,7 +833,7 @@ function bindControls() {
       if (currentData) {
         drawScatter(currentData, currentFocusKpi);
         updateBestCards(currentData, currentFocusKpi);
-        drawKpiTradeoff(currentData);
+        drawKpi3dPlots(currentData);
         drawParallelCoords(currentData);
         const label = document.getElementById('scatter-kpi-label');
         if (label) label.textContent = KPI_LABELS[currentFocusKpi];
@@ -497,6 +852,34 @@ function bindControls() {
     if (labelId) {
       const label = document.getElementById(labelId);
       if (label) label.textContent = e.target.value;
+    }
+
+    // Weight sliders — update label and recompute objective
+    if (e.target.classList.contains('weight-slider')) {
+      const kpi = e.target.dataset.kpi;
+      const valEl = document.getElementById(`weight-val-${kpi}`);
+      if (valEl) valEl.textContent = parseFloat(e.target.value).toFixed(1);
+      if (currentData) updateObjective(currentData);
+    }
+  });
+
+  // Objective preset buttons
+  const presets = {
+    coop: { cooperation_rate: 1.0, diversity: 0.0, winner_share: 0.0 },
+    balanced: { cooperation_rate: 0.6, diversity: 0.3, winner_share: -0.1 },
+    diversity: { cooperation_rate: 0.2, diversity: 0.8, winner_share: -0.2 },
+  };
+  document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('preset-btn')) {
+      const preset = presets[e.target.dataset.preset];
+      if (!preset) return;
+      for (const [kpi, w] of Object.entries(preset)) {
+        const slider = document.querySelector(`.weight-slider[data-kpi="${kpi}"]`);
+        if (slider) slider.value = w;
+        const valEl = document.getElementById(`weight-val-${kpi}`);
+        if (valEl) valEl.textContent = w.toFixed(1);
+      }
+      if (currentData) updateObjective(currentData);
     }
   });
 
@@ -566,8 +949,10 @@ function initWorker() {
         currentData = msg.data;
         updateBestCards(currentData, currentFocusKpi);
         drawScatter(currentData, currentFocusKpi);
-        drawKpiTradeoff(currentData);
+        drawKpi3dPlots(currentData);
         drawParallelCoords(currentData);
+        updateObjective(currentData);
+        drawSensitivity(currentData);
         updateEvalTable(currentData);
         if (btn) {
           btn.disabled = false;

@@ -17,7 +17,10 @@ from gds_psuu import (
     ParameterSpace,
     RandomSearchOptimizer,
     Sweep,
+    WeightedSum,
 )
+from gds_psuu.sensitivity import OATAnalyzer
+from gds_psuu.evaluation import Evaluator
 from gds_sim import Model, Results, StateUpdateBlock
 
 from gen_sim import (
@@ -145,6 +148,41 @@ def generate_psuu(output: Path) -> dict:
         {"params": s.params, "scores": s.scores} for s in results.summaries
     ]
 
+    # Sensitivity analysis (OAT)
+    evaluator = Evaluator(base_model=model, kpis=kpis, timesteps=20, runs=3)
+    oat = OATAnalyzer(n_levels=5)
+    sensitivity_result = oat.analyze(evaluator, space)
+
+    # Format sensitivity for JSON
+    sensitivity = {
+        "method": sensitivity_result.method,
+        "indices": {},
+    }
+    for kpi_name in results.kpi_names:
+        sensitivity["indices"][kpi_name] = {}
+        for param_name in space.params:
+            metrics = sensitivity_result.indices[kpi_name][param_name]
+            sensitivity["indices"][kpi_name][param_name] = {
+                "mean_effect": metrics["mean_effect"],
+                "relative_effect": metrics["relative_effect"],
+            }
+
+    # Multi-KPI objective examples
+    objective_examples = [
+        {
+            "name": "Maximize Cooperation",
+            "weights": {"cooperation_rate": 1.0, "diversity": 0.0, "winner_share": 0.0},
+        },
+        {
+            "name": "Balanced (Coop + Diversity)",
+            "weights": {"cooperation_rate": 0.6, "diversity": 0.3, "winner_share": -0.1},
+        },
+        {
+            "name": "Diversity First",
+            "weights": {"cooperation_rate": 0.2, "diversity": 0.8, "winner_share": -0.2},
+        },
+    ]
+
     data = {
         "title": "PSUU Analysis",
         "description": (
@@ -173,6 +211,8 @@ def generate_psuu(output: Path) -> dict:
         "evaluations": summaries,
         "total_evaluations": len(summaries),
         "strategy_names": strat_names,
+        "sensitivity": sensitivity,
+        "objective_examples": objective_examples,
     }
 
     return data
