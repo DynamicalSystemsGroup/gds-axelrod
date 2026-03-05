@@ -81,6 +81,43 @@ body::before {
   font-weight: 500;
 }
 
+/* Strategy glossary */
+#glossary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 10px;
+  margin-top: 1rem;
+}
+.glossary-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  background: rgba(255,253,249,0.7);
+  border: 1px solid var(--rim);
+  border-radius: 4px;
+}
+.glossary-swatch {
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+.glossary-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 0.76rem;
+  line-height: 1.4;
+}
+.glossary-info strong {
+  font-size: 0.8rem;
+}
+.glossary-desc {
+  color: var(--ink-dim);
+  font-size: 0.72rem;
+}
+
 /* Chapter viz containers */
 .viz-box {
   margin: 1.5rem 0;

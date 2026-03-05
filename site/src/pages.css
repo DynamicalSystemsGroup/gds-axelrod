@@ -642,6 +642,28 @@ hr.section-rule {
 
 /* ── PSUU PAGE ── */
 
+
+.psuu-narrative p {
+  font-size: 0.82rem;
+  line-height: 1.7;
+  margin-bottom: 0.8em;
+  max-width: 680px;
+}
+
+.psuu-narrative h3 {
+  font-family: 'IM Fell English', serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin: 1.5em 0 0.5em;
+  letter-spacing: 0.03em;
+}
+
+.psuu-narrative a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 .psuu-section {
   margin-bottom: 40px;
 }

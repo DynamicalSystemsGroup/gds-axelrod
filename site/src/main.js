@@ -17,6 +17,7 @@ import { initChapter4 } from './chapters/ch4-noise.js';
 import { initChapter5 } from './chapters/ch5-shadow.js';
 import { initChapter6 } from './chapters/ch6-sim.js';
 import { initAppendix } from './chapters/ch-appendix.js';
+import { loadStrategies } from './data/loader.js';
 import { renderEcosystemNote } from './ecosystem-note.js';
 
 // ── State ──
@@ -205,6 +206,24 @@ function loop() {
   }
 }
 
+// ── Strategy Glossary ──
+
+async function renderGlossary() {
+  const strategies = await loadStrategies();
+  const grid = document.getElementById('glossary-grid');
+  if (!grid || !strategies) return;
+
+  grid.innerHTML = strategies.map(s => `
+    <div class="glossary-card">
+      <div class="glossary-swatch" style="background:${s.color}"></div>
+      <div class="glossary-info">
+        <strong>${s.name}</strong>
+        <span class="glossary-desc">${s.description}</span>
+      </div>
+    </div>
+  `).join('');
+}
+
 // ── Boot ──
 
 async function boot() {
@@ -232,6 +251,9 @@ async function boot() {
     sizeDish();
     drawChart(history);
   });
+
+  // Render strategy glossary
+  renderGlossary();
 
   // Load chapter data (async, renders into containers)
   await Promise.all([

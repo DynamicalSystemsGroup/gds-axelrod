@@ -92,6 +92,17 @@ function renderNash(data) {
         `).join('')}
       </div>
     </section>
+
+    <section class="nash-section nash-beyond">
+      <h2>Beyond Nash</h2>
+      <p>Nash analysis reveals the static trap: mutual defection is the unique equilibrium,
+      yet mutual cooperation is Pareto optimal. This is the <strong>Price of Anarchy</strong>
+      — knowing <em>where</em> the fixed point is tells us nothing about how to escape it.</p>
+      <p>The <a href="./psuu.html">PSUU Analysis</a> page picks up where Nash leaves off.
+      By introducing dynamics (repeated play, evolutionary selection) and sweeping the
+      parameter space, PSUU asks: <em>under what conditions does cooperation emerge despite
+      the Nash prediction?</em></p>
+    </section>
   `;
 }
 

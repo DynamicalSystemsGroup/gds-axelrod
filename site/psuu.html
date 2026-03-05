@@ -13,10 +13,55 @@
   <div class="page-container">
     <header class="page-header">
       <h1>PSUU Analysis</h1>
-      <p class="page-subtitle">Parameter space search under uncertainty: which noise/rounds combination maximizes cooperation? Pick a KPI focus and run your own sweeps in-browser.</p>
+      <p class="page-subtitle">From Nash to Lyapunov: why static equilibria aren't enough,
+      and how parameter search under uncertainty moves toward dynamical guarantees.</p>
       <p class="page-packages">gds-psuu + gds-sim</p>
     </header>
+
     <main id="psuu-content" class="page-content">
+
+      <!-- Narrative: Nash → PSUU motivation -->
+      <section class="psuu-section psuu-narrative">
+        <h2>Why Nash Isn't Enough</h2>
+
+        <p>The <a href="./nash.html">Nash Analysis</a> page proves what game theory
+        already knows: in a one-shot Prisoner's Dilemma, <strong>mutual defection is
+        the unique Nash equilibrium</strong>. Defect is strictly dominant for both players.
+        The payoff at equilibrium is (0,&thinsp;0) — while mutual cooperation yields (2,&thinsp;2).</p>
+
+        <p>This is the <strong>Price of Anarchy</strong> in miniature. The Nash equilibrium
+        exists, but it's a terrible outcome. Knowing <em>where</em> the fixed point is
+        tells us nothing about how to reach a better one, or whether the system will
+        converge to anything at all.</p>
+
+        <h3>From Fixed Points to Dynamics</h3>
+        <p>Nash equilibria are static — they describe <em>where</em> no one wants to
+        deviate, not <em>how</em> a system gets there. The moment we introduce
+        <strong>repeated play</strong>, <strong>population dynamics</strong>, and
+        <strong>evolutionary selection</strong> (as the tournament does), the
+        question shifts from "what are the equilibria?" to "what does the system
+        actually do over time?"</p>
+
+        <p>The answer depends on <strong>parameters</strong>: how much noise corrupts
+        signals, how long the shadow of the future extends. The same set of strategies
+        can converge to cooperation or collapse into defection depending on these
+        conditions. Nash analysis can't see this — it operates on
+        the static 1v1 game, blind to the dynamics the tournament introduces.</p>
+
+        <h3>Parameter Search as Descent</h3>
+        <p>PSUU formalizes the question the blog post
+        <a href="https://blog.block.science/from-nash-to-lyapunov/"
+        target="_blank" rel="noopener"><em>From Nash to Lyapunov</em></a> builds toward:
+        if we can define a <strong>scalar objective</strong> (a KPI like cooperation rate),
+        then searching the parameter space is a form of <strong>descent</strong> over a
+        potential landscape. Each evaluation below is a point in that landscape — the
+        scatter plot is a slice of the surface PSUU explores.</p>
+
+        <p>This is the practical bridge between game theory and dynamical systems.
+        Nash tells us defection is rational. PSUU asks: <em>under what conditions
+        does the evolutionary system overcome that rationality trap?</em></p>
+      </section>
+
       <p class="loading">Loading PSUU analysis data...</p>
     </main>
   </div>
