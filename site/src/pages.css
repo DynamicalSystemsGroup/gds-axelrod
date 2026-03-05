@@ -972,3 +972,207 @@ hr.section-rule {
   text-decoration: underline;
 }
 
+
+/* ── SIM PAGE: KPI pills + custom sim ── */
+.subset-kpis {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.kpi-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.6rem;
+  color: var(--ink-dim);
+  background: var(--panel);
+  border: 1px solid var(--rim);
+  border-radius: 3px;
+  padding: 2px 8px;
+}
+
+.kpi-swatch {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.custom-sim-controls {
+  margin-bottom: 20px;
+}
+
+.custom-sim-controls .control-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.custom-sim-controls .control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.custom-sim-controls label {
+  font-size: 0.66rem;
+  color: var(--ink-dim);
+}
+
+.custom-sim-controls input[type="range"] {
+  width: 120px;
+  accent-color: var(--ink);
+}
+
+.custom-sim-controls .pop-details {
+  margin: 10px 0;
+}
+
+.custom-sim-controls .pop-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.custom-sim-controls .pop-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.custom-sim-controls .pop-item label {
+  font-size: 0.62rem;
+  width: 40px;
+}
+
+.custom-sim-controls .sim-pop-input {
+  width: 42px;
+  font-size: 0.66rem;
+  font-family: 'IBM Plex Mono', monospace;
+  text-align: center;
+  padding: 3px;
+  border: 1px solid var(--rim);
+  border-radius: 2px;
+  background: var(--panel);
+  color: var(--ink);
+}
+
+#custom-run-btn {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--panel);
+  border: 1px solid var(--rim);
+  color: var(--ink);
+  padding: 6px 18px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+#custom-run-btn:hover:not(:disabled) {
+  border-color: #aaa;
+}
+
+#custom-run-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.custom-result-card {
+  background: rgba(255, 253, 249, 0.7);
+  border: 1px solid var(--rim);
+  border-radius: 3px;
+  padding: 16px;
+  margin-top: 16px;
+}
+
+.custom-result-header {
+  margin-bottom: 12px;
+}
+
+.custom-result-header h3 {
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.subset-chart {
+  width: 100%;
+  min-height: 240px;
+}
+
+/* ── SIM PAGE: Narrative + terminology stack ── */
+.sim-narrative p {
+  font-size: 0.82rem;
+  line-height: 1.7;
+  margin-bottom: 0.8em;
+  max-width: 680px;
+}
+
+.sim-narrative h2 {
+  font-family: 'IM Fell English', serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin-bottom: 12px;
+}
+
+.sim-narrative a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.term-stack {
+  margin: 1.2em 0;
+  overflow-x: auto;
+}
+
+.term-step {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex-wrap: nowrap;
+  padding: 10px 0;
+}
+
+.term-label {
+  font-size: 0.68rem;
+  font-family: 'IBM Plex Mono', monospace;
+  background: var(--panel);
+  border: 1px solid var(--rim);
+  border-radius: 3px;
+  padding: 5px 10px;
+  white-space: nowrap;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.term-arrow {
+  font-size: 0.8rem;
+  color: var(--ink-dim);
+  padding: 0 6px;
+  flex-shrink: 0;
+}
+
+/* ── PSUU PAGE: KPI charts ── */
+.kpi-charts-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.kpi-chart {
+  min-height: 380px;
+}
+
+@media (max-width: 900px) {
+  .kpi-charts-row {
+    grid-template-columns: 1fr;
+  }
+}

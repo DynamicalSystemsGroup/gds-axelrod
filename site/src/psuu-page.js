@@ -150,6 +150,17 @@ function renderPage(data) {
     </section>
 
     <section class="psuu-section">
+      <h2>KPI Trade-offs</h2>
+      <p class="sim-desc">Each point is one evaluation plotted in KPI space.
+      Cooperation rate vs diversity reveals the Pareto frontier — configurations
+      where improving one KPI requires sacrificing another.</p>
+      <div class="kpi-charts-row">
+        <div id="kpi-tradeoff-plot" class="kpi-chart"></div>
+        <div id="kpi-parallel-plot" class="kpi-chart"></div>
+      </div>
+    </section>
+
+    <section class="psuu-section">
       <h2>All Evaluations</h2>
       <p class="sim-desc"><span id="eval-count">${data.total_evaluations}</span> parameter points evaluated.</p>
       <div class="eval-table-wrap">
@@ -173,6 +184,8 @@ function renderPage(data) {
   updateBestCards(data, currentFocusKpi);
   updateEvalTable(data);
   drawScatter(data, currentFocusKpi);
+  drawKpiTradeoff(data);
+  drawParallelCoords(data);
 
   renderEcosystemNote(container, {
     view: 'PSUU Analysis',
@@ -314,6 +327,133 @@ function drawScatter(data, focusKpi) {
   }
 }
 
+// ── KPI Trade-off Scatter ──
+
+function drawKpiTradeoff(data) {
+  const plotDiv = document.getElementById('kpi-tradeoff-plot');
+  if (!plotDiv) return;
+
+  const evals = data.evaluations;
+  const coopRates = evals.map(e => e.scores.cooperation_rate);
+  const diversities = evals.map(e => e.scores.diversity);
+  const winnerShares = evals.map(e => e.scores.winner_share);
+
+  const trace = {
+    type: 'scatter',
+    mode: 'markers',
+    x: coopRates,
+    y: diversities,
+    marker: {
+      size: 10,
+      color: winnerShares,
+      colorscale: [[0, 'rgba(80,220,60,0.85)'], [0.5, 'rgba(200,200,60,0.85)'], [1, 'rgba(220,80,60,0.85)']],
+      showscale: true,
+      colorbar: {
+        title: { text: 'Winner Share', font: { size: 9 } },
+        thickness: 12,
+        len: 0.8,
+      },
+      line: { width: 1, color: 'rgba(0,0,0,0.15)' },
+    },
+    text: evals.map(e =>
+      `noise: ${e.params.noise.toFixed(4)}<br>rounds: ${e.params.rounds_per_match}<br>` +
+      `Coop: ${e.scores.cooperation_rate.toFixed(3)}<br>` +
+      `Diversity: ${e.scores.diversity.toFixed(1)}<br>` +
+      `Winner Share: ${e.scores.winner_share.toFixed(3)}`
+    ),
+    hoverinfo: 'text',
+  };
+
+  const layout = {
+    paper_bgcolor: 'transparent',
+    plot_bgcolor: 'rgba(255,253,249,0.7)',
+    font: { family: 'IBM Plex Mono, monospace', size: 10, color: '#8a8278' },
+    height: 380,
+    margin: { t: 20, r: 80, b: 50, l: 60 },
+    xaxis: {
+      title: { text: 'Cooperation Rate', font: { size: 10 } },
+      gridcolor: 'rgba(0,0,0,0.06)',
+      linecolor: '#8a8278',
+      zeroline: false,
+      range: [-0.05, 1.05],
+    },
+    yaxis: {
+      title: { text: 'Diversity', font: { size: 10 } },
+      gridcolor: 'rgba(0,0,0,0.06)',
+      linecolor: '#8a8278',
+      zeroline: false,
+    },
+  };
+
+  if (plotDiv.data) {
+    Plotly.react(plotDiv, [trace], layout, { displayModeBar: false, responsive: true });
+  } else {
+    Plotly.newPlot(plotDiv, [trace], layout, { displayModeBar: false, responsive: true });
+  }
+}
+
+// ── Parallel Coordinates ──
+
+function drawParallelCoords(data) {
+  const plotDiv = document.getElementById('kpi-parallel-plot');
+  if (!plotDiv) return;
+
+  const evals = data.evaluations;
+
+  const trace = {
+    type: 'parcoords',
+    line: {
+      color: evals.map(e => e.scores.cooperation_rate),
+      colorscale: [[0, 'rgba(220,80,60,0.85)'], [0.5, 'rgba(200,200,60,0.85)'], [1, 'rgba(80,220,60,0.85)']],
+      showscale: true,
+      colorbar: {
+        title: { text: 'Coop Rate', font: { size: 9 } },
+        thickness: 12,
+        len: 0.6,
+      },
+    },
+    dimensions: [
+      {
+        label: 'Noise',
+        values: evals.map(e => e.params.noise),
+        range: [0, 0.15],
+      },
+      {
+        label: 'Rounds',
+        values: evals.map(e => e.params.rounds_per_match),
+        range: [3, 25],
+      },
+      {
+        label: 'Coop Rate',
+        values: evals.map(e => e.scores.cooperation_rate),
+        range: [0, 1],
+      },
+      {
+        label: 'Diversity',
+        values: evals.map(e => e.scores.diversity),
+      },
+      {
+        label: 'Winner Share',
+        values: evals.map(e => e.scores.winner_share),
+        range: [0, 1],
+      },
+    ],
+  };
+
+  const layout = {
+    paper_bgcolor: 'transparent',
+    font: { family: 'IBM Plex Mono, monospace', size: 10, color: '#8a8278' },
+    height: 380,
+    margin: { t: 40, r: 40, b: 20, l: 40 },
+  };
+
+  if (plotDiv.data) {
+    Plotly.react(plotDiv, [trace], layout, { displayModeBar: false, responsive: true });
+  } else {
+    Plotly.newPlot(plotDiv, [trace], layout, { displayModeBar: false, responsive: true });
+  }
+}
+
 // ── Controls ──
 
 function readInitialPop() {
@@ -338,6 +478,8 @@ function bindControls() {
       if (currentData) {
         drawScatter(currentData, currentFocusKpi);
         updateBestCards(currentData, currentFocusKpi);
+        drawKpiTradeoff(currentData);
+        drawParallelCoords(currentData);
         const label = document.getElementById('scatter-kpi-label');
         if (label) label.textContent = KPI_LABELS[currentFocusKpi];
       }
@@ -424,6 +566,8 @@ function initWorker() {
         currentData = msg.data;
         updateBestCards(currentData, currentFocusKpi);
         drawScatter(currentData, currentFocusKpi);
+        drawKpiTradeoff(currentData);
+        drawParallelCoords(currentData);
         updateEvalTable(currentData);
         if (btn) {
           btn.disabled = false;

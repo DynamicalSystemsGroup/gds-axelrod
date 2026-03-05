@@ -48,14 +48,36 @@
         conditions. Nash analysis can't see this — it operates on
         the static 1v1 game, blind to the dynamics the tournament introduces.</p>
 
+        <h3>The Simulation–Optimization Pipeline</h3>
+        <p>The <a href="./sim.html">Simulation</a> page shows individual
+        <strong>state trajectories</strong> — what happens for one specific
+        <strong>simulation configuration</strong> (a fixed noise and rounds value).
+        But each configuration is just one point in a vast <strong>parameter space</strong>.
+        How do you know which point to pick?</p>
+
+        <p>PSUU answers this by building the <strong>config → KPI mapping</strong>.
+        Each <strong>evaluation</strong> runs a <strong>Monte Carlo batch</strong>
+        — multiple stochastic simulations of the same configuration with different
+        random seeds. <strong>Metrics</strong> (cooperation rate, diversity, winner share)
+        are computed per trajectory, then <strong>aggregated</strong> across runs to
+        produce <strong>KPIs</strong> that summarize the configuration's performance
+        under uncertainty.</p>
+
+        <p>The scatter plot below visualizes this mapping: each point is one
+        evaluation — a configuration and its resulting KPIs. The surface this
+        creates is noisy, non-linear, and expensive to compute. PSUU explores it
+        using random search, surfacing the configurations that optimize each KPI.</p>
+
         <h3>Parameter Search as Descent</h3>
-        <p>PSUU formalizes the question the blog post
+        <p>This connects to the deeper argument in
         <a href="https://blog.block.science/from-nash-to-lyapunov/"
-        target="_blank" rel="noopener"><em>From Nash to Lyapunov</em></a> builds toward:
-        if we can define a <strong>scalar objective</strong> (a KPI like cooperation rate),
-        then searching the parameter space is a form of <strong>descent</strong> over a
-        potential landscape. Each evaluation below is a point in that landscape — the
-        scatter plot is a slice of the surface PSUU explores.</p>
+        target="_blank" rel="noopener"><em>From Nash to Lyapunov</em></a>:
+        if we can define a <strong>scalar objective function</strong>
+        (a KPI like cooperation rate), then searching the parameter space is
+        a form of <strong>descent</strong> over a potential landscape. Each
+        evaluation is a sample of that surface. More sophisticated optimizers
+        — Bayesian optimization, evolutionary algorithms — could exploit its
+        structure, but even random search reveals the landscape's shape.</p>
 
         <p>This is the practical bridge between game theory and dynamical systems.
         Nash tells us defection is rational. PSUU asks: <em>under what conditions
