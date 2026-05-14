@@ -11,8 +11,8 @@ const SHARED_CLOSING =
   'each remain authoritative for their concerns; views consume whichever is relevant.';
 
 const SHARED_REFERENCES = [
-  { label: 'Generalized Dynamical Systems', url: 'https://blog.block.science/generalized-dynamical-systems-part-i-foundations-2/' },
-  { label: 'gds-core — GDS ecosystem', url: 'https://github.com/BlockScience/gds-core' },
+  { label: 'Generalized Dynamical Systems', url: 'https://blog.dynamicalsystemsgroup.com/generalized-dynamical-systems-part-i-foundations-2/' },
+  { label: 'gds-core — GDS ecosystem', url: 'https://github.com/DynamicalSystemsGroup/gds-core' },
   { label: 'The Evolution of Trust — Nicky Case', url: 'https://ncase.me/trust/' },
   { label: 'The Evolution of Cooperation — Robert Axelrod', url: 'https://en.wikipedia.org/wiki/The_Evolution_of_Cooperation' },
 ];
